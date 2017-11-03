@@ -35,6 +35,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97928B3A1FAC6393005DEFEE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				97F1AB301FA2309A00085BD6 /* Main.storyboard */,
+				97F1AB331FA2309A00085BD6 /* Assets.xcassets */,
+				97F1AB351FA2309A00085BD6 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		97928B3B1FAC6393005DEFEE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				97928B3C1FAC6447005DEFEE /* Libriary */,
+				97928B3E1FAC6447005DEFEE /* Models */,
+				97928B3D1FAC6447005DEFEE /* UI */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		97928B3C1FAC6447005DEFEE /* Libriary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libriary;
+			sourceTree = "<group>";
+		};
+		97928B3D1FAC6447005DEFEE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		97928B3E1FAC6447005DEFEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		97F1AB201FA2309A00085BD6 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +97,9 @@
 			children = (
 				97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */,
 				97F1AB2E1FA2309A00085BD6 /* ViewController.swift */,
-				97F1AB301FA2309A00085BD6 /* Main.storyboard */,
-				97F1AB331FA2309A00085BD6 /* Assets.xcassets */,
-				97F1AB351FA2309A00085BD6 /* LaunchScreen.storyboard */,
 				97F1AB381FA2309A00085BD6 /* Info.plist */,
+				97928B3A1FAC6393005DEFEE /* Resource */,
+				97928B3B1FAC6393005DEFEE /* Source */,
 			);
 			path = iOSProjectSwift;
 			sourceTree = "<group>";
