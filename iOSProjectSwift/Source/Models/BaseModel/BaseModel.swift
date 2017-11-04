@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ModelObserver {
+enum ModelState {
     case modelDidUnload
     case modelWillLoad
     case modelDidLoad
@@ -17,6 +17,6 @@ enum ModelObserver {
 
 class BaseModel: NSObject {
     func load() {
-        let state = 
+        let state = ModelState
     }
 }
