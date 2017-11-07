@@ -8,26 +8,29 @@
 
 import UIKit
 
-class ObservableObject: NSObject {
-    // MARK:Properties
-    var state: ModelState = ModelState.modelDidUnload
-    var observers: NSHashTable<AnyObject>?
+class ObservableObject {
+    
+    // MARK: - Properties
+    
+    var state: ModelState = .didUnload
+    var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
 
-    // MARK:Methods
+    // MARK: - Methods
+    
     func addObserver(observer: NSObject) -> () {
-        self.observers?.add(observer)
+        self.observers.add(observer)
     }
 
     func removeObserver(observer: NSObject) -> () {
-        self.observers?.remove(observer)
+        self.observers.remove(observer)
     }
     
     func isObservedBy(observer: NSObject) -> (Bool) {
-        return (self.observers?.contains(observer))!
+        return self.observers.contains(observer)
     }
     
     func notifyOfStateWith(selector: Selector?, observer: NSObject) {
-    self.observers?.allObjects.forEach({ (object) in
+    self.observers.allObjects.forEach({ (object) in
             if (object.responds(to: selector)) {
                 _ = object.perform(selector, with: observer)
             }

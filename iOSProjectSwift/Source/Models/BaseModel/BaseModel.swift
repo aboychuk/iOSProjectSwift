@@ -9,14 +9,16 @@
 import Foundation
 
 enum ModelState {
-    case modelDidUnload
-    case modelWillLoad
-    case modelDidLoad
-    case modelFailLoad
+    case didUnload
+    case willLoad
+    case didLoad
+    case didFailLoading
 }
 
-class BaseModel: NSObject {
+class BaseModel: ObservableObject {
     func load() {
-        let state = ModelState
+        let state = self.state
+        if state == .willLoad || state == .didLoad {
+        }
     }
 }
