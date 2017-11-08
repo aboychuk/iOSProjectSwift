@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		97928B451FACEDDE005DEFEE /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97928B441FACEDDE005DEFEE /* ObservableObject.swift */; };
 		979CC5DE1FB306A10023529F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5DD1FB306A10023529F /* Model.swift */; };
+		979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5E11FB33D940023529F /* GlobalFunctions.swift */; };
 		97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */; };
 		97F1AB321FA2309A00085BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F1AB301FA2309A00085BD6 /* Main.storyboard */; };
 		97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F1AB331FA2309A00085BD6 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		97928B441FACEDDE005DEFEE /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		979CC5DD1FB306A10023529F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		979CC5E11FB33D940023529F /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		97F1AB291FA2309A00085BD6 /* iOSProjectSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProjectSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F1AB311FA2309A00085BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		97928B421FACEDC8005DEFEE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				979CC5E01FB33D840023529F /* GlobalFunctions */,
 				97928B431FACEDC8005DEFEE /* ObservableObject */,
 			);
 			path = Classes;
@@ -102,6 +105,14 @@
 				979CC5DD1FB306A10023529F /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		979CC5E01FB33D840023529F /* GlobalFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				979CC5E11FB33D940023529F /* GlobalFunctions.swift */,
+			);
+			path = GlobalFunctions;
 			sourceTree = "<group>";
 		};
 		97F1AB201FA2309A00085BD6 = {
@@ -205,6 +216,7 @@
 			files = (
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				97928B451FACEDDE005DEFEE /* ObservableObject.swift in Sources */,
+				979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */,
 				979CC5DE1FB306A10023529F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
