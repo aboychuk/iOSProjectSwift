@@ -24,23 +24,33 @@ class ObservableObject {
     // MARK: - Public Methods
     
     func addObserver(object: NSObject) {
-        self.observers.add(object)
+        synchronized(self) {
+            self.observers.add(object)
+        }
     }
 
     func removeObserver(object: NSObject) {
-        self.observers.remove(object)
+        synchronized(self) {
+            self.observers.remove(object)
+        }
     }
     
     func isObserved(by object: NSObject) -> Bool {
-        return self.observers.contains(object)
+        return synchronized(self, block: { () -> (Bool) in
+            return self.observers.contains(object)
+        })
     }
     
     func notify(of state: ModelState) {
-        self.notifyWith(self.selector(for: state))
+        synchronized(self) {
+            self.notifyWith(self.selector(for: state))
+        }
     }
     
     func notify(of state: ModelState, with object: NSObject) {
-        self.notifyWith(self.selector(for: state), with: object)
+        synchronized(self) {
+            self.notifyWith(self.selector(for: state), with: object)
+        }
     }
     
     func perform(notification: Bool, block: () -> ()) {
