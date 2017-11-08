@@ -14,7 +14,7 @@ class ObservableObject {
     
     var state: ModelState = .didUnload {
         didSet {
-            self.notifyOfState(state: self.state)
+            self.notify(of: self.state)
         }
     }
     
@@ -31,16 +31,16 @@ class ObservableObject {
         self.observers.remove(object)
     }
     
-    func isObservedBy(object: NSObject) -> Bool {
+    func isObserved(by object: NSObject) -> Bool {
         return self.observers.contains(object)
     }
     
-    func notifyOfState(state: ModelState) {
-        self.notifyOfStateWith(selector: self.selector(forState: state))
+    func notify(of state: ModelState) {
+        self.notifyWith(self.selector(for: state))
     }
     
-    func notifyOfState(state: ModelState,with object: NSObject) {
-        self.notifyOfStateWith(selector: self.selector(forState: state), object: object)
+    func notify(of state: ModelState, with object: NSObject) {
+        self.notifyWith(self.selector(for: state), with: object)
     }
     
     func perform(notification: Bool, block: () -> ()) {
@@ -50,13 +50,14 @@ class ObservableObject {
         self.notify = notify
     }
     
-    // MARK: - Private Methods
-    
-    private func selector(forState: ModelState) -> Selector? {
+    //Method created for overriding, do not call directly
+    func selector(for state: ModelState) -> Selector? {
         return nil
     }
     
-    private func notifyOfStateWith(selector: Selector?) {
+    // MARK: - Private Methods
+    
+    private func notifyWith(_ selector: Selector?) {
         if self.notify {
             self.observers.allObjects.forEach({ (object) in
                 if (object.responds(to: selector)) {
@@ -66,7 +67,7 @@ class ObservableObject {
         }
     }
     
-    private func notifyOfStateWith(selector: Selector?, object: NSObject) {
+    private func notifyWith(_ selector: Selector?, with object: NSObject) {
         if self.notify {
             self.observers.allObjects.forEach({ (object) in
                 if (object.responds(to: selector)) {
@@ -76,6 +77,3 @@ class ObservableObject {
         }
     }
 }
-
-
-
