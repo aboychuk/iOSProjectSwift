@@ -27,12 +27,15 @@ class Model: ObservableObject {
     //MARK: - Public Methods
     
     func load() {
-        let state = self.state
-        if state == .willLoad || state == .didLoad {
-            self.notify(of: state)
-            return
+        synchronized(self) {
+            let state = self.state
+            if state == .willLoad || state == .didLoad {
+                self.notify(of: state)
+                return
+            }
+            self.state = .willLoad
         }
-        self.state = .willLoad
+        
         self.processLoading()
     }
     
