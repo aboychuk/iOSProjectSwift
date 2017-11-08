@@ -12,29 +12,68 @@ class ObservableObject {
     
     // MARK: - Properties
     
-    var state: ModelState = .didUnload
+    var state: ModelState = .didUnload {
+        didSet {
+            self.notifyOfState(state: self.state)
+        }
+    }
+    
     var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
+    var notify: Bool = true
 
-    // MARK: - Methods
+    // MARK: - Public Methods
     
-    func addObserver(observer: NSObject) -> () {
-        self.observers.add(observer)
+    func addObserver(object: NSObject) {
+        self.observers.add(object)
     }
 
-    func removeObserver(observer: NSObject) -> () {
-        self.observers.remove(observer)
+    func removeObserver(object: NSObject) {
+        self.observers.remove(object)
     }
     
-    func isObservedBy(observer: NSObject) -> (Bool) {
-        return self.observers.contains(observer)
+    func isObservedBy(object: NSObject) -> Bool {
+        return self.observers.contains(object)
     }
     
-    func notifyOfStateWith(selector: Selector?, observer: NSObject) {
-    self.observers.allObjects.forEach({ (object) in
-            if (object.responds(to: selector)) {
-                _ = object.perform(selector, with: observer)
-            }
-        })
+    func notifyOfState(state: ModelState) {
+        self.notifyOfStateWith(selector: self.selector(forState: state))
+    }
+    
+    func notifyOfState(state: ModelState,with object: NSObject) {
+        self.notifyOfStateWith(selector: self.selector(forState: state), object: object)
+    }
+    
+    func perform(notification: Bool, block: () -> ()) {
+        let notify = self.notify
+        self.notify = notification
+        block()
+        self.notify = notify
+    }
+    
+    // MARK: - Private Methods
+    
+    private func selector(forState: ModelState) -> Selector? {
+        return nil
+    }
+    
+    private func notifyOfStateWith(selector: Selector?) {
+        if self.notify {
+            self.observers.allObjects.forEach({ (object) in
+                if (object.responds(to: selector)) {
+                    _ = object.perform(selector, with: self)
+                }
+            })
+        }
+    }
+    
+    private func notifyOfStateWith(selector: Selector?, object: NSObject) {
+        if self.notify {
+            self.observers.allObjects.forEach({ (object) in
+                if (object.responds(to: selector)) {
+                    _ = object.perform(selector, with: object)
+                }
+            })
+        }
     }
 }
 
