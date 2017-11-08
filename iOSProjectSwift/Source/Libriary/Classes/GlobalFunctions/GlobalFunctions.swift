@@ -8,8 +8,9 @@
 
 import Foundation
 
-func synchronized(_ lock: Any, block: () -> ()) {
+func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     objc_sync_enter(lock)
-    block()
+    let blockResult = block()
     objc_sync_exit(lock)
+    return blockResult
 }
