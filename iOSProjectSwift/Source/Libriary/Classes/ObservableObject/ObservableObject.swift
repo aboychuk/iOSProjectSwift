@@ -23,15 +23,15 @@ class ObservableObject {
 
     // MARK: - Public Methods
     
-    func addObserver(object: NSObject) {
+    func add(observer: NSObject) {
         synchronized(self) {
-            self.observers.add(object)
+            self.observers.add(observer)
         }
     }
 
-    func removeObserver(object: NSObject) {
+    func remove(observer: NSObject) {
         synchronized(self) {
-            self.observers.remove(object)
+            self.observers.remove(observer)
         }
     }
     
@@ -67,17 +67,7 @@ class ObservableObject {
     
     // MARK: - Private Methods
     
-    private func notifyWith(_ selector: Selector?) {
-        if self.notify {
-            self.observers.allObjects.forEach({ (object) in
-                if (object.responds(to: selector)) {
-                    _ = object.perform(selector, with: self)
-                }
-            })
-        }
-    }
-    
-    private func notifyWith(_ selector: Selector?, with object: NSObject) {
+    private func notifyWith(_ selector: Selector?, with object: NSObject? = nil) {
         if self.notify {
             self.observers.allObjects.forEach({ (object) in
                 if (object.responds(to: selector)) {
