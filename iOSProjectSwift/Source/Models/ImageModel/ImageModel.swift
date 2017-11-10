@@ -24,7 +24,29 @@ class ImageModel: Model {
     }
     
     //MARK: - Public Methods
+
+    func image(with url: URL) -> ImageModel? {
+        let cache = ImageModelCache.sharedCache
+        var imageModel = cache.model(for: url as AnyObject)
+        if imageModel == nil {
+            imageModel = url.isFileURL ? [fylesysc] : [internet]
+            cache.add(model: imageModel, for: url as AnyObject)
+        }
+        
+        return imageModel
+    }
     
-    func
+    //Method created for overriding do not call it directly
+    func loadImage() -> UIImage? {
+        return nil
+    }
     
+    override func performLoadingInBackground() {
+        self.loadImage()
+        if self.image == nil {
+            self.state = .didFailLoading
+        } else {
+            self.state = .didLoad
+        }
+    }
 }
