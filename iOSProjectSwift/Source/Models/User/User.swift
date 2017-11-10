@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class User: Model {
     
@@ -27,7 +27,5 @@ class User: Model {
             return fullname
         }
     }
-    
-    
-    
+
 }
