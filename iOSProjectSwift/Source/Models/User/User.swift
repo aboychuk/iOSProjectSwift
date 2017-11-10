@@ -16,7 +16,7 @@ class User: Model {
     var surname: String?
     var fullname: String? {
         get {
-            var fullname: String
+            var fullname = ""
             if let name = self.name {
                 fullname += name
             }
@@ -27,5 +27,4 @@ class User: Model {
             return fullname
         }
     }
-
 }
