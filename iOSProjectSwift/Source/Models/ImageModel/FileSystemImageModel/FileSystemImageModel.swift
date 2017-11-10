@@ -9,12 +9,20 @@
 import UIKit
 
 class FilesystemImageModel: ImageModel {
+    
+    //MARK: - Properties
+    
+    var imagePath: String? {
+        return FileManager.documentsPath
+    }
+    
+    //MARK: - Overrided Methods
 
-    override func loadImage(with completionHandler: (UIImage?) -> ()) {
+    override func loadImage() {
         let url = self.url.absoluteURL
-        if let data = try? Data(contentsOf: url) {
+        if let data = try? Data(contentsOf: url) 
             let image = UIImage.init(data: data)
-            completionHandler(image)
+            self.image = image
         }
     }
 }
