@@ -37,12 +37,14 @@ class ImageModel: Model {
     }
     
     //Method created for overriding do not call it directly
-    func loadImage() -> UIImage? {
-        return nil
+    func loadImage(with completionHandler: (UIImage?) -> ()) {
+        
     }
     
     override func performLoadingInBackground() {
-       self.image = self.loadImage()
+        self.loadImage { (image) in
+            self.image = image
+        }
         if self.image == nil {
             self.state = .didFailLoading
         } else {
