@@ -11,6 +11,7 @@
 		979CC5DE1FB306A10023529F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5DD1FB306A10023529F /* Model.swift */; };
 		979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5E11FB33D940023529F /* GlobalFunctions.swift */; };
 		979CC5E61FB34CB90023529F /* ImageModelCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5E51FB34CB90023529F /* ImageModelCache.swift */; };
+		97EED20E1FB5CC110088D7E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EED20D1FB5CC110088D7E8 /* User.swift */; };
 		97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */; };
 		97F1AB321FA2309A00085BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F1AB301FA2309A00085BD6 /* Main.storyboard */; };
 		97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F1AB331FA2309A00085BD6 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		979CC5DD1FB306A10023529F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		979CC5E11FB33D940023529F /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		979CC5E51FB34CB90023529F /* ImageModelCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModelCache.swift; sourceTree = "<group>"; };
+		97EED20D1FB5CC110088D7E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		97F1AB291FA2309A00085BD6 /* iOSProjectSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProjectSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F1AB311FA2309A00085BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		97928B3E1FAC6447005DEFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97EED20C1FB5CC060088D7E8 /* User */,
 				979CC5E41FB34C9F0023529F /* ImageModel */,
 				979CC5DC1FB306A10023529F /* Model */,
 			);
@@ -141,6 +144,14 @@
 				97FCD6A51FB45EFC007BD5A9 /* InternetImageModel */,
 			);
 			path = ImageModel;
+			sourceTree = "<group>";
+		};
+		97EED20C1FB5CC060088D7E8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				97EED20D1FB5CC110088D7E8 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		97F1AB201FA2309A00085BD6 = {
@@ -263,6 +274,7 @@
 				97FCD6A71FB45F58007BD5A9 /* ImageModel.swift in Sources */,
 				979CC5E61FB34CB90023529F /* ImageModelCache.swift in Sources */,
 				97928B451FACEDDE005DEFEE /* ObservableObject.swift in Sources */,
+				97EED20E1FB5CC110088D7E8 /* User.swift in Sources */,
 				979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */,
 				979CC5DE1FB306A10023529F /* Model.swift in Sources */,
 				97FCD6A91FB45F77007BD5A9 /* FileSystemImageModel.swift in Sources */,
