@@ -26,18 +26,23 @@ class InternetImageModel: FilesystemImageModel {
     }
     
     //MARK: Overrided Methods
-    
+
     override func loadImage() {
         let urlSession = URLSession.shared
-        let imagePath = self.url.absoluteString
-        let cached = FileManager.default.fileExists(atPath: imagePath)
+        let cached = FileManager.default.fileExists(atPath: self.imagePath!)
         if cached {
             super.loadImage()
             return
         } else {
-            self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: <#T##(URL?, URLResponse?, Error?) -> Void#>)
-            
+            self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: ({ (location, response, error ) in
+                do {
+                    try FileManager.default.moveItem(atPath: (location?.path)!, toPath: self.imagePath!)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }))
         }
+        
+        super.loadImage()
     }
-    
 }

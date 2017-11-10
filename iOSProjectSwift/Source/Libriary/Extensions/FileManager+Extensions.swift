@@ -12,7 +12,7 @@ extension FileManager {
     
     //MARK: - Class Methods
     
-    class func documentsPath() -> String {
+    static func documentsPath() -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
         return paths.first!
     }

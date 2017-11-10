@@ -10,19 +10,26 @@ import UIKit
 
 class FilesystemImageModel: ImageModel {
     
+    //MARK: - Constants
+    
+    struct Constants {
+        static let folderName = "images"
+    }
+    
     //MARK: - Properties
     
     var imagePath: String? {
-        return FileManager.documentsPath
+        var path = FileManager.documentsPath()
+        path?.append(Constants.folderName)
+        
+        return path
     }
     
     //MARK: - Overrided Methods
 
     override func loadImage() {
-        let url = self.url.absoluteURL
-        if let data = try? Data(contentsOf: url) 
-            let image = UIImage.init(data: data)
-            self.image = image
+        if let data = FileManager.default.contents(atPath: self.imagePath!) {
+            self.image = UIImage(data: data)
         }
     }
 }
