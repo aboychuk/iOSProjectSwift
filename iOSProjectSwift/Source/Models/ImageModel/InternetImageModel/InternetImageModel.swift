@@ -32,6 +32,7 @@ class InternetImageModel: FilesystemImageModel {
         let cached = FileManager.default.fileExists(atPath: self.imagePath!)
         if cached {
             super.loadImage()
+            
             return
         } else {
             self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: ({ (location, response, error ) in
