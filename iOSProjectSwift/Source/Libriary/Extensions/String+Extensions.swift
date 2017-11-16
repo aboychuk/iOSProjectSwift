@@ -12,7 +12,7 @@ extension String {
     
     //MARK: - Class Methods
     
-    static func removeIllegalCharactersFromString(_ string: String) -> String {
-        return string.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
+    static func removeIllegalCharactersFromString(_ string: String) -> String? {
+        return string.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)
     }
 }

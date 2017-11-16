@@ -25,6 +25,10 @@ class FilesystemImageModel: ImageModel {
         return path
     }
     
+    var imageName: String? {
+        return String.removeIllegalCharactersFromString(self.url.absoluteString)
+    }
+    
     //MARK: - Overrided Methods
 
     override func loadImage() {
