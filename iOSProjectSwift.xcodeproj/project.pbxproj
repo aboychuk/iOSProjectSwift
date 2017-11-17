@@ -26,6 +26,13 @@
 		97C1F3D91FBD9FA600F91F68 /* ArrayModelChangeRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D81FBD9FA600F91F68 /* ArrayModelChangeRemove.swift */; };
 		97C1F3DB1FBDA73B00F91F68 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3DA1FBDA73B00F91F68 /* Array+Extensions.swift */; };
 		97C376F51FBF90AD002C637A /* FBLoginContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C376F41FBF90AD002C637A /* FBLoginContext.swift */; };
+		97C377011FBF9F17002C637A /* FBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377001FBF9F17002C637A /* FBViewController.swift */; };
+		97C377031FBF9F34002C637A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377021FBF9F34002C637A /* FBLoginViewController.swift */; };
+		97C377051FBF9F52002C637A /* FBUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */; };
+		97C377071FBF9F66002C637A /* FBFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377061FBF9F66002C637A /* FBFriendsViewController.swift */; };
+		97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770B1FBF9FFE002C637A /* ImageView.swift */; };
+		97C3770E1FBFA00F002C637A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770D1FBFA00F002C637A /* LoadingView.swift */; };
+		97C377101FBFA01B002C637A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770F1FBFA01B002C637A /* View.swift */; };
 		97EED21F1FB600A30088D7E8 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EED21E1FB600A30088D7E8 /* FileManager+Extensions.swift */; };
 		97EED2211FB612C40088D7E8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EED2201FB612C40088D7E8 /* String+Extensions.swift */; };
 		97EED2241FB645A10088D7E8 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EED2231FB645A10088D7E8 /* ArrayModel.swift */; };
@@ -56,6 +63,13 @@
 		97C1F3D81FBD9FA600F91F68 /* ArrayModelChangeRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeRemove.swift; sourceTree = "<group>"; };
 		97C1F3DA1FBDA73B00F91F68 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		97C376F41FBF90AD002C637A /* FBLoginContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginContext.swift; sourceTree = "<group>"; };
+		97C377001FBF9F17002C637A /* FBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBViewController.swift; sourceTree = "<group>"; };
+		97C377021FBF9F34002C637A /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
+		97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDetailViewController.swift; sourceTree = "<group>"; };
+		97C377061FBF9F66002C637A /* FBFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsViewController.swift; sourceTree = "<group>"; };
+		97C3770B1FBF9FFE002C637A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		97C3770D1FBFA00F002C637A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		97C3770F1FBFA01B002C637A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		97EED21E1FB600A30088D7E8 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		97EED2201FB612C40088D7E8 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		97EED2231FB645A10088D7E8 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
@@ -171,6 +185,8 @@
 		97928B3D1FAC6447005DEFEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				97C376FB1FBF9D7A002C637A /* ViewControllers */,
+				97C376FA1FBF9D7A002C637A /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -275,6 +291,83 @@
 				97C1F3D81FBD9FA600F91F68 /* ArrayModelChangeRemove.swift */,
 			);
 			path = ArrayModelChangeRemove;
+			sourceTree = "<group>";
+		};
+		97C376FA1FBF9D7A002C637A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97C3770A1FBF9FED002C637A /* ImageView */,
+				97C377081FBF9FED002C637A /* LoadingView */,
+				97C377091FBF9FED002C637A /* View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97C376FB1FBF9D7A002C637A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				97C376FF1FBF9F03002C637A /* FBFriendsViewController */,
+				97C376FD1FBF9F03002C637A /* FBLoginViewController */,
+				97C376FE1FBF9F03002C637A /* FBUserDetailViewController */,
+				97C376FC1FBF9F03002C637A /* FBViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		97C376FC1FBF9F03002C637A /* FBViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97C377001FBF9F17002C637A /* FBViewController.swift */,
+			);
+			path = FBViewController;
+			sourceTree = "<group>";
+		};
+		97C376FD1FBF9F03002C637A /* FBLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97C377021FBF9F34002C637A /* FBLoginViewController.swift */,
+			);
+			path = FBLoginViewController;
+			sourceTree = "<group>";
+		};
+		97C376FE1FBF9F03002C637A /* FBUserDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */,
+			);
+			path = FBUserDetailViewController;
+			sourceTree = "<group>";
+		};
+		97C376FF1FBF9F03002C637A /* FBFriendsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97C377061FBF9F66002C637A /* FBFriendsViewController.swift */,
+			);
+			path = FBFriendsViewController;
+			sourceTree = "<group>";
+		};
+		97C377081FBF9FED002C637A /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				97C3770D1FBFA00F002C637A /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		97C377091FBF9FED002C637A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97C3770F1FBFA01B002C637A /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97C3770A1FBF9FED002C637A /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				97C3770B1FBF9FFE002C637A /* ImageView.swift */,
+			);
+			path = ImageView;
 			sourceTree = "<group>";
 		};
 		97EED21D1FB6008C0088D7E8 /* Extensions */ = {
@@ -482,10 +575,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C377101FBFA01B002C637A /* View.swift in Sources */,
+				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
 				97EED2211FB612C40088D7E8 /* String+Extensions.swift in Sources */,
 				972038E51FBF759E003D686C /* FBGetContext.swift in Sources */,
 				97C376F51FBF90AD002C637A /* FBLoginContext.swift in Sources */,
+				97C377051FBF9F52002C637A /* FBUserDetailViewController.swift in Sources */,
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */,
 				970795141FBF307C00BD986E /* UsersModel.swift in Sources */,
@@ -496,16 +592,20 @@
 				970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */,
 				97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */,
 				979CC5E61FB34CB90023529F /* ImageModelCache.swift in Sources */,
+				97C377031FBF9F34002C637A /* FBLoginViewController.swift in Sources */,
 				97928B451FACEDDE005DEFEE /* ObservableObject.swift in Sources */,
 				97EED21F1FB600A30088D7E8 /* FileManager+Extensions.swift in Sources */,
 				97C1F3D91FBD9FA600F91F68 /* ArrayModelChangeRemove.swift in Sources */,
 				97EED2241FB645A10088D7E8 /* ArrayModel.swift in Sources */,
 				970795041FBED41500BD986E /* UITableView+Extensions.swift in Sources */,
 				979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */,
+				97C377071FBF9F66002C637A /* FBFriendsViewController.swift in Sources */,
 				979CC5DE1FB306A10023529F /* Model.swift in Sources */,
 				972038E41FBF759E003D686C /* Context.swift in Sources */,
 				97C1F3DB1FBDA73B00F91F68 /* Array+Extensions.swift in Sources */,
 				97FCD6A91FB45F77007BD5A9 /* FileSystemImageModel.swift in Sources */,
+				97C377011FBF9F17002C637A /* FBViewController.swift in Sources */,
+				97C3770E1FBFA00F002C637A /* LoadingView.swift in Sources */,
 				970795111FBF2A0600BD986E /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
