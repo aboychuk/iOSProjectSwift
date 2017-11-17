@@ -7,3 +7,16 @@
 //
 
 import UIKit
+
+extension Array {
+    
+    //MARK: - Class Functions
+    
+    mutating func move(from sourceIndex: Int, to destinationIndex: Int) {
+        guard sourceIndex == destinationIndex else {
+            print("sourceIndex == destinationIndex")
+            return
+        }
+        self.insert(self.remove(at: sourceIndex), at: destinationIndex)
+    }
+}
