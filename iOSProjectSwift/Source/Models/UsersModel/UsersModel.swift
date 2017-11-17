@@ -22,18 +22,19 @@ class UsersModel: ArrayModel<Any> {
     
     var savePath: String? {
         var documentsPath = FileManager.documentsPath()
-        documentsPath?.append(Keys.plistName)
+         documentsPath?.append(Keys.plistName)
+        return documentsPath
     }
     
     //MARK: - Initializations and Deinitializations
     
     deinit {
-
+        self.unsubscribeNotifications()
     }
     
     override init() {
         super.init()
-        
+        self.subscribeNotifications()
     }
     
     //MARK: - Public Functions
@@ -41,6 +42,7 @@ class UsersModel: ArrayModel<Any> {
     func saveModel() {
         if let savePath = self.savePath {
             NSKeyedArchiver.archiveRootObject(self.objects, toFile: savePath)
+        }
     }
     
     func dumpModel() {
@@ -55,14 +57,33 @@ class UsersModel: ArrayModel<Any> {
     
     //MARK: - Overrided Functions
         
+    override func performLoadingInBackground() {
+        var objects: Array<AnyObject>?
+        if let savePath = self.savePath {
+            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<AnyObject>
+            if objects == nil {
+                //factory array
+            }
+        }
+        self.perform(notification: false, block: {
+            self.add(objects: objects as Any)
+        })
+        self.state = .didLoad
+    }
     
     //MARK: - Private Functions
     
-//    private func subscribeNotifications() {
-//
-//    }
-//
-//    private func unsubscribeNotifications() {
-//
-//    }
+    private func subscribeNotifications() {
+        for notification in self.notifications {
+            NotificationCenter.default.addObserver(forName: notification, object: nil, queue: OperationQueue.main, using: { (_) in
+                self.saveModel()
+            })
+        }
+    }
+
+    private func unsubscribeNotifications() {
+        for notification in self.notifications {
+            NotificationCenter.default.removeObserver(self, name: notification, object: nil)
+        }
+    }
 }

@@ -16,6 +16,7 @@ extension UITableView {
         let stringFromClass = String(describing:cls)
         guard let cell = self.dequeueReusableCell(withIdentifier: stringFromClass) else {
             fatalError("\(stringFromClass)) cell could not be instantiated because it was not found on the tableView")
+            //load from nib
         }
         
         return cell
