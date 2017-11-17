@@ -20,6 +20,7 @@ enum ModelState {
     case willLoad
     case didLoad
     case didFailLoading
+    case didChanged
 }
 
 class Model: ObservableObject {
@@ -65,6 +66,8 @@ class Model: ObservableObject {
             return Selector(("didLoad:"))
         case .didFailLoading:
             return Selector(("didFailLoading:"))
+        default:
+            return super.selector(for: state)
         }
     }
 }
