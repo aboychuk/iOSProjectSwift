@@ -16,7 +16,6 @@ extension UITableView {
         let stringFromClass = String(describing:Class.self)
         guard let cell = self.dequeueReusableCell(withIdentifier: stringFromClass) else {
             fatalError("\(stringFromClass)) cell could not be instantiated because it was not found on the tableView")
-
         }
         
         return cell
@@ -26,5 +25,11 @@ extension UITableView {
         self.beginUpdates()
         block()
         self.endUpdates()
+    }
+    
+    func apply(ModelChange: ArrayModelChange,
+               in row: Int = 0,
+               rowAnimation: UITableViewRowAnimation = UITableViewRowAnimationAutomatic) {
+        ModelChange.update(tableView: self, inSection: row, rowAnimation: rowAnimation)
     }
 }

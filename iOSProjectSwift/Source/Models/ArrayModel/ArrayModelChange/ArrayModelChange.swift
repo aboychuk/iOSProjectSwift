@@ -13,7 +13,7 @@ class ArrayModelChange {
         
     }
     
-    func update(tableView: UITableView, inSection: Int, rowAnimation: UITableViewRowAction) {
+    func update(tableView: UITableView, inSection: Int, rowAnimation: UITableViewRowAnimation) {
         
     }
 }

@@ -169,10 +169,10 @@
 		97C1F3CE1FBD98E000F91F68 /* ArrayModelChange */ = {
 			isa = PBXGroup;
 			children = (
+				97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */,
 				97C1F3CF1FBD9F5200F91F68 /* ArrayModelChangeAdd */,
 				97C1F3D01FBD9F5200F91F68 /* ArrayModelChangeMove */,
 				97C1F3D11FBD9F5200F91F68 /* ArrayModelChangeRemove */,
-				97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */,
 			);
 			path = ArrayModelChange;
 			sourceTree = "<group>";
