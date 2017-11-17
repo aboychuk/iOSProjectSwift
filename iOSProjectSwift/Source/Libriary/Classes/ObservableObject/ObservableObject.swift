@@ -23,19 +23,19 @@ class ObservableObject {
 
     // MARK: - Public Functions
     
-    func add(observer: NSObject) {
+    func add(observer: AnyObject) {
         synchronized(self) {
             self.observers.add(observer)
         }
     }
 
-    func remove(observer: NSObject) {
+    func remove(observer: AnyObject) {
         synchronized(self) {
             self.observers.remove(observer)
         }
     }
     
-    func isObserved(by object: NSObject) -> Bool {
+    func isObserved(by object: AnyObject) -> Bool {
         return synchronized(self, block: { () -> (Bool) in
             return self.observers.contains(object)
         })
@@ -47,7 +47,7 @@ class ObservableObject {
         }
     }
     
-    func notify(of state: ModelState, with object: NSObject) {
+    func notifyOfState(_ state: ModelState, with object: AnyObject) {
         synchronized(self) {
             self.notifyWith(self.selector(for: state), with: object)
         }
@@ -67,7 +67,7 @@ class ObservableObject {
     
     // MARK: - Private Functions
     
-    private func notifyWith(_ selector: Selector?, with object: NSObject? = nil) {
+    private func notifyWith(_ selector: Selector?, with object: AnyObject? = nil) {
         if self.notify {
             self.observers.allObjects.forEach({ (object) in
                 if (object.responds(to: selector)) {
