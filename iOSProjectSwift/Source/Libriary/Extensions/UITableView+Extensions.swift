@@ -10,10 +10,10 @@ import UIKit
 
 extension UITableView {
     
-    //MARK: - Class Functions
+    //MARK: - Instance Functions
     
-    func reusableCellFrom(Class: AnyClass) -> UITableViewCell {
-        let stringFromClass = String(describing:Class.self)
+    func reusableCellWith(cls: AnyClass) -> UITableViewCell {
+        let stringFromClass = String(describing:cls)
         guard let cell = self.dequeueReusableCell(withIdentifier: stringFromClass) else {
             fatalError("\(stringFromClass)) cell could not be instantiated because it was not found on the tableView")
         }
