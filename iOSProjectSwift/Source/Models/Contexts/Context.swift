@@ -29,7 +29,7 @@ class Context {
     }
     
     //Function created for overrideing do not call directly
-    func executeWithCompletionHandler(_ handler: (ModelState) -> ()) {
+    func executeWithCompletionHandler(_ handler:  @escaping (ModelState) -> ()) {
         
     }
     
