@@ -2,12 +2,12 @@
 # platform :ios, '9.0'
 
 target 'iOSProjectSwift' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for iOSProjectSwift
-    pod 'FBSDKCoreKit'
-    pod 'FBSDKShareKit'
-    pod 'FBSDKLoginKit'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 
 end

@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
 		970795041FBED41500BD986E /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970795031FBED41500BD986E /* UITableView+Extensions.swift */; };
 		970795061FBEE45F00BD986E /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970795051FBEE45F00BD986E /* UINib+Extensions.swift */; };
 		9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950A1FBF2A0500BD986E /* FBUserModel.swift */; };
 		970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */; };
 		970795111FBF2A0600BD986E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950E1FBF2A0600BD986E /* UserModel.swift */; };
 		970795141FBF307C00BD986E /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970795131FBF307C00BD986E /* UsersModel.swift */; };
+		972038E41FBF759E003D686C /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E21FBF759E003D686C /* Context.swift */; };
+		972038E51FBF759E003D686C /* FBGetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E31FBF759E003D686C /* FBGetContext.swift */; };
 		97928B451FACEDDE005DEFEE /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97928B441FACEDDE005DEFEE /* ObservableObject.swift */; };
 		979CC5DE1FB306A10023529F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5DD1FB306A10023529F /* Model.swift */; };
 		979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5E11FB33D940023529F /* GlobalFunctions.swift */; };
@@ -33,12 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		970795031FBED41500BD986E /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		970795051FBEE45F00BD986E /* UINib+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
 		9707950A1FBF2A0500BD986E /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBCurrentUserModel.swift; sourceTree = "<group>"; };
 		9707950E1FBF2A0600BD986E /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		970795131FBF307C00BD986E /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		972038E21FBF759E003D686C /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		972038E31FBF759E003D686C /* FBGetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBGetContext.swift; sourceTree = "<group>"; };
 		97928B441FACEDDE005DEFEE /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		979CC5DD1FB306A10023529F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		979CC5E11FB33D940023529F /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 		97FCD6A61FB45F58007BD5A9 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		97FCD6A81FB45F77007BD5A9 /* FileSystemImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemImageModel.swift; sourceTree = "<group>"; };
 		97FCD6AA1FB45F8C007BD5A9 /* InternetImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetImageModel.swift; sourceTree = "<group>"; };
+		A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProjectSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6A1CAB3BF78188444751878 /* Pods-iOSProjectSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +73,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5886B85332B7322EF71E370F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		970795091FBF2A0500BD986E /* FBUserModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,24 @@
 				970795131FBF307C00BD986E /* UsersModel.swift */,
 			);
 			path = UsersModel;
+			sourceTree = "<group>";
+		};
+		972038E11FBF759E003D686C /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				972038E21FBF759E003D686C /* Context.swift */,
+				972038E31FBF759E003D686C /* FBGetContext.swift */,
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+		978F527FD881D54FB9D9A709 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */,
+				D6A1CAB3BF78188444751878 /* Pods-iOSProjectSwift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		97928B3A1FAC6393005DEFEE /* Resource */ = {
@@ -140,6 +175,7 @@
 		97928B3E1FAC6447005DEFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				972038E11FBF759E003D686C /* Contexts */,
 				970795121FBF306800BD986E /* UsersModel */,
 				9707950B1FBF2A0600BD986E /* FBCurrentUserModel */,
 				970795091FBF2A0500BD986E /* FBUserModel */,
@@ -264,6 +300,8 @@
 			children = (
 				97F1AB2B1FA2309A00085BD6 /* iOSProjectSwift */,
 				97F1AB2A1FA2309A00085BD6 /* Products */,
+				978F527FD881D54FB9D9A709 /* Pods */,
+				5886B85332B7322EF71E370F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,9 +347,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97F1AB3B1FA2309A00085BD6 /* Build configuration list for PBXNativeTarget "iOSProjectSwift" */;
 			buildPhases = (
+				3305054D2FE7C3FEB6712CD1 /* [CP] Check Pods Manifest.lock */,
 				97F1AB251FA2309A00085BD6 /* Sources */,
 				97F1AB261FA2309A00085BD6 /* Frameworks */,
 				97F1AB271FA2309A00085BD6 /* Resources */,
+				FF7B06AB528787F1F0694F70 /* [CP] Embed Pods Frameworks */,
+				E0195142C9A318F58AAAFD57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,6 +408,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3305054D2FE7C3FEB6712CD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSProjectSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0195142C9A318F58AAAFD57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7B06AB528787F1F0694F70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97F1AB251FA2309A00085BD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -374,6 +481,7 @@
 			files = (
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
 				97EED2211FB612C40088D7E8 /* String+Extensions.swift in Sources */,
+				972038E51FBF759E003D686C /* FBGetContext.swift in Sources */,
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */,
 				970795141FBF307C00BD986E /* UsersModel.swift in Sources */,
@@ -391,6 +499,7 @@
 				970795041FBED41500BD986E /* UITableView+Extensions.swift in Sources */,
 				979CC5E21FB33D940023529F /* GlobalFunctions.swift in Sources */,
 				979CC5DE1FB306A10023529F /* Model.swift in Sources */,
+				972038E41FBF759E003D686C /* Context.swift in Sources */,
 				97C1F3DB1FBDA73B00F91F68 /* Array+Extensions.swift in Sources */,
 				97FCD6A91FB45F77007BD5A9 /* FileSystemImageModel.swift in Sources */,
 				970795111FBF2A0600BD986E /* UserModel.swift in Sources */,
@@ -509,6 +618,7 @@
 		};
 		97F1AB3C1FA2309A00085BD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +633,7 @@
 		};
 		97F1AB3D1FA2309A00085BD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6A1CAB3BF78188444751878 /* Pods-iOSProjectSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
