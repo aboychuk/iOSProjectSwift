@@ -48,7 +48,6 @@ class FBGetContext: Context {
                     case .success(let response):
                         self.saveResult(result: response as AnyObject)
                         self.parseResult(result: response as AnyObject)
-                        
                         state = .didLoad
                     case .failed(let error):
                         print("Graph Request Failed: \(error)")
