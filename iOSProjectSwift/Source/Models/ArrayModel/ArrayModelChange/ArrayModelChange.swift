@@ -10,9 +10,9 @@ import UIKit
 
 class ArrayModelChange {
     
-    //MARK: - Public Functions
+    //MARK: - Functions for Overriding
     
-    func update(tableView: UITableView, inSection: Int, rowAnimation: UITableViewRowAnimation) {
+    func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
         
     }
 }

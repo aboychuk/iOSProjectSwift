@@ -30,6 +30,6 @@ extension UITableView {
     func apply(ModelChange: ArrayModelChange,
                in row: Int = 0,
                rowAnimation: UITableViewRowAnimation = .automatic) {
-        ModelChange.update(tableView: self, inSection: row, rowAnimation: rowAnimation)
+        ModelChange.update(tableView: self, section: row, rowAnimation: rowAnimation)
     }
 }

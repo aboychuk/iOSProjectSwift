@@ -6,4 +6,26 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ArrayModelChangeRemove: ArrayModelChange {
+    
+    //MARK: - Properties
+    
+    var index: Int
+    
+    //MARK: - Initializations
+    
+    init(index: Int) {
+        self.index = index
+    }
+    
+    //MARK: - Overrided Functions
+    
+    override func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
+        let index = IndexPath.init(row: self.index, section: section)
+        tableView.updateTableWith {
+            tableView.deleteRows(at: [index], with: rowAnimation)
+        }
+    }
+}

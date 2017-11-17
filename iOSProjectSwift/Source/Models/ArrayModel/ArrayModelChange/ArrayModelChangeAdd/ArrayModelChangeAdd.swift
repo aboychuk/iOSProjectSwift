@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ArrayModelChangeAdd: ArrayModelChange {
     
@@ -22,5 +22,10 @@ class ArrayModelChangeAdd: ArrayModelChange {
     
     //MARK: - Overrided Functions
     
-    override func
+    override func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
+        let index = IndexPath.init(row: self.index, section: section)
+        tableView.updateTableWith {
+            tableView.insertRows(at: [index], with: rowAnimation)
+        }
+    }
 }
