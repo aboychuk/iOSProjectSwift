@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBUser: User {
+class FBUserModel: UserModel {
     
     //MARK: - Properties
     

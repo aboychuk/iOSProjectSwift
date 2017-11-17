@@ -7,7 +7,7 @@
 //
 
 
-class FBCurrentUser: FBUser {
+class FBCurrentUserModel: FBUserModel {
     
     //MARK: - Properties
     
