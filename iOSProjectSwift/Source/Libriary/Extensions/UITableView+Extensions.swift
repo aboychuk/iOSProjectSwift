@@ -7,3 +7,24 @@
 //
 
 import UIKit
+
+extension UITableView {
+    
+    //MARK: - Class Methods
+    
+    func reusableCellFrom(Class: AnyClass) -> UITableViewCell {
+        let stringFromClass = String(describing:Class.self)
+        guard let cell = self.dequeueReusableCell(withIdentifier: stringFromClass) else {
+            fatalError("\(stringFromClass)) cell could not be instantiated because it was not found on the tableView")
+
+        }
+        
+        return cell
+    }
+    
+    func updateTableWith(block: () -> ()) {
+        self.beginUpdates()
+        block()
+        self.endUpdates()
+    }
+}
