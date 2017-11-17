@@ -20,41 +20,49 @@ class UsersModel: ArrayModel<Any> {
     let notifications = [NSNotification.Name.UIApplicationWillTerminate,
                          NSNotification.Name.UIApplicationDidEnterBackground]
     
-    var savePath: String?
+    var savePath: String? {
+        var documentsPath = FileManager.documentsPath()
+        documentsPath?.append(Keys.plistName)
+    }
     
     //MARK: - Initializations and Deinitializations
     
     deinit {
-        <#statements#>
+
     }
     
     override init() {
-        <#code#>
+        super.init()
+        
     }
     
     //MARK: - Public Functions
     
     func saveModel() {
-        
+        if let savePath = self.savePath {
+            NSKeyedArchiver.archiveRootObject(self.objects, toFile: savePath)
     }
     
     func dumpModel() {
-        
+        if let savePath = self.savePath {
+            do {
+                try FileManager.default.removeItem(atPath: savePath)
+            } catch _ {
+                print("Remove of usersPlist failed")
+            }
+        }
     }
     
     //MARK: - Overrided Functions
-    
-    override func performLoadingInBackground() {
-        <#code#>
-    }
+        
     
     //MARK: - Private Functions
     
-    private func subscribeNotifications() {
-        
-    }
-    
-    private func unsubscribeNotifications() {
-        
-    }
+//    private func subscribeNotifications() {
+//
+//    }
+//
+//    private func unsubscribeNotifications() {
+//
+//    }
 }
