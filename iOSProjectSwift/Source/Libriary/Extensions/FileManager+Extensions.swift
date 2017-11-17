@@ -10,7 +10,7 @@ import UIKit
 
 extension FileManager {
     
-    //MARK: - Class Methods
+    //MARK: - Class Functions
     
     static func documentsPath() -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)

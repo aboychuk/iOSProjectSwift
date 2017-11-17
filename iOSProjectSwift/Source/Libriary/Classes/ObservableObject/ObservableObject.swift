@@ -21,7 +21,7 @@ class ObservableObject {
     var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
     var notify: Bool = true
 
-    // MARK: - Public Methods
+    // MARK: - Public Functions
     
     func add(observer: NSObject) {
         synchronized(self) {
@@ -65,7 +65,7 @@ class ObservableObject {
         return nil
     }
     
-    // MARK: - Private Methods
+    // MARK: - Private Functions
     
     private func notifyWith(_ selector: Selector?, with object: NSObject? = nil) {
         if self.notify {

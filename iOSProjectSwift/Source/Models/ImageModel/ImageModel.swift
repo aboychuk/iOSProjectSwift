@@ -23,7 +23,7 @@ class ImageModel: Model {
         super.init()
     }
     
-    //MARK: - Public Methods
+    //MARK: - Public Functions
 
     func image(with url: URL) -> ImageModel? {
         let cache = ImageModelCache.sharedCache

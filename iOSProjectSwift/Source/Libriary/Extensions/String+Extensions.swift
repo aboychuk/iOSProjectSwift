@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     
-    //MARK: - Class Methods
+    //MARK: - Class Functions
     
     static func removeIllegalCharactersFromString(_ string: String) -> String? {
         return string.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)

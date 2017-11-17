@@ -21,7 +21,7 @@ class ImageModelCache {
         
     }
     
-    //MARK: - Public Methods
+    //MARK: - Public Functions
     
     func add(model: AnyObject, for key: AnyObject) {
         synchronized(self, block: { self.cachedObjects.setObject(model, forKey: key) })

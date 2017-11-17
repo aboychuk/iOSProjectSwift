@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class ArrayModelChangeAdd: ArrayModelChange {
+    
+    //MARK: - Properties
+    
+    var index: Int
+    
+    //MARK: - Initializations
+    
+    init(index: Int) {
+        self.index = index
+    }
+    
+    //MARK: - Overrided Functions
+    
+    override func
+}

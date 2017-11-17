@@ -25,7 +25,7 @@ enum ModelState {
 
 class Model: ObservableObject {
     
-    //MARK: - Public Methods
+    //MARK: - Public Functions
     
     func load() {
         synchronized(self) {
@@ -45,7 +45,7 @@ class Model: ObservableObject {
         
     }
     
-    //MARK: - Private Methods
+    //MARK: - Private Functions
     
     private func processLoading() {
         let backgroundQueue = DispatchQueue.global(qos: .background)
@@ -54,7 +54,7 @@ class Model: ObservableObject {
         }
     }
     
-    //MARK: - Overrided Methods
+    //MARK: - Overrided Functions
     
     override func selector(for state: ModelState) -> Selector? {
         switch state {

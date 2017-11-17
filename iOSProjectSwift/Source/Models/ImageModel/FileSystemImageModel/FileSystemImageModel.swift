@@ -29,7 +29,7 @@ class FilesystemImageModel: ImageModel {
         return String.removeIllegalCharactersFromString(self.url.absoluteString)
     }
     
-    //MARK: - Overrided Methods
+    //MARK: - Overrided Functions
 
     override func loadImage() {
         if let data = FileManager.default.contents(atPath: self.imagePath!) {

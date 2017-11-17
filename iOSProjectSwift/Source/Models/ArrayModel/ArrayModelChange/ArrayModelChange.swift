@@ -9,9 +9,8 @@
 import UIKit
 
 class ArrayModelChange {
-    func update(tableView: UITableView) {
-        
-    }
+    
+    //MARK: - Public Functions
     
     func update(tableView: UITableView, inSection: Int, rowAnimation: UITableViewRowAnimation) {
         

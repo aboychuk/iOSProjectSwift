@@ -21,7 +21,7 @@ class ArrayModel<Type>: Model {
         return self.objects.count
     }
     
-    //MARK: - Public Methods
+    //MARK: - Public Functions
     
     func add(object: Type) {
         self.insert(object: object, index: self.count)

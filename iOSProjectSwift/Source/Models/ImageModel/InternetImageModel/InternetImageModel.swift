@@ -25,7 +25,7 @@ class InternetImageModel: FilesystemImageModel {
         }
     }
     
-    //MARK: Overrided Methods
+    //MARK: Overrided Functions
 
     override func loadImage() {
         let urlSession = URLSession.shared
