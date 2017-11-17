@@ -12,4 +12,9 @@ class FBCurrentUserModel: FBUserModel {
     //MARK: - Properties
     
     var token: String?
+    var authorized: Bool {
+        let userToken = self.token
+        let serverToken = ""//FBSDKCurrentAccessToken
+        return userToken == serverToken
+    }
 }
