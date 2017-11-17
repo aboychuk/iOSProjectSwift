@@ -37,7 +37,8 @@ class ArrayModel<Type>: Model {
         synchronized(self) {
             if self.count >= index {
                 self.objects.insert(object, at: index)
-                //add notification
+                let modelChange: ArrayModelChange = ArrayModelChangeAdd.init(index: index)
+                self.notifyOfStateWith(modelChange: modelChange)
             }
         }
     }
@@ -56,8 +57,18 @@ class ArrayModel<Type>: Model {
         synchronized(self) {
             if self.count > index {
                 self.objects.remove(at: index)
-                //add notification
+                let modelChange: ArrayModelChange = ArrayModelChangeRemove.init(index: index)
+                self.notifyOfStateWith(modelChange: modelChange)
             }
+        }
+    }
+    
+    func moveObjectAt(sourceIndex: Int, to destenationIndex: Int) {
+        synchronized(self) {
+            self.objects.move(from: sourceIndex, to: destenationIndex)
+            let modelChange: ArrayModelChange = ArrayModelChangeMove.init(sourceIndex: sourceIndex,
+                                                                          destinationIndex: destenationIndex)
+            self.notifyOfStateWith(modelChange: modelChange)
         }
     }
     
@@ -69,7 +80,13 @@ class ArrayModel<Type>: Model {
         })
     }
     
-    //MARK: ArrayModel Observer
+    //MARK: - Private Functions
+    
+    private func notifyOfStateWith(modelChange: ArrayModelChange) {
+        self.notifyOfState(.didChanged, with: modelChange as AnyObject)
+    }
+    
+    //MARK: - ArrayModel Observer
     
     override func selector(for state: ModelState) -> Selector? {
         switch state {
