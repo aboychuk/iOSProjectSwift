@@ -6,7 +6,11 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ArrayModelObserver {
+    func array(model: ArrayModel<Any>, updateWithChangeModel: ArrayModelChange)
+}
 
 class ArrayModel<Type>: Model {
     
@@ -65,4 +69,14 @@ class ArrayModel<Type>: Model {
         })
     }
     
+    //MARK: ArrayModel Observer
+    
+    override func selector(for state: ModelState) -> Selector? {
+        switch state {
+        case .didChanged:
+            return Selector(("array:"))
+        default:
+            return super.selector(for: state)
+        }
+    }
 }
