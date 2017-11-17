@@ -12,7 +12,14 @@ class FBUserModel: UserModel {
     
     //MARK: - Properties
     
-    var image: ImageModel?
+    var image: ImageModel? {
+        if self.imageURL != nil {
+            return ImageModel.init(url: imageURL!)
+        }
+        
+        return nil
+    }
+    
     var userID: String?
     var friends: String?
     var imageURL: URL?
