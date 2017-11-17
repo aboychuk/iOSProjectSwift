@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    //MARK: - Class Methods
+    //MARK: - Class Functions
     
     func reusableCellFrom(Class: AnyClass) -> UITableViewCell {
         let stringFromClass = String(describing:Class.self)
@@ -29,7 +29,7 @@ extension UITableView {
     
     func apply(ModelChange: ArrayModelChange,
                in row: Int = 0,
-               rowAnimation: UITableViewRowAnimation = UITableViewRowAnimationAutomatic) {
+               rowAnimation: UITableViewRowAnimation = .automatic) {
         ModelChange.update(tableView: self, inSection: row, rowAnimation: rowAnimation)
     }
 }
