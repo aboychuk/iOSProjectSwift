@@ -6,4 +6,11 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class LoadingView: View {
+
+    //MARK: - Properties
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView?
+}
