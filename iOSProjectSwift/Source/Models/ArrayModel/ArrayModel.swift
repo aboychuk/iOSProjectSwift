@@ -9,29 +9,29 @@
 import UIKit
 
 protocol ArrayModelObserver {
-    func arrayModel(_ : ArrayModel, updateWithChangeModel: ArrayModelChange)
+    func arrayModel(_ : ArrayModel<Any>, updateWithChangeModel: ArrayModelChange)
 }
 
-class ArrayModel: Model {
+class ArrayModel<T>: Model {
     
     //MARK: - Properties
     
-    var objects: Array<Model> = []
+    var objects: Array<T> = []
     var count: Int {
         return self.objects.count
     }
     
     //MARK: - Public Functions
     
-    func add(object: Model) {
+    func add(object: T) {
         self.insert(object: object, index: self.count)
     }
     
-    func add(objects: [Model]) {
+    func add(objects: [T]) {
         objects.forEach { self.add(object: $0) }
     }
     
-    func insert(object: Model, index: Int) {
+    func insert(object: T, index: Int) {
         synchronized(self) {
             if self.count >= index {
                 self.objects.insert(object, at: index)
@@ -41,11 +41,11 @@ class ArrayModel: Model {
         }
     }
     
-    func remove(object: Model) {
+    func remove(object: T) {
         self.removeObject(at: self.index(of: object))
     }
     
-    func remove(objects: [Model]) {
+    func remove(objects: [T]) {
         objects.forEach { self.remove(object: $0) }
     }
     
@@ -68,7 +68,7 @@ class ArrayModel: Model {
         }
     }
     
-    func index(of object: Model) -> Int {
+    func index(of object: T) -> Int {
         return self.index(of: object)
     }
     
