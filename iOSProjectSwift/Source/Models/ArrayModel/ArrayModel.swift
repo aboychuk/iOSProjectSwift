@@ -9,81 +9,73 @@
 import UIKit
 
 protocol ArrayModelObserver {
-    func array(model: ArrayModel<Any>, updateWithChangeModel: ArrayModelChange)
+    func arrayModel(_ : ArrayModel, updateWithChangeModel: ArrayModelChange)
 }
 
-class ArrayModel<Type>: Model {
+class ArrayModel: Model {
     
     //MARK: - Properties
     
-    var objects: Array<Type> = []
+    var objects: Array<Model> = []
     var count: Int {
         return self.objects.count
     }
     
     //MARK: - Public Functions
     
-    func add(object: Type) {
+    func add(object: Model) {
         self.insert(object: object, index: self.count)
     }
     
-    func add(objects: Type) {
-        for object in objects as! [Type] {
-            self.add(object: object)
-        }
+    func add(objects: [Model]) {
+        objects.forEach { self.add(object: $0) }
     }
     
-    func insert(object: Type, index: Int) {
+    func insert(object: Model, index: Int) {
         synchronized(self) {
             if self.count >= index {
                 self.objects.insert(object, at: index)
-                let modelChange: ArrayModelChange = ArrayModelChangeAdd.init(index: index)
+                let modelChange: ArrayModelChange = ArrayModelChangeAdd(index: index)
                 self.notifyOfStateWith(modelChange: modelChange)
             }
         }
     }
     
-    func remove(object: Type) {
-        self.removeObjectAt(index: self.index(of: object))
+    func remove(object: Model) {
+        self.removeObject(at: self.index(of: object))
     }
     
-    func remove(objects: Type) {
-        for object in self.objects {
-            self.remove(object: object)
-        }
+    func remove(objects: [Model]) {
+        objects.forEach { self.remove(object: $0) }
     }
     
-    func removeObjectAt(index: Int) {
+    func removeObject(at index: Int) {
         synchronized(self) {
             if self.count > index {
                 self.objects.remove(at: index)
-                let modelChange: ArrayModelChange = ArrayModelChangeRemove.init(index: index)
+                let modelChange: ArrayModelChange = ArrayModelChangeRemove(index: index)
                 self.notifyOfStateWith(modelChange: modelChange)
             }
         }
     }
     
-    func moveObjectAt(sourceIndex: Int, to destenationIndex: Int) {
+    func moveObject(at sourceIndex: Int, to destenationIndex: Int) {
         synchronized(self) {
             self.objects.move(from: sourceIndex, to: destenationIndex)
-            let modelChange: ArrayModelChange = ArrayModelChangeMove.init(sourceIndex: sourceIndex,
-                                                                          destinationIndex: destenationIndex)
+            let modelChange: ArrayModelChange = ArrayModelChangeMove(sourceIndex: sourceIndex,
+                                                                     destinationIndex: destenationIndex)
             self.notifyOfStateWith(modelChange: modelChange)
         }
     }
     
-    func index(of object: Type) -> Int {
-        return synchronized(self, block: {
-            return self.objects.index(where: { (object) -> Bool in
-                return true
-            })!
-        })
+    func index(of object: Model) -> Int {
+        return self.index(of: object)
     }
     
     //MARK: - Private Functions
     
     private func notifyOfStateWith(modelChange: ArrayModelChange) {
-        self.notifyOfState(.didChanged, with: modelChange as AnyObject)
+        self.notifyOfState(.didChanged, with: modelChange as ArrayModelChange)
     }
     
     //MARK: - ArrayModel Observer
@@ -91,7 +83,9 @@ class ArrayModel<Type>: Model {
     override func selector(for state: ModelState) -> Selector? {
         switch state {
         case .didChanged:
-            return Selector(("array:"))
+// Argument of '#selector' refers to instance method 'arrayModel(_:updateWithChangeModel:)' that is not exposed to Objective-C
+//            return #selector(ArrayModelObserver.arrayModel)
+            return Selector(("arrayModel:"))
         default:
             return super.selector(for: state)
         }
