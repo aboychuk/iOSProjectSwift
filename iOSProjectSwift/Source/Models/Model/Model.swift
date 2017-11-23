@@ -23,13 +23,7 @@ enum ModelState {
     case didChanged
 }
 
-class Model: ObservableObject, Equatable, Hashable {
-    
-    //MARK: - Properties
-    
-    var hashValue: Int {
-        return self.hashValue
-    }
+class Model: ObservableObject {
     
     //MARK: - Public Functions
     
@@ -44,12 +38,6 @@ class Model: ObservableObject, Equatable, Hashable {
         }
         
         self.processLoading()
-    }
-    
-    //MARK: - Equatable
-    
-    static func == (lhs: Model, rhs: Model) -> Bool {
-        return lhs.hashValue == rhs.hashValue
     }
     
     //method created for overriding, do not call directly
