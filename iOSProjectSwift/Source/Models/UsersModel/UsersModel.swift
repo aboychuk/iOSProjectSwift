@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersModel: ArrayModel {
+class UsersModel: ArrayModel<UserModel> {
     
     struct Keys {
         static let plistName = "users.plist"
@@ -58,9 +58,9 @@ class UsersModel: ArrayModel {
     //MARK: - Overrided Functions
         
     override func performLoadingInBackground() {
-        var objects: Array<Model>?
+        var objects: Array<UserModel>?
         if let savePath = self.savePath {
-            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<Model>
+            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<UserModel>
             if objects == nil {
                 //factory array
             }
