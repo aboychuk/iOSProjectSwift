@@ -13,12 +13,22 @@ import FacebookShare
 
 class FBLoginContext: Context {
     
+    //MARK: - Properties
+    
+    var user : FBCurrentUserModel? {
+        return self.model as? FBCurrentUserModel
+    }
+    
     //MARK: - Overrided Functions
     
     override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
         var state = self.model.state
-        let model = self.model as! FBCurrentUserModel
-        if !model.authorized {
+        guard let user = self.user else {
+            state = .didFailLoading
+            
+            return
+        }
+        if !user.authorized {
             let manager = LoginManager()
             manager.logIn(readPermissions: [.publicProfile, .userFriends]) { LoginResult in
                 switch LoginResult {
@@ -27,13 +37,13 @@ class FBLoginContext: Context {
                 case .cancelled:
                     print("User cancelled login.")
                 case .success(_,_,let token):
-                    model.token = token.authenticationToken
+                    user.token = token.authenticationToken
                     state = .willLoad
-                    handler(state)
                 }
             }
         }
+        
+        handler(state)
     }
-    
     
 }
