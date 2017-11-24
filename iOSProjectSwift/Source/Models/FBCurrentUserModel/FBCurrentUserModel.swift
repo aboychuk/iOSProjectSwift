@@ -6,6 +6,9 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
+import FacebookCore
+import FacebookLogin
+import FacebookShare
 
 class FBCurrentUserModel: FBUserModel {
     
@@ -14,7 +17,7 @@ class FBCurrentUserModel: FBUserModel {
     var token: String?
     var authorized: Bool {
         let userToken = self.token
-        let serverToken = ""//FBSDKCurrentAccessToken
+        let serverToken = AccessToken.current?.userId
         return userToken == serverToken
     }
 }
