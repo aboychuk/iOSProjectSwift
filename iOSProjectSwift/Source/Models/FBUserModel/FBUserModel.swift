@@ -1,5 +1,5 @@
 //
-//  FBUser.swift
+//  FBUserModel.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 11/10/17.
