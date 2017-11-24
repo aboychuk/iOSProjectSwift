@@ -15,10 +15,25 @@ class FBGetContext: Context {
     
     //MARK: - Properties
     
-    var graphPath: String?
-    var parameters: [String : Any]?
-    var pathToCachedResult: String?
-    var plistName: String?
+    var graphPath: String? {
+        return nil
+    }
+    
+    var parameters: [String : String]? {
+        return nil
+    }
+    
+    var pathToCachedResult: String? {
+        return nil
+    }
+    
+    var plistName: String {
+        return "default.plist"
+    }
+    
+    var user: FBUserModel? {
+        return self.model as? FBUserModel
+    }
     
     //MARK: - Overrided Functions
     
