@@ -12,14 +12,12 @@ extension UITableView {
     
     //MARK: - Instance Functions
     
-    func reusableCellWith(cls: AnyClass) -> UITableViewCell {
-        let stringFromClass = String(describing:cls)
-        guard let cell = self.dequeueReusableCell(withIdentifier: stringFromClass) else {
-            fatalError("\(stringFromClass)) cell could not be instantiated because it was not found on the tableView")
-            //load from nib
+    func reusableCellWith<T>(type: T.Type) -> T? {
+        guard let cell = self.dequeueReusableCell(withIdentifier: String.toString(from: type)) else {
+            return UINib.object(from: type)
         }
         
-        return cell
+        return cell as? T
     }
     
     func updateTableWith(block: () -> ()) {
@@ -29,8 +27,8 @@ extension UITableView {
     }
     
     func apply(ModelChange: ArrayModelChange,
-               in row: Int = 0,
+               in section: Int = 0,
                rowAnimation: UITableViewRowAnimation = .automatic) {
-        ModelChange.update(tableView: self, section: row, rowAnimation: rowAnimation)
+        ModelChange.update(tableView: self, section: section, rowAnimation: rowAnimation)
     }
 }

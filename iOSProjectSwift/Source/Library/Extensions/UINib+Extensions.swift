@@ -12,19 +12,23 @@ extension UINib {
  
     //MARK: - Class Functions
     
-    static func nib(with cls: AnyClass, bundle: Bundle = .main) -> UINib? {
-        return UINib(nibName: String(describing:cls), bundle: bundle)
+    static func nib<T>(from type: T.Type, bundle: Bundle = .main) -> UINib? {
+        return UINib(nibName: String.toString(from: type), bundle: bundle)
     }
     
-    static func object(with cls: AnyClass, bundle: Bundle = .main, options: [AnyHashable : Any]?) -> Any? {
+    static func object<T>(from type: T.Type, bundle: Bundle = .main, options: [AnyHashable : Any]? = nil) -> T? {
+        if let nib = self.nib(from: type, bundle: bundle) {
+            return nib.object(from: type, owner: bundle, options: options)
+        }
+        
         return nil
     }
     
     //MARK: - Instance Functions
 
-    func object(with cls: AnyClass, owner: Any?, options: [AnyHashable : Any]?) -> Any? {
+    func object<T>(from type: T.Type, owner: Any?, options: [AnyHashable : Any]?) -> T? {
         let objects = instantiate(withOwner: owner, options: options)
         //NSarray extension
-        return objects.first
+        return objects.first as? T
     }
 }

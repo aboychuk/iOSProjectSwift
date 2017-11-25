@@ -13,4 +13,5 @@ class LoadingView: View {
     //MARK: - Properties
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView?
+    
 }
