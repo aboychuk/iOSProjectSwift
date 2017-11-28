@@ -32,6 +32,7 @@
 		97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770B1FBF9FFE002C637A /* ImageView.swift */; };
 		97C3770E1FBFA00F002C637A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770D1FBFA00F002C637A /* LoadingView.swift */; };
 		97C377101FBFA01B002C637A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770F1FBFA01B002C637A /* View.swift */; };
+		97E42DF01FCDFFEF00A09233 /* RootViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E42DEF1FCDFFEF00A09233 /* RootViewProtocol.swift */; };
 		97EED2241FB645A10088D7E8 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EED2231FB645A10088D7E8 /* ArrayModel.swift */; };
 		97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */; };
 		97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F1AB331FA2309A00085BD6 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		97C3770B1FBF9FFE002C637A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		97C3770D1FBFA00F002C637A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		97C3770F1FBFA01B002C637A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		97E42DEF1FCDFFEF00A09233 /* RootViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewProtocol.swift; sourceTree = "<group>"; };
 		97EED2231FB645A10088D7E8 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 		97F1AB291FA2309A00085BD6 /* iOSProjectSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProjectSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F1AB2C1FA2309A00085BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +351,14 @@
 			path = ImageView;
 			sourceTree = "<group>";
 		};
+		97E42DEE1FCDFFDC00A09233 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				97E42DEF1FCDFFEF00A09233 /* RootViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		97EED2221FB6458F0088D7E8 /* ArrayModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 		97FC17231FC6E4A900F2F798 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				97E42DEE1FCDFFDC00A09233 /* Protocols */,
 				97FC17251FC6E4A900F2F798 /* GlobalFunctions */,
 				97FC17241FC6E4A900F2F798 /* Classes */,
 				97FC172B1FC6E4A900F2F798 /* Extensions */,
@@ -603,6 +614,7 @@
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
 				97FC17341FC6E4A900F2F798 /* Array+Extensions.swift in Sources */,
+				97E42DF01FCDFFEF00A09233 /* RootViewProtocol.swift in Sources */,
 				972038E51FBF759E003D686C /* FBGetContext.swift in Sources */,
 				97FC17321FC6E4A900F2F798 /* ImageModelCache.swift in Sources */,
 				97FC17371FC6E4A900F2F798 /* UINib+Extensions.swift in Sources */,
