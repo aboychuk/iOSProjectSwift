@@ -14,5 +14,7 @@ protocol RootView {
 }
 
 extension RootView where Self : UIViewController {
-    var rootView : ViewType? { return self.viewIfLoaded as? ViewType }
+    var rootView : ViewType? {
+        return self.viewIfLoaded as? ViewType
+    }
 }
