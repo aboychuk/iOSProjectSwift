@@ -14,4 +14,32 @@ class LoadingView: View {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView?
     
+//    var visible: Bool
+    
+    //MARK: - Initializers
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Public functions
+
+    func set(visible: Bool, animated: Bool, on completion:()->()) {
+        
+    }
+    
+    //MARK: - Private functions
+    
+    func prepareView() {
+        self.autoresizingMask = 
+        
+    }
+    
+    func prepareActivityIndicator() {
+        
+    }
 }
