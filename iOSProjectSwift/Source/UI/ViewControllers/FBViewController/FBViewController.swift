@@ -31,10 +31,18 @@ class FBViewController: UIViewController, RootView, ModelObserver {
         didSet { oldValue?.remove(observer: self) }
     }
     
+    //MARK: - Functions for overriding
+    
+    func updateWithModel(_ model: Model) {
+
+    }
+    
     //MARK: - ModelObserver protocol
     
     func didUnload(model: Model) {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.rootView?.loadingView?.set(visible: false)
+        }
     }
     
     func willLoad(model: Model) {
@@ -46,6 +54,7 @@ class FBViewController: UIViewController, RootView, ModelObserver {
     func didLoad(model: Model) {
         DispatchQueue.main.async { [weak self] in
             self?.rootView?.loadingView?.set(visible: false)
+            self?.updateWithModel(model)
         }
     }
     
@@ -54,5 +63,4 @@ class FBViewController: UIViewController, RootView, ModelObserver {
             self?.rootView?.loadingView?.set(visible: false)
         }
     }
-    
 }
