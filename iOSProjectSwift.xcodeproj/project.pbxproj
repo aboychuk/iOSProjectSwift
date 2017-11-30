@@ -21,6 +21,8 @@
 		97A6B4E01FC8449900FACFE1 /* FBLogoutContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */; };
 		97A6B4E41FC880BC00FACFE1 /* FBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4E31FC880BC00FACFE1 /* FBParser.swift */; };
 		97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */; };
+		97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */; };
+		97A6EF1E1FD04DFA00D9DDB5 /* FBLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF1D1FD04DFA00D9DDB5 /* FBLoginView.xib */; };
 		97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */; };
 		97C1F3D51FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */; };
 		97C1F3D71FBD9F9600F91F68 /* ArrayModelChangeMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */; };
@@ -65,6 +67,8 @@
 		97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLogoutContext.swift; sourceTree = "<group>"; };
 		97A6B4E31FC880BC00FACFE1 /* FBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBParser.swift; sourceTree = "<group>"; };
 		97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizing+Extensions.swift"; sourceTree = "<group>"; };
+		97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
+		97A6EF1D1FD04DFA00D9DDB5 /* FBLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoginView.xib; sourceTree = "<group>"; };
 		97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChange.swift; sourceTree = "<group>"; };
 		97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeAdd.swift; sourceTree = "<group>"; };
 		97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeMove.swift; sourceTree = "<group>"; };
@@ -288,10 +292,10 @@
 		97C376FB1FBF9D7A002C637A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				97C376FF1FBF9F03002C637A /* FBFriendsViewController */,
+				97C376FC1FBF9F03002C637A /* FBViewController */,
 				97C376FD1FBF9F03002C637A /* FBLoginViewController */,
 				97C376FE1FBF9F03002C637A /* FBUserDetailViewController */,
-				97C376FC1FBF9F03002C637A /* FBViewController */,
+				97C376FF1FBF9F03002C637A /* FBFriendsViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				97C377021FBF9F34002C637A /* FBLoginViewController.swift */,
+				97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */,
+				97A6EF1D1FD04DFA00D9DDB5 /* FBLoginView.xib */,
 			);
 			path = FBLoginViewController;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A6EF1E1FD04DFA00D9DDB5 /* FBLoginView.xib in Resources */,
 				97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
 			);
@@ -626,6 +633,7 @@
 				97FC17351FC6E4A900F2F798 /* FileManager+Extensions.swift in Sources */,
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				97FC17361FC6E4A900F2F798 /* String+Extensions.swift in Sources */,
+				97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */,
 				97A6B4E01FC8449900FACFE1 /* FBLogoutContext.swift in Sources */,
 				97FC17331FC6E4A900F2F798 /* ObservableObject.swift in Sources */,
 				97A6B4DC1FC8445B00FACFE1 /* FBUserDetailContext.swift in Sources */,
