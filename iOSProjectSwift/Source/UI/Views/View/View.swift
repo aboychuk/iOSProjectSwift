@@ -12,10 +12,7 @@ class View: UIView {
     
     //MARK: - Properties
     
-    var loadingView: LoadingView? {
-        willSet { newValue?.addSubview(self) }
-        didSet { oldValue?.removeFromSuperview() }
-    }
+    var loadingView: LoadingView?
     
     //MARK: - Initializations
     
@@ -37,15 +34,15 @@ class View: UIView {
     
     private func prepareLoadingView() {
         self.loadingView = LoadingView.add(view: self)
-        }
+    }
     
     private func prepareLoadingViewFromNib() {
         let loadingView: LoadingView? = UINib.object(from: LoadingView.self)
-        if let view = loadingView {
-            view.frame = self.bounds
-            view.set(visible: true)
-        
-            self.loadingView = view;
+        if let newLoadingView = loadingView {
+            newLoadingView.frame = self.bounds
+            newLoadingView.set(visible: true)
+            self.addSubview(newLoadingView)
+            self.loadingView = newLoadingView;
         }
     }    
 }
