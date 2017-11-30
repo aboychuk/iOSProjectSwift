@@ -35,7 +35,7 @@ class FBloginViewController : FBViewController {
     
     //MARK: - Public functions
     
-    func updateWithModel(_ model: Model) {
+    override func updateWithModel(_ model: Model) {
         self.showUserDetailViewController()
     }
     

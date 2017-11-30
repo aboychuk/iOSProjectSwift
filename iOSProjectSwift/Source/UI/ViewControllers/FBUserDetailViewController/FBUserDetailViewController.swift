@@ -24,32 +24,50 @@ class FBUserDetailController : FBViewController {
     //MARK: - IBActions
     
     @IBAction func onFriends(sender: UIButton) {
-        
+        self.showFriendsViewController()
     }
     
     @IBAction func onLogout(sender: UIButton) {
-        
+        if let currentUser = self.currentUser {
+            self.logoutContext = FBLogoutContext(model: currentUser)
+        }
     }
     
-    //MARK: View Lyfecycle
+    //MARK: - View Lyfecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareNavigationItem()
         if let model = self.model {
-            self.context = FBUserDetailContext.init(model: model)
+            self.context = FBUserDetailContext(model: model)
         }
     }
     
-    //MARK: Public functions
+    //MARK: - Public functions
     
-    func updateWithModel(_ model: Model) {
-//        self.rootView.fillWithModel
+    override func updateWithModel(_ model: Model) {
+        //rootview.updateWithModel
     }
     
-    //MARK: Private functions
+    //MARK: - Private functions
     
     private func prepareNavigationItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(onLogout(sender:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                                 style: .done,
+                                                                 target: self,
+                                                                 action: #selector(onLogout(sender:)))
+    }
+    
+    private func showFriendsViewController() {
+        //show next VC
+    }
+    
+    //MARK: - ModelObserver protocol
+    
+    override func didUnload(model: Model) {
+        DispatchQueue.main.async { [weak self] in
+            self?.rootView?.loadingView?.set(visible: false)
+            self?.navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
 }
