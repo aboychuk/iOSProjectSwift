@@ -31,12 +31,6 @@ class FBViewController: UIViewController, RootView, ModelObserver {
         didSet { oldValue?.remove(observer: self) }
     }
     
-    //MARK: - Functions for overriding
-    
-    func updateWithModel(_ model: Model) {
-        
-    }
-    
     //MARK: - ModelObserver protocol
     
     func didUnload(model: Model) {
