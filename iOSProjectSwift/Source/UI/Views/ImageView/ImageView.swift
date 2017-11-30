@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageView: View {
+class ImageView: BaseView {
     
     //MARK: - Properties
     

@@ -1,5 +1,5 @@
 //
-//  View.swift
+//  BaseView.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 11/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View: UIView {
+class BaseView: UIView {
     
     //MARK: - Properties
     
