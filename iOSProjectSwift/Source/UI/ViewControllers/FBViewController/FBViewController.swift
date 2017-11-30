@@ -10,6 +10,10 @@ import UIKit
 
 class FBViewController: UIViewController, RootView, ModelObserver {
     
+    //MARK: - RootView protocol
+    
+    typealias ViewType = BaseView
+    
     //MARK: - Properties
     
     var model: Model? {
@@ -32,10 +36,6 @@ class FBViewController: UIViewController, RootView, ModelObserver {
     func updateWithModel(_ model: Model) {
         
     }
-    
-    //MARK: - RootView protocol
-    
-    typealias ViewType = BaseView
     
     //MARK: - ModelObserver protocol
     

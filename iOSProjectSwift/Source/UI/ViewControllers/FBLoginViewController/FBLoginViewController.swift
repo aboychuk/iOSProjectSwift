@@ -17,7 +17,7 @@ class FBloginViewController : FBViewController {
     //MARK: - Initializers
     
     init() {
-        super.init()
+        super.init(nibName: nil, bundle: .main)
         self.currentUser = FBCurrentUserModel()
     }
     
@@ -25,5 +25,11 @@ class FBloginViewController : FBViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - IBActions
     
+    @IBAction func onLogin(sender: UIButton) {
+        if let model = self.currentUser {
+            self.context = Context.init(model: model)
+        }
+    }
 }
