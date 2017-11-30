@@ -10,7 +10,7 @@ import UIKit
 
 class UserModel: Model {
     
-    struct Keys {
+    struct Constants {
         static let name = "UserName"
         static let surname = "UserSurname"
     }
@@ -27,15 +27,22 @@ class UserModel: Model {
         return nil
     }
     
+    // MARK: Initialization
+    
+    override init() {
+        self.name = Constants.name
+        self.surname = Constants.surname
+    }
+    
     // MARK: - NSCoding
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.name, forKey:Keys.name)
-        aCoder.encode(self.surname, forKey:Keys.surname)
+        aCoder.encode(self.name, forKey:Constants.name)
+        aCoder.encode(self.surname, forKey:Constants.surname)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObject(forKey: Keys.name) as? String
-        self.surname = aDecoder.decodeObject(forKey: Keys.surname) as? String
+        self.name = aDecoder.decodeObject(forKey: Constants.name) as? String
+        self.surname = aDecoder.decodeObject(forKey: Constants.surname) as? String
     }
 }

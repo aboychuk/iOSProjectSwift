@@ -6,4 +6,24 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class FBloginViewController : FBViewController {
+    
+    //MARK: - RootView protocol
+    
+    typealias ViewType = FBloginView
+    
+    //MARK: - Initializers
+    
+    init() {
+        super.init()
+        self.currentUser = FBCurrentUserModel()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}
