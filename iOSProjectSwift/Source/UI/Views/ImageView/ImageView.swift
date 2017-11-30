@@ -12,8 +12,18 @@ class ImageView: View {
     
     //MARK: - Properties
     
-    var imageModel: ImageModel?
-    var contentImageView: UIImageView?
+    var imageModel: ImageModel? {
+        willSet {
+            newValue?.add(observer: self)
+            newValue?.load()
+        }
+        didSet { oldValue?.remove(observer: self) }
+    }
+    
+    var contentImageView: UIImageView? {
+        willSet { newValue?.addSubview(self) }
+        didSet { oldValue?.removeFromSuperview() }
+    }
     
     //MARK: - Initializations
     

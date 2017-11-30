@@ -12,7 +12,10 @@ class View: UIView {
     
     //MARK: - Properties
     
-    var loadingView: LoadingView?
+    var loadingView: LoadingView? {
+        willSet { newValue?.addSubview(self) }
+        didSet { oldValue?.removeFromSuperview() }
+    }
     
     //MARK: - Initializations
     
@@ -41,9 +44,7 @@ class View: UIView {
         if let view = loadingView {
             view.frame = self.bounds
             view.set(visible: true)
-            
-            self.addSubview(view)
-            
+        
             self.loadingView = view;
         }
     }    
