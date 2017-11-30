@@ -16,7 +16,7 @@ class FBFriendsView: BaseView {
     
     //MARK: - Public functions
     
-    func fillWithModel {
+    func fillWithModel() {
         self.tableview?.reloadData()
     }
     

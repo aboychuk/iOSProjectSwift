@@ -8,17 +8,20 @@
 
 import UIKit
 
-class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableViewDataSource  {
+class FBFriendsViewController: FBViewController
+//UITableViewDelegate, UITableViewDataSource
+{
     
     //MARK: - UITableViewDataSource protocol
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.model.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+////        return self.model.count
+//        return 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        return 0
+//    }
     
     //MARK: - View Lifecycle
     
