@@ -21,7 +21,18 @@ class LoadingView: View {
 
     //MARK: - Properties
     
-    @IBOutlet var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet var activityIndicator: UIActivityIndicatorView? {
+        willSet {
+            if activityIndicator != newValue {
+                activityIndicator?.removeFromSuperview()
+            }
+        }
+        didSet {
+            if activityIndicator != oldValue {
+                self.addSubview(activityIndicator!)
+            }
+        }
+    }
     
     var visible: Bool = false
     
@@ -38,8 +49,8 @@ class LoadingView: View {
     
     //MARK: - Public functions
     
-    func loadingView(in superView: UIView) -> LoadingView {
-        return LoadingView(frame: superView.bounds)
+    static func add(view: UIView) -> LoadingView {
+        return LoadingView(frame: view.bounds)
     }
 
     func set(visible: Bool, animated: Bool = true, on completionHandler: VoidBLock? = nil) {
@@ -63,7 +74,7 @@ class LoadingView: View {
     
     private func prepareActivityIndicator() {
         if var indicator = self.activityIndicator {
-            if (indicator != nil) {
+            if indicator != nil {
                 self.activityIndicator = indicator
                 self.addSubview(self.activityIndicator!)
             } else {
