@@ -42,7 +42,12 @@ class FBloginViewController : FBViewController {
     //MARK: - Private Functions
     
     private func showUserDetailViewController() {
-        //Create next VC
+        let detailController = FBUserDetailController()
+        detailController.model = self.model
+        detailController.currentUser = self.currentUser
+        let navigationController = UINavigationController.init(rootViewController: detailController)
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     //MARK: - ModelObserver protocol

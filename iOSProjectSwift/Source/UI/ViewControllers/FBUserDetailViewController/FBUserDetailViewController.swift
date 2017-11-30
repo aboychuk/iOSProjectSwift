@@ -59,7 +59,13 @@ class FBUserDetailController : FBViewController {
     }
     
     private func showFriendsViewController() {
-        //show next VC
+        let friendsController = FBFriendsViewController()
+//        friendsController.model = self.model.friends
+        friendsController.currentUser = self.currentUser
+        let navigationController = UINavigationController.init(rootViewController: friendsController)
+        
+        self.present(navigationController, animated: true, completion: nil)
+
     }
     
     //MARK: - ModelObserver protocol
