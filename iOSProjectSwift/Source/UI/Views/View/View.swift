@@ -30,19 +30,21 @@ class View: UIView {
         self.prepareLoadingViewFromNib()
     }
     
-    //MARK: - Public Functions
+    //MARK: - Private Functions
     
-    func prepareLoadingView() {
-        
-    }
+    private func prepareLoadingView() {
+        self.loadingView = LoadingView.add(view: self)
+        }
     
-    func prepareLoadingViewFromNib() {
-        
-    }
-    
-    //Function created for overriding
-    func fillWithModel(_ model: Model) {
-        
-    }
-    
+    private func prepareLoadingViewFromNib() {
+        let loadingView: LoadingView? = UINib.object(from: LoadingView.self)
+        if let view = loadingView {
+            view.frame = self.bounds
+            view.set(visible: true)
+            
+            self.addSubview(view)
+            
+            self.loadingView = view;
+        }
+    }    
 }
