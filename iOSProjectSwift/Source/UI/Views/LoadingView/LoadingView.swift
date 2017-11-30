@@ -43,7 +43,8 @@ class LoadingView: View {
     }
 
     func set(visible: Bool, animated: Bool = true, on completionHandler: VoidBLock? = nil) {
-        UIView.animate(withDuration: animated ? Constants.defaultDuration : 0, animations: { [weak self] in
+        UIView.animate(withDuration: animated ? Constants.defaultDuration : 0,
+                       animations: { [weak self] in
                         self?.alpha = visible ? Constants.visibleAlpha : Constants.invisibleAlpha
         }) { [weak self](_) in
             completionHandler?()
@@ -54,13 +55,13 @@ class LoadingView: View {
     
     //MARK: - Private functions
     
-    func prepareView() {
+    private func prepareView() {
         self.autoresizingMask = .autoresizeWithFixedPosition
         self.backgroundColor = UIColor.init(white: 0, alpha: Constants.defaultAlpha)
         self.prepareActivityIndicator()
     }
     
-    func prepareActivityIndicator() {
+    private func prepareActivityIndicator() {
         if var indicator = self.activityIndicator {
             if (indicator != nil) {
                 self.activityIndicator = indicator
