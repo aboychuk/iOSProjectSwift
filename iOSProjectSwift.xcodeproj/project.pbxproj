@@ -25,6 +25,8 @@
 		97A6EF1E1FD04DFA00D9DDB5 /* FBLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF1D1FD04DFA00D9DDB5 /* FBLoginView.xib */; };
 		97A6EF211FD0652D00D9DDB5 /* FBUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */; };
 		97A6EF231FD0654500D9DDB5 /* FBUserDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF221FD0654500D9DDB5 /* FBUserDetailView.xib */; };
+		97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */; };
+		97A6EF271FD0977100D9DDB5 /* FBFriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */; };
 		97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */; };
 		97C1F3D51FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */; };
 		97C1F3D71FBD9F9600F91F68 /* ArrayModelChangeMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */; };
@@ -73,6 +75,8 @@
 		97A6EF1D1FD04DFA00D9DDB5 /* FBLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoginView.xib; sourceTree = "<group>"; };
 		97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDetailView.swift; sourceTree = "<group>"; };
 		97A6EF221FD0654500D9DDB5 /* FBUserDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserDetailView.xib; sourceTree = "<group>"; };
+		97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsView.swift; sourceTree = "<group>"; };
+		97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBFriendsView.xib; sourceTree = "<group>"; };
 		97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChange.swift; sourceTree = "<group>"; };
 		97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeAdd.swift; sourceTree = "<group>"; };
 		97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeMove.swift; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				97C377061FBF9F66002C637A /* FBFriendsViewController.swift */,
+				97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */,
+				97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */,
 			);
 			path = FBFriendsViewController;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */,
 				97A6EF231FD0654500D9DDB5 /* FBUserDetailView.xib in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
+				97A6EF271FD0977100D9DDB5 /* FBFriendsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +655,7 @@
 				9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */,
 				97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */,
 				970795141FBF307C00BD986E /* UsersModel.swift in Sources */,
+				97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */,
 				97C1F3D51FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift in Sources */,
 				97A6EF211FD0652D00D9DDB5 /* FBUserDetailView.swift in Sources */,
 				97FCD6A71FB45F58007BD5A9 /* ImageModel.swift in Sources */,
