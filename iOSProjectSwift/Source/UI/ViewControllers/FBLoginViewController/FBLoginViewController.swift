@@ -32,4 +32,24 @@ class FBloginViewController : FBViewController {
             self.context = Context.init(model: model)
         }
     }
+    
+    //MARK: - Public functions
+    
+    func updateWithModel(_ model: Model) {
+        self.showUserDetailViewController()
+    }
+    
+    //MARK: - Private Functions
+    
+    private func showUserDetailViewController() {
+        //Create next VC
+    }
+    
+    //MARK: - ModelObserver protocol
+    
+    override func willLoad(model: Model) {
+        DispatchQueue.main.async { [weak self] in
+            self?.updateWithModel(model)
+        }
+    }
 }
