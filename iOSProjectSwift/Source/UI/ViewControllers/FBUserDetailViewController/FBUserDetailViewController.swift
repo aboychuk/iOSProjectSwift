@@ -14,11 +14,17 @@ class FBUserDetailController : FBViewController {
     
     typealias ViewType = FBUserDetailView
     
-    //MARK: - Properties
+    //MARK: - Public Properties
     
     var logoutContext: FBLogoutContext? {
         willSet { newValue?.execute() }
         didSet { oldValue?.cancel() }
+    }
+    
+    //MARK: - Private properties
+    
+    private var fbUserModel: FBUserModel? {
+        return self.model as? FBUserModel
     }
     
     //MARK: - IBActions
@@ -60,7 +66,7 @@ class FBUserDetailController : FBViewController {
     
     private func showFriendsViewController() {
         let friendsController = FBFriendsViewController()
-//        friendsController.model = self.model.friends
+//      friendsController.model = self.model.friends
         friendsController.currentUser = self.currentUser
         let navigationController = UINavigationController.init(rootViewController: friendsController)
         
