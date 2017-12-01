@@ -28,6 +28,8 @@
 		97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */; };
 		97A6EF271FD0977100D9DDB5 /* FBFriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */; };
 		97A6EF2B1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */; };
+		97A6EF331FD164CD00D9DDB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF2F1FD164CD00D9DDB5 /* LaunchScreen.storyboard */; };
+		97A6EF341FD164CD00D9DDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF311FD164CD00D9DDB5 /* Main.storyboard */; };
 		97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */; };
 		97C1F3D51FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */; };
 		97C1F3D71FBD9F9600F91F68 /* ArrayModelChangeMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */; };
@@ -79,6 +81,8 @@
 		97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsView.swift; sourceTree = "<group>"; };
 		97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBFriendsView.xib; sourceTree = "<group>"; };
 		97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
+		97A6EF301FD164CD00D9DDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97A6EF321FD164CD00D9DDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		97C1F3D21FBD9F6900F91F68 /* ArrayModelChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChange.swift; sourceTree = "<group>"; };
 		97C1F3D41FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeAdd.swift; sourceTree = "<group>"; };
 		97C1F3D61FBD9F9600F91F68 /* ArrayModelChangeMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModelChangeMove.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				97F1AB331FA2309A00085BD6 /* Assets.xcassets */,
+				97A6EF2E1FD164CC00D9DDB5 /* Base.lproj */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -252,6 +257,15 @@
 				97A6B4E31FC880BC00FACFE1 /* FBParser.swift */,
 			);
 			path = FBParser;
+			sourceTree = "<group>";
+		};
+		97A6EF2E1FD164CC00D9DDB5 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				97A6EF2F1FD164CD00D9DDB5 /* LaunchScreen.storyboard */,
+				97A6EF311FD164CD00D9DDB5 /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		97C1F3CE1FBD98E000F91F68 /* ArrayModelChange */ = {
@@ -556,9 +570,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A6EF341FD164CD00D9DDB5 /* Main.storyboard in Resources */,
 				97A6EF1E1FD04DFA00D9DDB5 /* FBLoginView.xib in Resources */,
 				97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */,
 				97A6EF231FD0654500D9DDB5 /* FBUserDetailView.xib in Resources */,
+				97A6EF331FD164CD00D9DDB5 /* LaunchScreen.storyboard in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
 				97A6EF271FD0977100D9DDB5 /* FBFriendsView.xib in Resources */,
 			);
@@ -683,6 +699,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97A6EF2F1FD164CD00D9DDB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97A6EF301FD164CD00D9DDB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		97A6EF311FD164CD00D9DDB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97A6EF321FD164CD00D9DDB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		97F1AB391FA2309A00085BD6 /* Debug */ = {
