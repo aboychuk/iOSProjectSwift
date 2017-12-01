@@ -14,7 +14,7 @@ class ObservableObject {
     
     var state: ModelState = .didUnload {
         didSet {
-            self.notifyOfState(self.state)
+            self.notifyOfState()
         }
     }
     
@@ -31,10 +31,18 @@ class ObservableObject {
         
     }
     
-    func notifyOfState(_ state : ModelState) {
+    func notifyOfState() {
         synchronized(self) {
             self.observationControllers.allObjects.forEach {
-                $0.notify(of: state)
+                $0.notify(of: self.state)
+            }
+        }
+    }
+    
+    func notifyWithObject(_ object: AnyObject?) {
+        synchronized(self) {
+            self.observationControllers.allObjects.forEach {
+                $0.notify(of: self.state, object: object)
             }
         }
     }
@@ -60,12 +68,12 @@ extension ObservableObject {
 
         //MARK: - Public functions
 
-        func notify(of state: ModelState) {
+        func notify(of state: ModelState, object: AnyObject? = nil) {
             if let block = self.relation[state] {
                 block(self.observableObject)
             }
         }
-
+        
         subscript(state: ModelState) -> Action? {
             get {
                 return self.relation[state]
