@@ -43,7 +43,7 @@ class FBGetContext: Context {
         
         synchronized(model) {
             if modelState == .didUnload || modelState == .willLoad {
-                model.notify(of: modelState)
+                model.notifyOfState()
                 if modelState == .didLoad {
                     return
                 }

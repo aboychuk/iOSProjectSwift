@@ -75,19 +75,6 @@ class ArrayModel<T>: Model {
     //MARK: - Private Functions
     
     private func notifyOfStateWith(modelChange: ArrayModelChange) {
-        self.notifyOfState(.didChanged, with: modelChange as ArrayModelChange)
-    }
-    
-    //MARK: - ArrayModel Observer
-    
-    override func selector(for state: ModelState) -> Selector? {
-        switch state {
-        case .didChanged:
-// Argument of '#selector' refers to instance method 'arrayModel(_:updateWithChangeModel:)' that is not exposed to Objective-C
-//            return #selector(ArrayModelObserver.arrayModel)
-            return Selector(("arrayModel:"))
-        default:
-            return super.selector(for: state)
-        }
+        self.notifyWithObject(modelChange)
     }
 }

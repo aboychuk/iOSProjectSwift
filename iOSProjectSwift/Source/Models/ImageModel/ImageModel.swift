@@ -43,10 +43,6 @@ class ImageModel: Model {
     
     override func performLoadingInBackground() {
         self.loadImage()
-        if self.image == nil {
-            self.state = .didFailLoading
-        } else {
-            self.state = .didLoad
-        }
+        self.state = self.image == nil ? .didFailLoading : .didLoad
     }
 }
