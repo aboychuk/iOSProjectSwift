@@ -14,16 +14,44 @@ class ImageView: BaseView {
     
     var imageModel: ImageModel? {
         willSet {
-            newValue?.add(observer: self)
+            self.observationController = self.imageModel?.controller(for: self)
+
             newValue?.load()
         }
-        didSet { oldValue?.remove(observer: self) }
+        didSet {
+            if let controller = self.observationController {
+            oldValue?.remove(controller: controller)
+            }
+        }
     }
     
     var contentImageView: UIImageView? {
         willSet { newValue?.addSubview(self) }
         didSet { oldValue?.removeFromSuperview() }
     }
+    
+    var observationController: ObservableObject.ObservationController? {
+        didSet {
+            self.observationController?[.didUnload] = { [weak self] _, _ in
+                self?.loadingView?.set(visible: false)
+            }
+            
+            self.observationController?[.willLoad] = { [weak self] _, _ in
+                self?.loadingView?.set(visible: true)
+            }
+            
+            self.observationController?[.didLoad] = { [weak self] _, _ in
+                self?.loadingView?.set(visible: false)
+                self?.fill(with: self?.imageModel)
+            }
+            
+            self.observationController?[.didUnload] = { [weak self] _, _ in
+                self?.loadingView?.set(visible: false)
+            }
+        }
+    }
+    
+    
     
     //MARK: - Initializations
     
@@ -43,8 +71,8 @@ class ImageView: BaseView {
     
     //MARK: - Public functions
     
-    func fill(with model: ImageModel) {
-        self.contentImageView?.image = model.image
+    func fill(with model: ImageModel?) {
+        self.contentImageView?.image = model?.image
     }
     
     //MARK: - Private functions
