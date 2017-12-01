@@ -18,14 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        let window = UIWindow.windowWithRootViewController(FBloginViewController())
+        let window = UIWindow.windowWithRootViewController(FBLoginViewController())
         self.window = window
         
         window.makeKeyAndVisible()
         
-        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         
         return true

@@ -39,7 +39,7 @@ __attribute__((noinline)) static size_t remaining_stack_size(size_t *restrict to
 
 @interface BFExecutor ()
 
-@property (nonatomic, copy) void(^block)(void(^block)());
+@property (nonatomic, copy) void(^block)(void(^block)(void));
 
 @end
 
@@ -85,7 +85,7 @@ __attribute__((noinline)) static size_t remaining_stack_size(size_t *restrict to
     static BFExecutor *mainThreadExecutor = NULL;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        mainThreadExecutor = [self executorWithBlock:^void(void(^block)()) {
+        mainThreadExecutor = [self executorWithBlock:^void(void(^block)(void)) {
             if (![NSThread isMainThread]) {
                 dispatch_async(dispatch_get_main_queue(), block);
             } else {
@@ -98,25 +98,25 @@ __attribute__((noinline)) static size_t remaining_stack_size(size_t *restrict to
     return mainThreadExecutor;
 }
 
-+ (instancetype)executorWithBlock:(void(^)(void(^block)()))block {
++ (instancetype)executorWithBlock:(void(^)(void(^block)(void)))block {
     return [[self alloc] initWithBlock:block];
 }
 
 + (instancetype)executorWithDispatchQueue:(dispatch_queue_t)queue {
-    return [self executorWithBlock:^void(void(^block)()) {
+    return [self executorWithBlock:^void(void(^block)(void)) {
         dispatch_async(queue, block);
     }];
 }
 
 + (instancetype)executorWithOperationQueue:(NSOperationQueue *)queue {
-    return [self executorWithBlock:^void(void(^block)()) {
+    return [self executorWithBlock:^void(void(^block)(void)) {
         [queue addOperation:[NSBlockOperation blockOperationWithBlock:block]];
     }];
 }
 
 #pragma mark - Initializer
 
-- (instancetype)initWithBlock:(void(^)(void(^block)()))block {
+- (instancetype)initWithBlock:(void(^)(void(^block)(void)))block {
     self = [super init];
     if (!self) return self;
 
@@ -127,7 +127,7 @@ __attribute__((noinline)) static size_t remaining_stack_size(size_t *restrict to
 
 #pragma mark - Execution
 
-- (void)execute:(void(^)())block {
+- (void)execute:(void(^)(void))block {
     self.block(block);
 }
 
