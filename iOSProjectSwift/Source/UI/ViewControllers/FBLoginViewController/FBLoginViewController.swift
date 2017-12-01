@@ -14,17 +14,6 @@ class FBLoginViewController : FBViewController {
     
     typealias ViewType = FBloginView
     
-    //MARK: - Initializers
-    
-    init() {
-        super.init(nibName: nil, bundle: .main)
-        self.currentUser = FBCurrentUserModel()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     //MARK: - IBActions
     
     @IBAction func onLogin(sender: UIButton) {

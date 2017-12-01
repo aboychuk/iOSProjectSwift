@@ -31,6 +31,16 @@ class FBViewController: UIViewController, RootView, ModelObserver {
         didSet { oldValue?.remove(observer: self) }
     }
     
+    //MARK: - Initializations
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     //MARK: - Functions for overriding
     
     func updateWithModel(_ model: Model) {

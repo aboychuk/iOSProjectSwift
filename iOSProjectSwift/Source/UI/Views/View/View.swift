@@ -15,16 +15,7 @@ class BaseView: UIView {
     var loadingView: LoadingView?
     
     //MARK: - Initializations
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.prepareLoadingView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         self.prepareLoadingViewFromNib()
