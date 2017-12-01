@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBViewController: UIViewController, RootView, ModelObserver {
+class FBViewController: UIViewController, RootView {
     
     //MARK: - RootView protocol
     
@@ -16,9 +16,33 @@ class FBViewController: UIViewController, RootView, ModelObserver {
     
     //MARK: - Properties
     
-    var model: Model? {
-        willSet { newValue?.add(observer: self) }
-        didSet { oldValue?.remove(observer: self) }
+    var observationController: ObservableObject.ObservationController? {
+        didSet {
+            self.observationController?[.didUnload] = { [weak self] _, _ in
+                self?.rootView?.loadingView?.set(visible: false)
+            }
+            
+            self.observationController?[.willLoad] = { [weak self] _, _ in
+                self?.rootView?.loadingView?.set(visible: true)
+            }
+            
+            self.observationController?[.didLoad] = { [weak self] _, _ in
+                self?.rootView?.loadingView?.set(visible: false)
+                //Update with model
+            }
+            
+            self.observationController?[.didUnload] = { [weak self] _, _ in
+                self?.rootView?.loadingView?.set(visible: false)
+            }
+        }
+    }
+    
+    var model: Model = FBUserModel() {
+        didSet { self.observationController = self.model.controller(for: self) }
+    }
+    
+    var currentUser: FBCurrentUserModel = FBCurrentUserModel() {
+        didSet { self.observationController = self.currentUser.controller(for: self) }
     }
     
     var context: Context? {
@@ -26,51 +50,9 @@ class FBViewController: UIViewController, RootView, ModelObserver {
         didSet { oldValue?.cancel() }
     }
     
-    var currentUser: FBCurrentUserModel? {
-        willSet { newValue?.add(observer: self) }
-        didSet { oldValue?.remove(observer: self) }
-    }
-    
-    //MARK: - Initializations
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     //MARK: - Functions for overriding
     
     func updateWithModel(_ model: Model) {
 
-    }
-    
-    //MARK: - ModelObserver protocol
-    
-    func didUnload(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.rootView?.loadingView?.set(visible: false)
-        }
-    }
-    
-    func willLoad(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.rootView?.loadingView?.set(visible: true)
-        }
-    }
-    
-    func didLoad(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.rootView?.loadingView?.set(visible: false)
-            self?.updateWithModel(model)
-        }
-    }
-    
-    func didFailLoading(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.rootView?.loadingView?.set(visible: false)
-        }
     }
 }
