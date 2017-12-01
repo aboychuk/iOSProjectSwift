@@ -23,7 +23,7 @@ class FBUserDetailController : FBViewController {
     
     //MARK: - Private properties
     
-    private var fbUserModel: FBUserModel? {
+    var fbUserModel: FBUserModel? {
         return self.model as? FBUserModel
     }
     
@@ -34,9 +34,7 @@ class FBUserDetailController : FBViewController {
     }
     
     @IBAction func onLogout(sender: UIButton) {
-        if let currentUser = self.currentUser {
             self.logoutContext = FBLogoutContext(model: currentUser)
-        }
     }
     
     //MARK: - View Lyfecycle
@@ -44,9 +42,8 @@ class FBUserDetailController : FBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareNavigationItem()
-        if let model = self.model {
+
             self.context = FBUserDetailContext(model: model)
-        }
     }
     
     //MARK: - Public functions
@@ -66,20 +63,11 @@ class FBUserDetailController : FBViewController {
     
     private func showFriendsViewController() {
         let friendsController = FBFriendsViewController()
-//      friendsController.model = self.model.friends
+//        friendsController.model = self.model.friends
         friendsController.currentUser = self.currentUser
         let navigationController = UINavigationController.init(rootViewController: friendsController)
         
         self.present(navigationController, animated: true, completion: nil)
 
-    }
-    
-    //MARK: - ModelObserver protocol
-    
-    override func didUnload(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.rootView?.loadingView?.set(visible: false)
-            self?.navigationController?.dismiss(animated: true, completion: nil)
-        }
     }
 }

@@ -51,8 +51,6 @@ class ImageView: BaseView {
         }
     }
     
-    
-    
     //MARK: - Initializations
     
     override init(frame: CGRect) {

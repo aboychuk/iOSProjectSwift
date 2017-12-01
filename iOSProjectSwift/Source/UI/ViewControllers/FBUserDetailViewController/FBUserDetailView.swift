@@ -19,7 +19,6 @@ class FBUserDetailView: BaseView {
     //MARK: - Public functions
     
     func fillWithModel(_ model: FBUserModel) {
-        self.userFullName?.text = model.fullname
-        self.imageView?.imageModel = model.image
+
     }
 }

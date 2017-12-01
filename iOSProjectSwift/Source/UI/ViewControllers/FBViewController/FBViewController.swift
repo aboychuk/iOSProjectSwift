@@ -28,7 +28,6 @@ class FBViewController: UIViewController, RootView {
             
             self.observationController?[.didLoad] = { [weak self] _, _ in
                 self?.rootView?.loadingView?.set(visible: false)
-                //Update with model
             }
             
             self.observationController?[.didUnload] = { [weak self] _, _ in

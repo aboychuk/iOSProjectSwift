@@ -28,9 +28,7 @@ class FBFriendsViewController: FBViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareNavigationTitle()
-        if let friendsModel = self.model {
-            self.context = FBFriendsContext(model: friendsModel)
-        }
+            self.context = FBFriendsContext(model: self.model)
     }
     
     //MARK: - Public functions

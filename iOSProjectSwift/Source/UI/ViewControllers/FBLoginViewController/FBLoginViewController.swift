@@ -14,23 +14,10 @@ class FBLoginViewController : FBViewController {
     
     typealias ViewType = FBloginView
     
-    //MARK: - Initializers
-    
-    init() {
-        super.init(nibName: nil, bundle: .main)
-        self.currentUser = FBCurrentUserModel()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     //MARK: - IBActions
     
     @IBAction func onLogin(sender: UIButton) {
-        if let model = self.currentUser {
-            self.context = Context.init(model: model)
-        }
+        self.context = Context(model: self.currentUser)
     }
     
     //MARK: - Public functions
@@ -45,16 +32,8 @@ class FBLoginViewController : FBViewController {
         let detailController = FBUserDetailController()
         detailController.model = self.model
         detailController.currentUser = self.currentUser
-        let navigationController = UINavigationController.init(rootViewController: detailController)
+        let navigationController = UINavigationController(rootViewController: detailController)
         
         self.present(navigationController, animated: true, completion: nil)
-    }
-    
-    //MARK: - ModelObserver protocol
-    
-    override func willLoad(model: Model) {
-        DispatchQueue.main.async { [weak self] in
-            self?.updateWithModel(model)
-        }
     }
 }

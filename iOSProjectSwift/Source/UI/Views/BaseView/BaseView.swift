@@ -30,6 +30,12 @@ class BaseView: UIView {
         self.prepareLoadingViewFromNib()
     }
     
+    //MARK: - Functions for  overriding
+
+    func fill(with model: Model) {
+
+    }
+    
     //MARK: - Private Functions
     
     private func prepareLoadingView() {
@@ -44,5 +50,5 @@ class BaseView: UIView {
             self.addSubview(newLoadingView)
             self.loadingView = newLoadingView;
         }
-    }    
+    }
 }
