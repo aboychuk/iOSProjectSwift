@@ -24,7 +24,7 @@ class Context {
     
     func execute() {
         executeWithCompletionHandler() { [weak self] (modelstate: ModelState) in
-            self?.model.notify(of: modelstate)
+            self?.model.state = modelstate
         }
     }
     
