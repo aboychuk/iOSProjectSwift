@@ -31,6 +31,10 @@ class ObservableObject {
         
     }
     
+    func remove(controller: ObservationController) {
+        self.observationControllers.remove(controller)
+    }
+    
     func notifyOfState() {
         synchronized(self) {
             self.observationControllers.allObjects.forEach {
@@ -46,12 +50,22 @@ class ObservableObject {
             }
         }
     }
+    
+    func perform(notification: Bool, block: () -> ()) {
+        synchronized(self) {
+            let notify = self.notify
+            self.notify = notification
+            block()
+            self.notify = notify
+        }
+    }
 }
 
 extension ObservableObject {
     class ObservationController {
+        
         typealias Observer = AnyObject
-        typealias Action = (ObservableObject) -> ()
+        typealias Action = (ObservableObject, AnyObject?) -> ()
 
         //MARK: - Private properties
 
@@ -70,9 +84,11 @@ extension ObservableObject {
 
         func notify(of state: ModelState, object: AnyObject? = nil) {
             if let block = self.relation[state] {
-                block(self.observableObject)
+                block(self.observableObject, object)
             }
         }
+        
+        //MARK: - Subscript
         
         subscript(state: ModelState) -> Action? {
             get {
@@ -85,85 +101,3 @@ extension ObservableObject {
         }
     }
 }
-
-//
-//  ObservableObject.swift
-//  iOSProjectSwift
-//
-//  Created by Andrew Boychuk on 11/3/17.
-//  Copyright © 2017 Andrew Boychuk. All rights reserved.
-
-
-//import UIKit
-//
-//class ObservableObject {
-//
-//    // MARK: - Properties
-//
-//    var state: ModelState = .didUnload {
-//        didSet {
-//            self.notify(of: self.state)
-//        }
-//    }
-//
-//    var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
-//    var notify: Bool = true
-//
-//    // MARK: - Public Functions
-//
-//    func add(observer: AnyObject) {
-//        synchronized(self) {
-//            self.observers.add(observer)
-//        }
-//    }
-//
-//    func remove(observer: AnyObject) {
-//        synchronized(self) {
-//            self.observers.remove(observer)
-//        }
-//    }
-//
-//    func isObserved(by object: AnyObject) -> Bool {
-//        return synchronized(self, block: { () -> (Bool) in
-//            return self.observers.contains(object)
-//        })
-//    }
-//
-//    func notify(of state: ModelState) {
-//        synchronized(self) {
-//            self.notifyWith(self.selector(for: state))
-//        }
-//    }
-//
-//    func notifyOfState(_ state: ModelState, with object: AnyObject) {
-//        synchronized(self) {
-//            self.notifyWith(self.selector(for: state), with: object)
-//        }
-//    }
-//
-//    func perform(notification: Bool, block: () -> ()) {
-//        let notify = self.notify
-//        self.notify = notification
-//        block()
-//        self.notify = notify
-//    }
-//
-//    //Method created for overriding, do not call directly
-//    func selector(for state: ModelState) -> Selector? {
-//        return nil
-//    }
-//
-//    // MARK: - Private Functions
-//
-//    private func notifyWith(_ selector: Selector?, with object: AnyObject? = nil) {
-//        if self.notify {
-//            self.observers.allObjects.forEach({ (object) in
-//                if (object.responds(to: selector)) {
-//                    _ = object.perform(selector, with: object)
-//                }
-//            })
-//        }
-//    }
-//}
-//
-//
