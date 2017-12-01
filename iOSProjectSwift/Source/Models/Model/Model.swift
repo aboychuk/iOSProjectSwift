@@ -31,7 +31,7 @@ class Model: ObservableObject {
         synchronized(self) {
             let state = self.state
             if state == .willLoad || state == .didLoad {
-                self.notify(of: state)
+                self.notifyOfState()
                 return
             }
             self.state = .willLoad
@@ -51,23 +51,6 @@ class Model: ObservableObject {
         let backgroundQueue = DispatchQueue.global(qos: .background)
         backgroundQueue.async {
             self.performLoadingInBackground()
-        }
-    }
-    
-    //MARK: - Overrided Functions
-    
-    override func selector(for state: ModelState) -> Selector? {
-        switch state {
-        case .didUnload:
-            return Selector(("didUnload:"))
-        case .willLoad:
-            return Selector(("willLoad:"))
-        case .didLoad:
-            return Selector(("didLoad:"))
-        case .didFailLoading:
-            return Selector(("didFailLoading:"))
-        default:
-            return super.selector(for: state)
         }
     }
 }
