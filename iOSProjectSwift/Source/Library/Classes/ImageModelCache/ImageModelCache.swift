@@ -17,22 +17,20 @@ class ImageModelCache {
     
     //MARK: - Initializations
     
-    private init () {
-        
-    }
+    private init () { }
     
     //MARK: - Public Functions
     
-    func add(model: AnyObject, for key: AnyObject) {
-        synchronized(self, block: { self.cachedObjects.setObject(model, forKey: key) })
+    func add(model: AnyObject, forKey: AnyObject) {
+        synchronized(self, block: { self.cachedObjects.setObject(model, forKey: forKey) })
     }
     
-    func removeModel(for key: AnyObject) {
-        synchronized(self, block: { self.cachedObjects.removeObject(forKey: key) })
+    func removeModel(forKey: AnyObject) {
+        synchronized(self, block: { self.cachedObjects.removeObject(forKey: forKey) })
     }
     
-    func model(for key: AnyObject) -> AnyObject {
+    func model(forKey: AnyObject) -> AnyObject {
         return synchronized(self, block: { () -> AnyObject in
-            return self.cachedObjects.object(forKey: key)! })
+            return self.cachedObjects.object(forKey: forKey)! })
     }
 }
