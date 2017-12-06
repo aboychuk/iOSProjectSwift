@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBLoginViewController : FBViewController {
+class FBLoginViewController : FBViewController, RootView {
     
     //MARK: - RootView protocol
     

@@ -8,33 +8,11 @@
 
 import UIKit
 
-class FBViewController: UIViewController, RootView {
-    
-    //MARK: - RootView protocol
-    
-    typealias ViewType = BaseView
+class FBViewController: UIViewController  {
     
     //MARK: - Properties
     
-    var observationController: ObservableObject.ObservationController? {
-        didSet {
-            self.observationController?[.didUnload] = { [weak self] _, _ in
-                self?.rootView?.loadingView?.set(visible: false)
-            }
-            
-            self.observationController?[.willLoad] = { [weak self] _, _ in
-                self?.rootView?.loadingView?.set(visible: true)
-            }
-            
-            self.observationController?[.didLoad] = { [weak self] _, _ in
-                self?.rootView?.loadingView?.set(visible: false)
-            }
-            
-            self.observationController?[.didUnload] = { [weak self] _, _ in
-                self?.rootView?.loadingView?.set(visible: false)
-            }
-        }
-    }
+    var observationController: ObservableObject.ObservationController?
     
     var model: Model = FBUserModel() {
         didSet { self.observationController = self.model.controller(for: self) }

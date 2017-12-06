@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBUserDetailController : FBViewController {
+class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - RootView protocol
     
