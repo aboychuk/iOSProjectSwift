@@ -37,6 +37,7 @@ class LoadingView: BaseView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.prepareView()
     }
     
     //MARK: - Public functions
