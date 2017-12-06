@@ -10,13 +10,9 @@ import UIKit
 
 extension UIWindow {
     
-    static func window() -> UIWindow {
-        return UIWindow.init(frame: UIScreen.main.bounds)
-    }
-    
-    static func windowWithRootViewController(_ VC: UIViewController) -> UIWindow {
-        let window = self.window()
-        window.rootViewController = VC
+    static func window(_ block: (UIWindow) -> ()) -> UIWindow {
+        let window = UIWindow.init(frame: UIScreen.main.bounds)
+        block(window)
         
         return window
     }
