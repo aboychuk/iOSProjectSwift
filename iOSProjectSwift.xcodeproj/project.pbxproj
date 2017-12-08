@@ -16,6 +16,8 @@
 		972038E51FBF759E003D686C /* FBGetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E31FBF759E003D686C /* FBGetContext.swift */; };
 		97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */; };
 		979CC5DE1FB306A10023529F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5DD1FB306A10023529F /* Model.swift */; };
+		97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */; };
+		97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A136801FDB1D59000FBFAD /* FBUserCell.xib */; };
 		97A6B4DC1FC8445B00FACFE1 /* FBUserDetailContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4DB1FC8445B00FACFE1 /* FBUserDetailContext.swift */; };
 		97A6B4DE1FC8446C00FACFE1 /* FBFriendsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4DD1FC8446C00FACFE1 /* FBFriendsContext.swift */; };
 		97A6B4E01FC8449900FACFE1 /* FBLogoutContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */; };
@@ -69,6 +71,8 @@
 		972038E31FBF759E003D686C /* FBGetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBGetContext.swift; sourceTree = "<group>"; };
 		97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		979CC5DD1FB306A10023529F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserCell.swift; sourceTree = "<group>"; };
+		97A136801FDB1D59000FBFAD /* FBUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserCell.xib; sourceTree = "<group>"; };
 		97A6B4DB1FC8445B00FACFE1 /* FBUserDetailContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDetailContext.swift; sourceTree = "<group>"; };
 		97A6B4DD1FC8446C00FACFE1 /* FBFriendsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsContext.swift; sourceTree = "<group>"; };
 		97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLogoutContext.swift; sourceTree = "<group>"; };
@@ -251,6 +255,15 @@
 			path = ImageModel;
 			sourceTree = "<group>";
 		};
+		97A1367D1FDB1D3C000FBFAD /* FBUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */,
+				97A136801FDB1D59000FBFAD /* FBUserCell.xib */,
+			);
+			path = FBUserCell;
+			sourceTree = "<group>";
+		};
 		97A6B4E21FC880AF00FACFE1 /* FBParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +371,7 @@
 				97C377061FBF9F66002C637A /* FBFriendsViewController.swift */,
 				97A6EF261FD0977100D9DDB5 /* FBFriendsView.xib */,
 				97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */,
+				97A1367D1FDB1D3C000FBFAD /* FBUserCell */,
 			);
 			path = FBFriendsViewController;
 			sourceTree = "<group>";
@@ -576,6 +590,7 @@
 				97A6EF231FD0654500D9DDB5 /* FBUserDetailView.xib in Resources */,
 				97A6EF331FD164CD00D9DDB5 /* LaunchScreen.storyboard in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
+				97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */,
 				97A6EF271FD0977100D9DDB5 /* FBFriendsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */,
 				97C377101FBFA01B002C637A /* BaseView.swift in Sources */,
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
