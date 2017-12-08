@@ -42,13 +42,7 @@ class FBLoginViewController : FBViewController, RootView {
     //MARK: - IBActions
     
     @IBAction func onLogin(sender: UIButton) {
-        self.context = FBLoginContext.init(model: self.currentUser)
-    }
-    
-    //MARK: - Public functions
-    
-    override func updateWithModel(_ model: Model) {
-        self.showUserDetailViewController()
+        self.context = FBLoginContext(model: self.currentUser)
     }
     
     //MARK: - Private Functions
@@ -59,6 +53,6 @@ class FBLoginViewController : FBViewController, RootView {
         detailController.currentUser = self.currentUser
         let navigationController = UINavigationController(rootViewController: detailController)
         
-        self.present(navigationController, animated: true, completion: nil)
+        self.present(navigationController, animated: true)
     }
 }

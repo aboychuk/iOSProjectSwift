@@ -41,7 +41,7 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Private properties
     
-    var fbUserModel: FBUserModel? {
+    var userModel: FBUserModel? {
         return self.model as? FBUserModel
     }
     
@@ -66,11 +66,8 @@ class FBUserDetailController : FBViewController, RootView {
     //MARK: - Public functions
     
     override func updateWithModel(_ model: Model) {
-        if let userModel = model as? FBUserModel {
-            self.rootView?.fillWithModel(userModel)
-        } else {
-            return
-        }
+        guard let userModel = self.userModel else { return }
+        self.rootView?.fillWithModel(userModel)
     }
     
     //MARK: - Private functions
@@ -84,7 +81,11 @@ class FBUserDetailController : FBViewController, RootView {
     
     private func showFriendsViewController() {
         let friendsController = FBFriendsViewController()
-//        friendsController.model = self.model.friends
+        
+        if let userFriends = self.userModel?.friends {
+            friendsController.model = userFriends
+        }
+        
         friendsController.currentUser = self.currentUser
         let navigationController = UINavigationController.init(rootViewController: friendsController)
         

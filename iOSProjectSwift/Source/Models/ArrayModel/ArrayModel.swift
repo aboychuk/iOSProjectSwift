@@ -12,26 +12,26 @@ protocol ArrayModelObserver {
     func arrayModel(_ : ArrayModel<Any>, updateWithChangeModel: ArrayModelChange)
 }
 
-class ArrayModel<T>: Model {
+class ArrayModel<Element>: Model {
     
     //MARK: - Properties
     
-    var objects: Array<T> = []
+    var objects: Array<Element> = []
     var count: Int {
         return self.objects.count
     }
     
     //MARK: - Public Functions
     
-    func add(object: T) {
+    func add(object: Element) {
         self.insert(object: object, index: self.count)
     }
     
-    func add(objects: [T]) {
+    func add(objects: [Element]) {
         objects.forEach { self.add(object: $0) }
     }
     
-    func insert(object: T, index: Int) {
+    func insert(object: Element, index: Int) {
         synchronized(self) {
             if self.count >= index {
                 self.objects.insert(object, at: index)
@@ -41,11 +41,11 @@ class ArrayModel<T>: Model {
         }
     }
     
-    func remove(object: T) {
+    func remove(object: Element) {
         self.removeObject(at: self.index(of: object))
     }
     
-    func remove(objects: [T]) {
+    func remove(objects: [Element]) {
         objects.forEach { self.remove(object: $0) }
     }
     
@@ -68,7 +68,7 @@ class ArrayModel<T>: Model {
         }
     }
     
-    func index(of object: T) -> Int {
+    func index(of object: Element) -> Int {
         return self.index(of: object)
     }
     

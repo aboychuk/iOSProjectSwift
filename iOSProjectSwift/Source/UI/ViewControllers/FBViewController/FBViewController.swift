@@ -28,10 +28,4 @@ class FBViewController: UIViewController  {
             newValue?.execute()
         }
     }
-    
-    //MARK: - Functions for overriding
-    
-    func updateWithModel(_ model: Model) {
-
-    }
 }
