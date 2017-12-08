@@ -49,21 +49,6 @@ class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableVie
         return self.model as? UsersModel
     }
     
-    //MARK: - UITableViewDataSource protocol
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.usersModel?.count else { return 0 }
-        
-        return count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
-        cell.userModel = self.usersModel?[indexPath.row] as? FBUserModel
-        
-        return cell
-    }
-    
     //MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -82,5 +67,31 @@ class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableVie
     
     private func prepareNavigationTitle() {
         self.navigationItem.title = "Friends"
+    }
+    
+    //MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let count = self.usersModel?.count else { return 0 }
+        
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
+        cell.userModel = self.usersModel?[indexPath.row] as? FBUserModel
+        
+        return cell
+    }
+    
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = FBUserDetailController()
+        guard let user = self.usersModel?[indexPath.row] else { return }
+        controller.model = user
+        controller.currentUser = self.currentUser
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
