@@ -94,7 +94,6 @@ extension ObservableObject {
             get {
                 return self.relation[state]
             }
-
             set {
                 self.relation[state] = newValue
             }

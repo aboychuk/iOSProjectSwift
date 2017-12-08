@@ -12,8 +12,8 @@ extension UITableView {
     
     //MARK: - Instance Functions
     
-    func reusableCellWith<T>(type: T.Type, index: IndexPath) -> T? {
-        let cell = self.dequeueReusableCell(withIdentifier: String.toString(from: type), for: index) as? T
+    func reusableCellWith<T>(type: T.Type, index: IndexPath) -> T {
+        let cell = self.dequeueReusableCell(withIdentifier: String.toString(from: type), for: index) as! T
         
         return cell
     }
