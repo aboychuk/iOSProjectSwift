@@ -66,8 +66,8 @@ class FBGetContext: Context {
             switch result {
                 
             case .success(let response):
-                self?.saveResult(result: response as AnyObject)
-                self?.parseResult(result: response as AnyObject)
+                self?.saveResult(result: (response as AnyObject) as! JSON)
+                self?.parseResult(result: (response as AnyObject) as! JSON)
                 state = .didLoad
                 
             case .failed(let error):
@@ -85,11 +85,11 @@ class FBGetContext: Context {
     //MARK: - Public Functions
     
     //Function created for overriding
-    func parseResult(result: AnyObject) {
-        
+    func parseResult(result: JSON) {
+
     }
     
-    func saveResult(result: AnyObject) {
+    func saveResult(result: JSON) {
         if let path = self.pathToCachedResult {
             NSKeyedArchiver.archiveRootObject(result, toFile: path)
         }

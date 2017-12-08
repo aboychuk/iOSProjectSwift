@@ -16,9 +16,27 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Public Properties
     
+    override var observationController: ObservableObject.ObservationController? {
+        didSet {
+            let loadingView = self.rootView?.loadingView
+            
+            self.observationController?[.willLoad] = { _, _ in
+                loadingView?.set(visible: true)
+            }
+            
+            self.observationController?[.didLoad] = { [weak self] _, _ in
+                loadingView?.set(visible: false)
+                guard let model = self?.model else { return }
+                self?.updateWithModel(model)
+            }
+        }
+    }
+    
     var logoutContext: FBLogoutContext? {
-        willSet { newValue?.execute() }
-        didSet { oldValue?.cancel() }
+        didSet {
+            oldValue?.cancel()
+            self.logoutContext?.execute()
+        }
     }
     
     //MARK: - Private properties
@@ -34,7 +52,7 @@ class FBUserDetailController : FBViewController, RootView {
     }
     
     @IBAction func onLogout(sender: UIButton) {
-            self.logoutContext = FBLogoutContext(model: currentUser)
+        self.logoutContext = FBLogoutContext(model: self.currentUser)
     }
     
     //MARK: - View Lyfecycle
@@ -42,14 +60,17 @@ class FBUserDetailController : FBViewController, RootView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareNavigationItem()
-
-            self.context = FBUserDetailContext(model: model)
+        self.context = FBUserDetailContext(model: self.model)
     }
     
     //MARK: - Public functions
     
     override func updateWithModel(_ model: Model) {
-        //rootview.updateWithModel
+        if let userModel = model as? FBUserModel {
+            self.rootView?.fillWithModel(userModel)
+        } else {
+            return
+        }
     }
     
     //MARK: - Private functions

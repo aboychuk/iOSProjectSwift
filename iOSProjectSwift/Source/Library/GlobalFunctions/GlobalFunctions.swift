@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: - Global functions
+
 func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     objc_sync_enter(lock)
     defer {
@@ -16,3 +18,7 @@ func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     
     return block()
 }
+
+//MARK: - Global typealias
+
+typealias JSON = [String : Any]

@@ -24,13 +24,9 @@ class FBLoginViewController : FBViewController, RootView {
                 loadingView?.set(visible: true)
                 self?.showUserDetailViewController()
             }
-            
-            self.observationController?[.didLoad] = { [weak self] _, _ in
-                loadingView?.set(visible: false)
-                self?.showUserDetailViewController()
-            }
         }
     }
+    
     //MARK: - Initializations
     
     init(model: FBCurrentUserModel) {
@@ -59,7 +55,7 @@ class FBLoginViewController : FBViewController, RootView {
     
     private func showUserDetailViewController() {
         let detailController = FBUserDetailController()
-        detailController.model = self.model
+        detailController.model = self.currentUser
         detailController.currentUser = self.currentUser
         let navigationController = UINavigationController(rootViewController: detailController)
         

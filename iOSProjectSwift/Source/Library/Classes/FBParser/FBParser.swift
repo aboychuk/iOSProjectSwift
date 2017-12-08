@@ -10,10 +10,6 @@ import UIKit
 
 class FBParser {
     
-    //Typealias
-    
-    typealias JSON = [String : Any]
-    
     // MARK: Constants
     
     private struct Constants {
@@ -26,27 +22,30 @@ class FBParser {
     
     //MARK: - Public functions
     
-    static func update(model: FBUserModel, from result: JSON) -> FBUserModel {
+    static func update(user: FBUserModel, from result: JSON) -> FBUserModel {
         let userID = result[Constants.userID] as? String
         let userName = result[Constants.userName] as? String
         let userSurname = result[Constants.userSurname] as? String
         let userPhotoString = result[Constants.userPhoto] as? String
         let userURL = URL(string: userPhotoString!)
-        let userFriends = result[Constants.userFriends] as? Array<JSON>
         
+        user.userID = userID
+        user.name = userName
+        user.surname = userSurname
+        user.imageURL = userURL
+    
+        return user
+    }
+    
+    static func updateFriends(user: FBUserModel, from result: JSON) -> FBUserModel {
+        let userFriends = result[Constants.userFriends] as? Array<JSON>
+
         userFriends?.forEach({
             var user = FBUserModel()
-            user = self.update(model: user, from: $0)
-            model.friends?.add(object: user)
+            user = self.update(user: user, from: $0)
+            user.friends?.add(object: user)
         })
         
-        model.userID = userID
-        model.name = userName
-        model.surname = userSurname
-        model.imageURL = userURL
-        
-
-        
-        return model
+        return user
     }
 }
