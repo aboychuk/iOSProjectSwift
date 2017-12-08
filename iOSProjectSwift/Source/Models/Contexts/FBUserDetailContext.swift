@@ -10,20 +10,21 @@ import UIKit
 
 class FBUserDetailContext: FBGetContext {
     
-    private struct UserDetailConstants {
+    private struct Constants {
         static let fields = "fields"
         static let fieldKeys = "first_name,last_name,picture.type(large)"
         static let plistName = "UserDetail.plist"
+        static let emptyString = "empty"
     }
     
     //MARK: - Properties
     
-    override var graphPath: String? {
-        return self.user?.userID
+    override var graphPath: String {
+        return self.user?.userID ?? Constants.emptyString
     }
     
-    override var parameters: [String : String]? {
-        return [UserDetailConstants.fields : UserDetailConstants.fieldKeys]
+    override var parameters: [String : String] {
+        return [Constants.fields : Constants.fieldKeys]
     }
     
     override var pathToCachedResult: String? {
@@ -37,7 +38,7 @@ class FBUserDetailContext: FBGetContext {
     }
     
     override var plistName: String {
-        return UserDetailConstants.plistName
+        return Constants.plistName
     }
     
     //MARK: - Public Functions

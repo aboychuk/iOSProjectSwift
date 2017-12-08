@@ -13,20 +13,21 @@ import FacebookShare
 
 class FBFriendsContext: FBGetContext {
     
-    private struct FriendsConstants {
+    private struct Constants {
         static let fields = "fields"
         static let fieldKeys = "friends{first_name,last_name,picture}"
         static let plistName = "UserFriends.plist"
+        static let emptyString = "empty"
     }
     
     //MARK: - Properties
     
-    override var graphPath: String? {
-        return AccessToken.current?.userId
+    override var graphPath: String {
+        return AccessToken.current?.userId ?? Constants.emptyString
     }
     
-    override var parameters: [String : String]? {
-        return [FriendsConstants.fields : FriendsConstants.fieldKeys]
+    override var parameters: [String : String] {
+        return [Constants.fields : Constants.fieldKeys]
     }
     
     override var pathToCachedResult: String? {
@@ -40,7 +41,7 @@ class FBFriendsContext: FBGetContext {
     }
     
     override var plistName: String {
-        return FriendsConstants.plistName
+        return Constants.plistName
     }
     
     //MARK: - Public Functions

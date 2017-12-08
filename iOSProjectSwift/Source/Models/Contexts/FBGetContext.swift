@@ -13,14 +13,19 @@ import FacebookShare
 
 class FBGetContext: Context {
     
-    //MARK: - Properties
-    
-    var graphPath: String? {
-        return nil
+    private struct Constants {
+        static let plistName = "default.plist"
+        static let emptyString = "empty"
     }
     
-    var parameters: [String : String]? {
-        return nil
+    //MARK: - Properties
+    
+    var graphPath: String {
+        return Constants.emptyString
+    }
+    
+    var parameters: [String : String] {
+        return [Constants.emptyString : Constants.emptyString]
     }
     
     var pathToCachedResult: String? {
@@ -28,7 +33,7 @@ class FBGetContext: Context {
     }
     
     var plistName: String {
-        return "default.plist"
+        return Constants.plistName
     }
     
     var user: FBUserModel? {
@@ -54,29 +59,27 @@ class FBGetContext: Context {
     }
     
     override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
-        let connection = GraphRequestConnection()
-        if let graphPath = self.graphPath {
-            if let parameters = self.parameters {
-                connection.add(GraphRequest(graphPath: graphPath, parameters: parameters)) { httpResponse, result in
-                    var state = self.model.state
-                    switch result {
-                    case .success(let response):
-                        self.saveResult(result: response as AnyObject)
-                        self.parseResult(result: response as AnyObject)
-                        state = .didLoad
-                    case .failed(let error):
-                        print("Graph Request Failed: \(error)")
-                        state = .didFailLoading
-                        if state == .didFailLoading {
-                            self.loadResult()
-                            state = .didLoad
-                        }
-                    }
-                    handler(state)
+        var state = self.model.state
+        let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
+        
+        request.start() { [weak self] (httpResponse, result) in
+            switch result {
+                
+            case .success(let response):
+                self?.saveResult(result: response as AnyObject)
+                self?.parseResult(result: response as AnyObject)
+                state = .didLoad
+                
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+                state = .didFailLoading
+                if state == .didFailLoading {
+                    self?.loadResult()
+                    state = .didLoad
                 }
             }
+            handler(state)
         }
-        connection.start()
     }
     
     //MARK: - Public Functions
@@ -97,5 +100,4 @@ class FBGetContext: Context {
             NSKeyedUnarchiver.unarchiveObject(withFile: path)
         }
     }
-    
 }
