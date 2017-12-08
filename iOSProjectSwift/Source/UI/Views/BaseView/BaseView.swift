@@ -18,7 +18,7 @@ class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.prepareLoadingView()
+//        self.prepareLoadingView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,7 +27,7 @@ class BaseView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.prepareLoadingViewFromNib()
+//        self.prepareLoadingViewFromNib()
     }
     
     //MARK: - Functions for  overriding
@@ -38,9 +38,9 @@ class BaseView: UIView {
     
     //MARK: - Private Functions
     
-    private func prepareLoadingView() {
-        self.loadingView = LoadingView.add(view: self)
-    }
+//    private func prepareLoadingView() {
+//        self.loadingView = LoadingView.add(view: self)
+//    }
     
     private func prepareLoadingViewFromNib() {
         let loadingView: LoadingView? = UINib.object(from: LoadingView.self)
