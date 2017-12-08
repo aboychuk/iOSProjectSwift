@@ -20,6 +20,11 @@ class FBUserDetailController : FBViewController, RootView {
         didSet {
             let loadingView = self.rootView?.loadingView
             
+            self.observationController?[.didUnload] = { [weak self] _, _ in
+                loadingView?.set(visible: false)
+                self?.dismiss(animated: true, completion: nil)
+            }
+            
             self.observationController?[.willLoad] = { _, _ in
                 loadingView?.set(visible: true)
             }
@@ -41,7 +46,7 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Private properties
     
-    var userModel: FBUserModel? {
+    private var userModel: FBUserModel? {
         return self.model as? FBUserModel
     }
     
@@ -65,7 +70,7 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Public functions
     
-    override func updateWithModel(_ model: Model) {
+    func updateWithModel(_ model: Model) {
         guard let userModel = self.userModel else { return }
         self.rootView?.fillWithModel(userModel)
     }
