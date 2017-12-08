@@ -23,8 +23,10 @@ class FBViewController: UIViewController  {
     }
     
     var context: Context? {
-        willSet { newValue?.execute() }
-        didSet { oldValue?.cancel() }
+        willSet {
+            self.context?.cancel()
+            newValue?.execute()
+        }
     }
     
     //MARK: - Functions for overriding

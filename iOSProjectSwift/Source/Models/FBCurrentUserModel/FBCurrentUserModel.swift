@@ -16,8 +16,10 @@ class FBCurrentUserModel: FBUserModel {
     
     var token: String?
     var authorized: Bool {
-        let userToken = self.token
-        let serverToken = AccessToken.current?.userId
-        return userToken == serverToken
+        if let serverToken = AccessToken.current?.userId {
+            return self.token == serverToken
+        }
+        
+        return false
     }
 }
