@@ -72,6 +72,19 @@ class ArrayModel<Element>: Model {
         return self.index(of: object)
     }
     
+    //MARK: - Subscript
+    
+    subscript(index: Int) -> Element? {
+        get {
+            return self.objects[index]
+        }
+        set {
+            if let element = newValue {
+                self.objects[index] = element
+            }
+        }
+    }
+    
     //MARK: - Private Functions
     
     private func notifyOfStateWith(modelChange: ArrayModelChange) {

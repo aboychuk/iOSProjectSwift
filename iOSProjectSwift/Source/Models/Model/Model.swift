@@ -20,7 +20,7 @@ enum ModelState {
     case willLoad
     case didLoad
     case didFailLoading
-    case didChanged
+    case didChange
 }
 
 class Model: ObservableObject {
