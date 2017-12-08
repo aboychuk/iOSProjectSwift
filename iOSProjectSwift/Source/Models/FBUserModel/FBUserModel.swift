@@ -21,7 +21,7 @@ class FBUserModel: UserModel {
     }
     
     var userID: String?
-    var friends: String?
+    var friends: UsersModel?
     var imageURL: URL?
     
 }
