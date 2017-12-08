@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534419497.171611"
+            timestampString = "534424130.730287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -42,7 +42,7 @@
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-                  timestampString = "534419497.200564"
+                  timestampString = "534424832.690523"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -57,7 +57,7 @@
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-                  timestampString = "534419497.204433"
+                  timestampString = "534424832.69473"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534419497.171707"
+            timestampString = "534424130.730377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534419497.171787"
+            timestampString = "534424130.730453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/AppDelegate.swift"
-            timestampString = "534267417.818246"
+            timestampString = "534424832.665982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/AppDelegate.swift"
-            timestampString = "534267417.818312"
+            timestampString = "534424832.666067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534419497.171913"
+            timestampString = "534424130.730684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534419497.171992"
+            timestampString = "534424130.730758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -198,15 +198,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172068"
+            timestampString = "534424832.666191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "onLogin(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -214,15 +214,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172168"
+            timestampString = "534424832.666269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "updateWithModel(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172261"
+            timestampString = "534424832.666343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "showUserDetailViewController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172353"
+            timestampString = "534424832.666424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "showUserDetailViewController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -262,46 +262,46 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172444"
+            timestampString = "534424832.666499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "observationController"
             landmarkType = "24">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-                  timestampString = "534419497.247309"
+                  timestampString = "534422399.95902"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "483">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #3 (iOSProjectSwift.ObservableObject, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-                  timestampString = "534419497.250235"
+                  timestampString = "534422399.962343"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "54">
                </Location>
             </Locations>
@@ -310,11 +310,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.172522"
+            timestampString = "534424832.666574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -326,11 +326,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-            timestampString = "534419497.172602"
+            timestampString = "534424603.542827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -339,14 +339,14 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.FBViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; iOSProjectSwift.FBViewController"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-                  timestampString = "534419497.261941"
+                  timestampString = "534421869.828223"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -354,14 +354,14 @@
                   offsetFromSymbolStart = "195">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.FBViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.FBViewController&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-                  timestampString = "534419497.265175"
+                  timestampString = "534421869.831006"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -374,11 +374,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-            timestampString = "534419497.172676"
+            timestampString = "534424603.543286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -387,14 +387,14 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.FBViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; iOSProjectSwift.FBViewController"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-                  timestampString = "534419497.271479"
+                  timestampString = "534422928.738097"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -402,14 +402,14 @@
                   offsetFromSymbolStart = "306">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.FBViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.FBViewController&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
-                  timestampString = "534419497.274084"
+                  timestampString = "534422928.741186"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -438,11 +438,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
-            timestampString = "534419497.172778"
+            timestampString = "534424130.734105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -454,63 +454,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-            timestampString = "534419497.173229"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "observationController"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
-                  moduleName = "iOSProjectSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-                  timestampString = "534419497.29127"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (iOSProjectSwift.ObservableObject, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
-                  moduleName = "iOSProjectSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
-                  timestampString = "534419497.293939"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "54">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
-            timestampString = "534419497.173301"
+            timestampString = "534424130.734603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "executeWithCompletionHandler(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -518,11 +470,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/FBCurrentUserModel/FBCurrentUserModel.swift"
-            timestampString = "534419497.173624"
+            timestampString = "534424130.7347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -534,11 +486,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/FBCurrentUserModel/FBCurrentUserModel.swift"
-            timestampString = "534419497.173694"
+            timestampString = "534424130.734775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -550,11 +502,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/FBCurrentUserModel/FBCurrentUserModel.swift"
-            timestampString = "534419497.173761"
+            timestampString = "534424130.73485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -566,11 +518,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
-            timestampString = "534419497.173827"
+            timestampString = "534424130.734925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -582,15 +534,287 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
-            timestampString = "534419592.394733"
+            timestampString = "534424130.735014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "executeWithCompletionHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
+            timestampString = "534424130.735101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "executeWithCompletionHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
+            timestampString = "534424832.666887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "observationController"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
+                  timestampString = "534424603.877067"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (iOSProjectSwift.ObservableObject, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in iOSProjectSwift.FBLoginViewController.observationController.didset : Swift.Optional&lt;iOSProjectSwift.ObservableObject.ObservationController&gt;"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
+                  timestampString = "534424603.881696"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "58">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
+            timestampString = "534424832.666973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
+            landmarkName = "notifyOfState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
+            timestampString = "534424130.735585"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "executeWithCompletionHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
+            timestampString = "534424832.667072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "observationController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBLoginViewController/FBLoginViewController.swift"
+            timestampString = "534424832.667147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "observationController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
+            timestampString = "534424832.667221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "notify(of:object:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of iOSProjectSwift.ObservableObject.ObservationController.notify(of: iOSProjectSwift.ModelState, object: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
+                  timestampString = "534424832.737089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.ObservableObject.ObservationController.notify(of: iOSProjectSwift.ModelState, object: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
+                  timestampString = "534424832.739967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
+            timestampString = "534424832.667299"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "state"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Models/Contexts/FBLoginContext.swift"
+            timestampString = "534424130.736369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "executeWithCompletionHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBViewController/FBViewController.swift"
+            timestampString = "534424603.548159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "currentUser"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
+            timestampString = "534424832.667421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Models/Contexts/FBGetContext.swift"
+            timestampString = "534424884.477215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "executeWithCompletionHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/Models/Contexts/FBGetContext.swift"
+            timestampString = "534424885.948862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "executeWithCompletionHandler(_:)"
             landmarkType = "7">
          </BreakpointContent>
