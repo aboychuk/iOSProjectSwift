@@ -34,16 +34,18 @@ class FBLoginContext: Context {
                 switch LoginResult {
                 case .failed(let error):
                     print (error)
+                    state = .didFailLoading
                 case .cancelled:
                     print("User cancelled login.")
+                    state = .didUnload
                 case .success(_,_,let token):
                     user.token = token.authenticationToken
                     state = .willLoad
                 }
+                handler(state)
             }
+        } else {
+            handler(state)
         }
-        
-        handler(state)
     }
-    
 }
