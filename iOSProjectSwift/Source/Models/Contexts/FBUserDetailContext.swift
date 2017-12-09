@@ -33,7 +33,7 @@ class FBUserDetailContext: FBGetContext {
     }
         var cachePath = path
         cachePath.append(self.plistName)
-        
+
         return cachePath
     }
     
