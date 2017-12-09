@@ -22,12 +22,11 @@ class LoadingView: BaseView {
     //MARK: - Properties
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView? {
-        willSet {
-            if let indicator = newValue {
+        didSet {
+            guard let indicator = activityIndicator else { return }
             self.addSubview(indicator)
-            }
+            oldValue?.removeFromSuperview()
         }
-        didSet { oldValue?.removeFromSuperview() }
     }
     
     var visible: Bool = false
@@ -37,12 +36,6 @@ class LoadingView: BaseView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    //MARK: - Public functions
-    
-//    static func add(view: UIView) -> LoadingView {
-//        return LoadingView(frame: view.bounds)
-//    }
 
     func set(visible: Bool, animated: Bool = true, on completionHandler: VoidBlock? = nil) {
         UIView.animate(withDuration: animated ? Constants.defaultDuration : 0,

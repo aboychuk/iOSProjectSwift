@@ -22,27 +22,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534424130.730287"
+            timestampString = "534459919.796777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "init(coder:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.LoadingView.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.LoadingView&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-                  timestampString = "534458369.383492"
+                  timestampString = "534459587.683626"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "iOSProjectSwift.LoadingView.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.LoadingView&gt;"
                   moduleName = "iOSProjectSwift"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-                  timestampString = "534458369.388639"
+                  timestampString = "534459587.686597"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534424130.730377"
+            timestampString = "534459919.796855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534424130.730453"
+            timestampString = "534459919.796922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "prepareActivityIndicator()"
             landmarkType = "7">
          </BreakpointContent>
@@ -161,38 +161,6 @@
             endingLineNumber = "20"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534424130.730684"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "activityIndicator"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOSProjectSwift/Source/UI/Views/LoadingView/LoadingView.swift"
-            timestampString = "534424130.730758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "activityIndicator"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -358,7 +326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Models/Contexts/FBGetContext.swift"
@@ -554,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
-            timestampString = "534458368.568389"
+            timestampString = "534459919.797404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -602,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
-            timestampString = "534458368.57036"
+            timestampString = "534459919.797518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -650,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/Library/Classes/ObservableObject/ObservableObject.swift"
-            timestampString = "534458368.570541"
+            timestampString = "534459919.797578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -698,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
-            timestampString = "534458368.570859"
+            timestampString = "534459919.797688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -826,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
-            timestampString = "534458368.571461"
+            timestampString = "534459919.797912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -842,7 +810,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
-            timestampString = "534458368.571649"
+            timestampString = "534459919.797977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -890,7 +858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
-            timestampString = "534458368.571832"
+            timestampString = "534459919.798039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -906,12 +874,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSProjectSwift/Source/UI/ViewControllers/FBUserDetailViewController/FBUserDetailViewController.swift"
-            timestampString = "534458368.571982"
+            timestampString = "534459919.798101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "updateWithModel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+            timestampString = "534459919.798165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.BaseView.__allocating_init(frame: __C.CGRect) -&gt; iOSProjectSwift.BaseView"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+                  timestampString = "534459919.929438"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.BaseView.init(frame: __C.CGRect) -&gt; iOSProjectSwift.BaseView"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+                  timestampString = "534459919.932346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+            timestampString = "534459919.798586"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.BaseView.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.BaseView&gt;"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+                  timestampString = "534459919.945796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSProjectSwift.BaseView.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSProjectSwift.BaseView&gt;"
+                  moduleName = "iOSProjectSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewboychuk/Documents/Swift/iOSProjectSwift/iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+                  timestampString = "534459919.949632"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+            timestampString = "534459919.79888"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "BaseView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+            timestampString = "534459919.799169"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "prepareLoadingView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSProjectSwift/Source/UI/Views/BaseView/BaseView.swift"
+            timestampString = "534459919.799454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "prepareLoadingView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

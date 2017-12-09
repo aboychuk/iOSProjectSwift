@@ -17,11 +17,9 @@ extension UINib {
     }
     
     static func object<T>(from type: T.Type, bundle: Bundle = .main, options: [AnyHashable : Any]? = nil) -> T? {
-        if let nib = self.nib(from: type, bundle: bundle) {
-            return nib.object(from: type, owner: bundle, options: options)
-        }
-        
-        return nil
+        return self.nib(from: type, bundle: bundle).map {
+            $0.object(from: type, owner: bundle, options: options)
+            } as? T
     }
     
     //MARK: - Instance Functions
