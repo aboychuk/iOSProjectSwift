@@ -10,7 +10,7 @@ import UIKit
 
 class ObservableObject {
     
-    // MARK: - Properties
+    // MARK: - Public properties
     
     var state: ModelState = .didUnload {
         didSet {
@@ -18,21 +18,25 @@ class ObservableObject {
         }
     }
     
-    var observationControllers: NSHashTable<ObservationController> = NSHashTable.weakObjects()
+    var observationControllers = Array<WeakHashable<ObservationController>>()
     var notify: Bool = true
     
-    // MARK: - Public Functions
+    // MARK: - Public functions
     
     func controller(for observer: AnyObject) -> ObservationController {
         let controller = ObservationController(observableObject: self, observer: observer)
-        self.observationControllers.add(controller)
+        self.observationControllers.append(WeakHashable(object: controller))
         
         return controller
         
     }
     
     func remove(controller: ObservationController) {
-        self.observationControllers.remove(controller)
+        var array = self.observationControllers
+        if let index = array.index(of: WeakHashable(object: controller)) {
+            array.remove(at: index)
+            self.observationControllers = array
+        }
     }
     
     func notifyOfState() {
@@ -45,7 +49,7 @@ class ObservableObject {
     
     func notifyWithObject(_ object: AnyObject?) {
         synchronized(self) {
-            self.observationControllers.allObjects.forEach {
+            self.observationControllers.allObjects {
                 $0.notify(of: self.state, object: object)
             }
         }
@@ -62,20 +66,25 @@ class ObservableObject {
 }
 
 extension ObservableObject {
-    class ObservationController {
+    class ObservationController: Hashable {
         
-        typealias Observer = AnyObject
-        typealias Action = (ObservableObject, AnyObject?) -> ()
+        typealias ObserverType = AnyObject
+        typealias ActionType = (ObservableObject, AnyObject?) -> ()
+        
+        //MARK: - Public properties
+
+        var hashValue: Int
+
 
         //MARK: - Private properties
 
-        private var observer : Observer
+        private var observer : ObserverType
         private var observableObject : ObservableObject
-        private var relation = [ModelState : Action]()
+        private var relation = [ModelState : ActionType]()
 
         //MARK: - Initialization
 
-        init(observableObject: ObservableObject, observer: Observer) {
+        init(observableObject: ObservableObject, observer: ObserverType) {
             self.observableObject = observableObject
             self.observer = observer
         }
@@ -90,13 +99,16 @@ extension ObservableObject {
         
         //MARK: - Subscript
         
-        subscript(state: ModelState) -> Action? {
-            get {
-                return self.relation[state]
-            }
-            set {
-                self.relation[state] = newValue
-            }
+        subscript(state: ModelState) -> ActionType? {
+            get { return self.relation[state] }
+            set { self.relation[state] = newValue }
+        }
+        
+        //MARK: - Hashable
+        
+        static func ==(lhs: ObservableObject.ObservationController,
+                       rhs: ObservableObject.ObservationController) -> Bool {
+            return lhs.hashValue == rhs.hashValue
         }
     }
 }

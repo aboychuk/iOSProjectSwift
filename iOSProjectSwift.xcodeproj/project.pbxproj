@@ -14,6 +14,7 @@
 		970795141FBF307C00BD986E /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970795131FBF307C00BD986E /* UsersModel.swift */; };
 		972038E41FBF759E003D686C /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E21FBF759E003D686C /* Context.swift */; };
 		972038E51FBF759E003D686C /* FBGetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E31FBF759E003D686C /* FBGetContext.swift */; };
+		976E49031FDEE17B00EDC78E /* WeakHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976E49021FDEE17A00EDC78E /* WeakHashable.swift */; };
 		97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */; };
 		979CC5DE1FB306A10023529F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CC5DD1FB306A10023529F /* Model.swift */; };
 		97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */; };
@@ -67,6 +68,7 @@
 		970795131FBF307C00BD986E /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		972038E21FBF759E003D686C /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		972038E31FBF759E003D686C /* FBGetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBGetContext.swift; sourceTree = "<group>"; };
+		976E49021FDEE17A00EDC78E /* WeakHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakHashable.swift; sourceTree = "<group>"; };
 		97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		979CC5DD1FB306A10023529F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 				97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */,
 			);
 			path = Contexts;
+			sourceTree = "<group>";
+		};
+		976E49011FDEE17A00EDC78E /* WeakHashable */ = {
+			isa = PBXGroup;
+			children = (
+				976E49021FDEE17A00EDC78E /* WeakHashable.swift */,
+			);
+			path = WeakHashable;
 			sourceTree = "<group>";
 		};
 		978F527FD881D54FB9D9A709 /* Pods */ = {
@@ -447,6 +457,7 @@
 		97FC17241FC6E4A900F2F798 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				976E49011FDEE17A00EDC78E /* WeakHashable */,
 				97A6B4E21FC880AF00FACFE1 /* FBParser */,
 				97FC17271FC6E4A900F2F798 /* ImageModelCache */,
 				97FC17291FC6E4A900F2F798 /* ObservableObject */,
@@ -653,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */,
+				976E49031FDEE17B00EDC78E /* WeakHashable.swift in Sources */,
 				97C377101FBFA01B002C637A /* BaseView.swift in Sources */,
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,

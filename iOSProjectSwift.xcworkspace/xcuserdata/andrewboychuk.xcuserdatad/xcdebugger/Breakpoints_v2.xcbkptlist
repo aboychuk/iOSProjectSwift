@@ -543,7 +543,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "notify(of:object:)"
+            landmarkName = "init(observableObject:observer:)"
             landmarkType = "7">
             <Locations>
                <Location

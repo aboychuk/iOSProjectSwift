@@ -29,7 +29,7 @@ class ImageModelCache {
         synchronized(self) { self.cachedObjects.removeObject(forKey: forKey) }
     }
     
-    func model(forKey: AnyObject) -> AnyObject {
+    func model(forKey: AnyObject) -> AnyObject? {
         return synchronized(self) { () -> AnyObject in
             return self.cachedObjects.object(forKey: forKey)! }
     }

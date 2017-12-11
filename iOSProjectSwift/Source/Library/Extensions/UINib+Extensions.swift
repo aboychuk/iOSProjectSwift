@@ -25,8 +25,8 @@ extension UINib {
     //MARK: - Instance Functions
 
     func object<T>(from type: T.Type, owner: Any?, options: [AnyHashable : Any]?) -> T? {
-        let objects = instantiate(withOwner: owner, options: options)
-        //NSarray extension
+        let objects = instantiate(withOwner: owner, options: options).filter { $0 is T }
+
         return objects.first as? T
     }
 }
