@@ -10,7 +10,7 @@ import UIKit
 
 class UsersModel: ArrayModel<UserModel> {
     
-    struct Keys {
+    struct Constants {
         static let plistName = "users.plist"
         static let usersCount = 10
     }
@@ -21,9 +21,7 @@ class UsersModel: ArrayModel<UserModel> {
                          NSNotification.Name.UIApplicationDidEnterBackground]
     
     var savePath: String? {
-        var documentsPath = FileManager.documentsPath()
-         documentsPath?.append(Keys.plistName)
-        return documentsPath
+        return FileManager.documentsPathAppend(folder: Constants.plistName)
     }
     
     //MARK: - Initializations and Deinitializations
@@ -62,12 +60,16 @@ class UsersModel: ArrayModel<UserModel> {
         if let savePath = self.savePath {
             objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<UserModel>
             if objects == nil {
-                //factory array
+                objects = Array(repeating: UserModel(), count: Constants.usersCount)
+            }
+            
+        }
+        self.perform(notification: false) {
+            if let array = objects {
+                self.add(objects: array)
             }
         }
-        self.perform(notification: false, block: {
-            self.add(objects: objects!)
-        })
+        
         self.state = .didLoad
     }
     

@@ -28,13 +28,7 @@ class FBUserDetailContext: FBGetContext {
     }
     
     override var pathToCachedResult: String? {
-        guard let path = FileManager.documentsPath() else {
-            return nil
-    }
-        var cachePath = path
-        cachePath.append(self.plistName)
-
-        return cachePath
+        return FileManager.documentsPathAppend(folder: self.plistName)
     }
     
     override var plistName: String {

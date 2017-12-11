@@ -10,9 +10,9 @@ import UIKit
 
 extension UIWindow {
     
-    static func window(_ block: (UIWindow) -> ()) -> UIWindow {
+    static func window(_ block: ((UIWindow) -> ())? = nil) -> UIWindow {
         let window = UIWindow.init(frame: UIScreen.main.bounds)
-        block(window)
+        block.map { $0(window) }
         
         return window
     }

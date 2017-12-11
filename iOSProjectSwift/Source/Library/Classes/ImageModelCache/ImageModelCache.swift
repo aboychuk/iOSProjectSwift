@@ -22,15 +22,15 @@ class ImageModelCache {
     //MARK: - Public Functions
     
     func add(model: AnyObject, forKey: AnyObject) {
-        synchronized(self, block: { self.cachedObjects.setObject(model, forKey: forKey) })
+        synchronized(self) { self.cachedObjects.setObject(model, forKey: forKey) }
     }
     
     func removeModel(forKey: AnyObject) {
-        synchronized(self, block: { self.cachedObjects.removeObject(forKey: forKey) })
+        synchronized(self) { self.cachedObjects.removeObject(forKey: forKey) }
     }
     
     func model(forKey: AnyObject) -> AnyObject {
-        return synchronized(self, block: { () -> AnyObject in
-            return self.cachedObjects.object(forKey: forKey)! })
+        return synchronized(self) { () -> AnyObject in
+            return self.cachedObjects.object(forKey: forKey)! }
     }
 }

@@ -62,21 +62,18 @@ class FBGetContext: Context {
         var state = self.model.state
         let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
         
-        request.start() { [weak self] (httpResponse, result) in
+        request.start() { [weak self] (response, result) in
             switch result {
-                
             case .success(let response):
-                self?.saveResult(result: (response as AnyObject) as! JSON)
-                self?.parseResult(result: (response as AnyObject) as! JSON)
+                guard let resultJSON = (response as AnyObject) as? JSON else { return }
+                self?.saveResult(result: resultJSON)
+                self?.parseResult(result: resultJSON)
                 state = .didLoad
                 
             case .failed(let error):
-                print("Graph Request Failed: \(error)")
-                state = .didFailLoading
-                if state == .didFailLoading {
-                    self?.loadResult()
-                    state = .didLoad
-                }
+                print(error)
+                self?.loadResult()
+                state = .didLoad
             }
             handler(state)
         }

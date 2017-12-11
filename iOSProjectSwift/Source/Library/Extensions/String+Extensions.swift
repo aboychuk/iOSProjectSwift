@@ -15,8 +15,4 @@ extension String {
     static func removeIllegalCharactersFromString(_ string: String) -> String? {
         return string.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)
     }
-    
-    static func toString<T>(from type : T.Type) -> String {
-        return String(describing: type)
-    }
 }

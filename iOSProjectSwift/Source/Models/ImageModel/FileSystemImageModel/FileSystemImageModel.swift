@@ -19,10 +19,7 @@ class FilesystemImageModel: ImageModel {
     //MARK: - Properties
     
     var imagePath: String? {
-        var path = FileManager.documentsPath()
-        path?.append(Constants.folderName)
-        
-        return path
+        return FileManager.documentsPathAppend(folder: Constants.folderName)
     }
     
     var imageName: String? {

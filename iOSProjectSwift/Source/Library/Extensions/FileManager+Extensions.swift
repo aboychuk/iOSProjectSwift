@@ -16,4 +16,8 @@ extension FileManager {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return paths.first
     }
+    
+    static func documentsPathAppend(folder: String) -> String? {
+        return FileManager.documentsPath()?.appending(folder)
+    }
 }

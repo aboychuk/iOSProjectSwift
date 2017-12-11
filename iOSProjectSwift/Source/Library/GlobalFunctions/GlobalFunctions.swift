@@ -19,6 +19,10 @@ func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     return block()
 }
 
+func toString<T>(from type : T.Type) -> String {
+    return String(describing: type)
+}
+
 //MARK: - Global typealias
 
 typealias JSON = [String : Any]

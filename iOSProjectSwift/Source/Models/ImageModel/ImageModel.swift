@@ -27,11 +27,9 @@ class ImageModel: Model {
 
     func image(with url: URL) -> ImageModel? {
         let cache = ImageModelCache.sharedCache
-        var imageModel = cache.model(forKey: url as AnyObject)
-        if imageModel == nil {
-            imageModel = url.isFileURL ? FilesystemImageModel(url: url) : InternetImageModel(url: url)
-            cache.add(model: imageModel, forKey: url as AnyObject)
-        }
+        guard let imageModel = cache.model(forKey: url as AnyObject) else { return nil }
+        imageModel = url.isFileURL ? FilesystemImageModel(url: url) : InternetImageModel(url: url)
+        cache.add(model: imageModel, forKey: url as AnyObject)
         
         return imageModel as? ImageModel
     }
