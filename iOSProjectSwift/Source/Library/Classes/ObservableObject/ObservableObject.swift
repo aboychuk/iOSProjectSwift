@@ -28,7 +28,6 @@ class ObservableObject {
         self.observationControllers.append(WeakHashable(object: controller))
         
         return controller
-        
     }
     
     func remove(controller: ObservationController) {
@@ -41,16 +40,16 @@ class ObservableObject {
     
     func notifyOfState() {
         synchronized(self) {
-            self.observationControllers.allObjects.forEach {
-                $0.notify(of: self.state)
+            for controller in self.observationControllers {
+                controller.object?.notify(of: self.state)
             }
         }
     }
     
     func notifyWithObject(_ object: AnyObject?) {
         synchronized(self) {
-            self.observationControllers.allObjects {
-                $0.notify(of: self.state, object: object)
+            for controller in self.observationControllers {
+                controller.object?.notify(of: self.state, object: object)
             }
         }
     }
@@ -73,8 +72,7 @@ extension ObservableObject {
         
         //MARK: - Public properties
 
-        var hashValue: Int
-
+        var hashValue: Int = 0
 
         //MARK: - Private properties
 
