@@ -8,7 +8,39 @@
 
 import UIKit
 
-class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableViewDataSource, RootView {
+extension FBFriendsViewController: UITableViewDelegate {
+    
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = FBUserDetailController()
+        guard let user = self.usersModel?[indexPath.row] else { return }
+        controller.model = user
+        controller.currentUser = self.currentUser
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension FBFriendsViewController: UITableViewDataSource {
+    
+    //MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let count = self.usersModel?.count else { return 0 }
+        
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
+        cell.userModel = self.usersModel?[indexPath.row] as? FBUserModel
+        
+        return cell
+    }
+}
+
+class FBFriendsViewController: FBViewController, RootView {
     
     //MARK: - Rootview Protocol
 
@@ -25,17 +57,17 @@ class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableVie
                 self?.dismiss(animated: true, completion: nil)
             }
         
-            self.observationController?[.willLoad] = { _, _ in
+            self.observationController?[.willLoad] = { [weak loadingView] _, _ in
                 loadingView?.set(visible: true)
             }
             
-            self.observationController?[.didLoad] = { [weak self] _, _ in
+            self.observationController?[.didLoad] = { [weak self, weak loadingView] _, _ in
                 loadingView?.set(visible: false)
                 guard let model = self?.model else { return }
                 self?.updateWithModel(model)
             }
             
-            self.observationController?[.didChange] = { [weak self] _, _ in
+            self.observationController?[.didChange] = { [weak self, weak loadingView] _, _ in
                 loadingView?.set(visible: false)
                 guard let model = self?.model else { return }
                 self?.updateWithModel(model)
@@ -67,31 +99,5 @@ class FBFriendsViewController: FBViewController, UITableViewDelegate, UITableVie
     
     private func prepareNavigationTitle() {
         self.navigationItem.title = "Friends"
-    }
-    
-    //MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.usersModel?.count else { return 0 }
-        
-        return count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
-        cell.userModel = self.usersModel?[indexPath.row] as? FBUserModel
-        
-        return cell
-    }
-    
-    //MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = FBUserDetailController()
-        guard let user = self.usersModel?[indexPath.row] else { return }
-        controller.model = user
-        controller.currentUser = self.currentUser
-        
-        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

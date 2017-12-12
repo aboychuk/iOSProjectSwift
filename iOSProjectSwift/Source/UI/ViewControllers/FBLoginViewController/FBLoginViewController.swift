@@ -24,6 +24,10 @@ class FBLoginViewController : FBViewController, RootView {
                 loadingView?.set(visible: true)
                 self?.showUserDetailViewController()
             }
+            
+            self.observationController?[.didLoad] = { [weak self] _, _ in
+                loadingView?.set(visible: false)
+            }
         }
     }
     

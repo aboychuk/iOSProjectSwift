@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingView: BaseView {
+class LoadingView: UIView {
     
     typealias VoidBlock = () -> ()
     
