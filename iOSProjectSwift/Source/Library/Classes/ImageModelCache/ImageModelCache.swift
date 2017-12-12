@@ -13,7 +13,7 @@ class ImageModelCache {
     //MARK: - Properties
     
     static let sharedCache = ImageModelCache()
-    var cachedObjects: NSMapTable<AnyObject, AnyObject> = NSMapTable.strongToWeakObjects()
+    var cachedObjects = [URL : WeakHashable<ImageModel>]()
     
     //MARK: - Initializations
     
@@ -21,16 +21,15 @@ class ImageModelCache {
     
     //MARK: - Public Functions
     
-    func add(model: AnyObject, forKey: AnyObject) {
-        synchronized(self) { self.cachedObjects.setObject(model, forKey: forKey) }
+    func add(model: WeakHashable<ImageModel>, forKey: URL) {
+        synchronized(self) { self.cachedObjects.updateValue(model, forKey: forKey) }
     }
     
-    func removeModel(forKey: AnyObject) {
-        synchronized(self) { self.cachedObjects.removeObject(forKey: forKey) }
+    func removeModel(forKey: URL) {
+        synchronized(self) { self.cachedObjects.removeValue(forKey: forKey) }
     }
     
-    func model(forKey: AnyObject) -> AnyObject? {
-        return synchronized(self) { () -> AnyObject in
-            return self.cachedObjects.object(forKey: forKey)! }
+    func model(forKey: URL) -> ImageModel? {
+        return synchronized(self) { return self.cachedObjects[forKey]?.object }
     }
 }
