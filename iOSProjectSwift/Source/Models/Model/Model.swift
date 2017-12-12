@@ -23,27 +23,7 @@ enum ModelState {
     case didChange
 }
 
-extension Model : Hashable {
-    
-    //MARK: - Hashable
-    
-    static func ==(lhs: Model, rhs: Model) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-}
-
 class Model: ObservableObject {
-    
-    //MARK: - Properties
-    
-    var hashValue: Int
-    
-    //MARK: - Initializations
-    
-    init(model: Model) {
-        self.hashValue = model.hashValue
-        super.init()
-    }
     
     //MARK: - Public Functions
     

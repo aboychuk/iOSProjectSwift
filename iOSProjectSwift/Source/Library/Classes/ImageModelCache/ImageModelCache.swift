@@ -21,12 +21,12 @@ class ImageModelCache {
     
     //MARK: - Public Functions
     
-    func add(model: WeakHashable<ImageModel>, forKey: URL) {
-        synchronized(self) { self.cachedObjects.updateValue(model, forKey: forKey) }
+    func add(model: ImageModel, forKey: URL) {
+        synchronized(self) { _ = self.cachedObjects.updateValue(WeakHashable(object: model), forKey: forKey) }
     }
     
     func removeModel(forKey: URL) {
-        synchronized(self) { self.cachedObjects.removeValue(forKey: forKey) }
+        synchronized(self) { _ = self.cachedObjects.removeValue(forKey: forKey) }
     }
     
     func model(forKey: URL) -> ImageModel? {
