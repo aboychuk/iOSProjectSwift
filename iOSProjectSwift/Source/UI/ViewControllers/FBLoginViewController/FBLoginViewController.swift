@@ -19,13 +19,17 @@ class FBLoginViewController : FBViewController, RootView {
     override var observationController: ObservableObject.ObservationController? {
         didSet {
             let loadingView = self.rootView?.loadingView
-        
-            self.observationController?[.willLoad] = { [weak self] _, _ in
-                loadingView?.set(visible: true)
-                self?.showUserDetailViewController()
+            
+            self.observationController?[.didUnload] = { [weak loadingView] _, _ in
+                loadingView?.set(visible: false)
             }
             
-            self.observationController?[.didLoad] = { [weak self] _, _ in
+            self.observationController?[.willLoad] = { [weak self] _, _ in
+                self?.showUserDetailViewController()
+                loadingView?.set(visible: true)
+            }
+            
+            self.observationController?[.didLoad] = { [weak loadingView] _, _ in
                 loadingView?.set(visible: false)
             }
         }

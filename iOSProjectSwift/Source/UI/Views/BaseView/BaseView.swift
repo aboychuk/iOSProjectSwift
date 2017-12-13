@@ -23,10 +23,6 @@ class BaseView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
         self.prepareLoadingView()
     }
     
@@ -42,6 +38,7 @@ class BaseView: UIView {
         let loadingView: LoadingView? = UINib.object(from: LoadingView.self)
         if let newLoadingView = loadingView {
             newLoadingView.frame = self.bounds
+            newLoadingView.set(visible: false)
             self.addSubview(newLoadingView)
             self.loadingView = newLoadingView;
         }

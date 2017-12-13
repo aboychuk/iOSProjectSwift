@@ -33,6 +33,11 @@ class LoadingView: UIView {
     
     //MARK: - Initializers
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.prepareView()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -52,7 +57,7 @@ class LoadingView: UIView {
     
     private func prepareView() {
         self.autoresizingMask = .autoresizeWithFixedPosition
-        self.backgroundColor = UIColor.init(white: 0, alpha: Constants.defaultAlpha)
+        self.backgroundColor = UIColor(white: 0, alpha: Constants.defaultAlpha)
         self.prepareActivityIndicator()
     }
     
