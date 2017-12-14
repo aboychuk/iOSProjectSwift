@@ -38,13 +38,13 @@ class FBLoginViewController : FBViewController, RootView {
     //MARK: - Initializations
     
     init(model: FBCurrentUserModel) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: toString(from: FBLoginViewController.self), bundle: .main)
         
         self.currentUser = model
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     //MARK: - IBActions
@@ -56,11 +56,11 @@ class FBLoginViewController : FBViewController, RootView {
     //MARK: - Private Functions
     
     private func showUserDetailViewController() {
-        let detailController = FBUserDetailController()
+        let detailController = FBUserDetailController.init(model: self.currentUser)
         detailController.model = self.currentUser
-        detailController.currentUser = self.currentUser
         let navigationController = UINavigationController(rootViewController: detailController)
         
-        self.present(navigationController, animated: true)
+        self.present(navigationController, animated: true, completion: nil)
+
     }
 }

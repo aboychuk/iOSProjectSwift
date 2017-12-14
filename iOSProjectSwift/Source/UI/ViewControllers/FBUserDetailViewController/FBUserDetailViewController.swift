@@ -50,6 +50,19 @@ class FBUserDetailController : FBViewController, RootView {
         return self.model as? FBUserModel
     }
     
+    //MARK: - Initializations
+    
+    init(model: FBCurrentUserModel) {
+        super.init(nibName: toString(from: FBUserDetailController.self), bundle: .main)
+        
+        
+        self.currentUser = model
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     //MARK: - IBActions
     
     @IBAction func onFriends(sender: UIButton) {
@@ -85,16 +98,13 @@ class FBUserDetailController : FBViewController, RootView {
     }
     
     private func showFriendsViewController() {
-        let friendsController = FBFriendsViewController()
+        let friendsController = FBFriendsViewController.init(model: self.currentUser)
         
         if let userFriends = self.userModel?.friends {
             friendsController.model = userFriends
         }
         
-        friendsController.currentUser = self.currentUser
-        let navigationController = UINavigationController.init(rootViewController: friendsController)
-        
-        self.present(navigationController, animated: true, completion: nil)
-
+        let navigationController = UINavigationController(rootViewController: friendsController)
+        self.navigationController?.pushViewController(navigationController, animated: true)
     }
 }
