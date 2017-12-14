@@ -103,8 +103,6 @@ class FBUserDetailController : FBViewController, RootView {
         if let userFriends = self.userModel?.friends {
             friendsController.model = userFriends
         }
-        
-        let navigationController = UINavigationController(rootViewController: friendsController)
-        self.navigationController?.pushViewController(navigationController, animated: true)
+        self.navigationController?.pushViewController(friendsController, animated: true)
     }
 }

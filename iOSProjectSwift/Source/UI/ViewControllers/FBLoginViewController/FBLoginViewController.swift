@@ -61,6 +61,5 @@ class FBLoginViewController : FBViewController, RootView {
         let navigationController = UINavigationController(rootViewController: detailController)
         
         self.present(navigationController, animated: true, completion: nil)
-
     }
 }

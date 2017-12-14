@@ -344,8 +344,8 @@
 		97C376FD1FBF9F03002C637A /* FBLoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				97C377021FBF9F34002C637A /* FBLoginViewController.swift */,
 				97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */,
+				97C377021FBF9F34002C637A /* FBLoginViewController.swift */,
 				97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */,
 			);
 			path = FBLoginViewController;
@@ -354,8 +354,8 @@
 		97C376FE1FBF9F03002C637A /* FBUserDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */,
 				97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */,
+				97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */,
 				97A6EF221FD0654500D9DDB5 /* FBUserDetailController.xib */,
 			);
 			path = FBUserDetailViewController;
@@ -364,9 +364,9 @@
 		97C376FF1FBF9F03002C637A /* FBFriendsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */,
 				97C377061FBF9F66002C637A /* FBFriendsViewController.swift */,
 				97A6EF261FD0977100D9DDB5 /* FBFriendsViewController.xib */,
-				97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */,
 				97A1367D1FDB1D3C000FBFAD /* FBUserCell */,
 			);
 			path = FBFriendsViewController;

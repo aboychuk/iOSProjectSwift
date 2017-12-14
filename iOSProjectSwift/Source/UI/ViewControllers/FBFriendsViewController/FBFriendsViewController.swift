@@ -13,11 +13,12 @@ extension FBFriendsViewController: UITableViewDelegate {
     //MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = FBUserDetailController.init(model: self.currentUser)
         guard let user = self.usersModel?[indexPath.row] else { return }
-        controller.model = user
+
+        let detailController = FBUserDetailController.init(model: self.currentUser)
+        detailController.model = user
         
-        self.navigationController?.pushViewController(controller, animated: true)
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 }
 
@@ -89,7 +90,7 @@ class FBFriendsViewController: FBViewController, RootView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     //MARK: - View Lifecycle
@@ -105,7 +106,7 @@ class FBFriendsViewController: FBViewController, RootView {
     func updateWithModel(_ model: Model) {
         self.rootView?.fillWithModel()
     }
-    
+        
     //MARK: - Private functions
     
     private func prepareNavigationTitle() {
