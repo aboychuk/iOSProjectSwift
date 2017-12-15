@@ -20,7 +20,7 @@ class FBUserDetailContext: FBGetContext {
     //MARK: - Properties
     
     override var graphPath: String {
-        return self.user?.userID ?? Constants.emptyString
+        return self.user?.ID ?? Constants.emptyString
     }
     
     override var parameters: [String : String] {

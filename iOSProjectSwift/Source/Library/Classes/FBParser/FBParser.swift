@@ -14,8 +14,8 @@ class FBParser {
     
     private struct Constants {
         static let userID = "id"
-        static let userName = "fisrt_name"
-        static let userSurname = "last_name"
+        static let firstName = "first_name"
+        static let lastName = "last_name"
         static let userPhoto = "picture.data.url"
         static let userFriends = "friends.data"
     }
@@ -23,16 +23,16 @@ class FBParser {
     //MARK: - Public functions
     
     static func update(user: FBUserModel, from result: JSON) -> FBUserModel {
-        let userID = result[Constants.userID] as? String
-        let userName = result[Constants.userName] as? String
-        let userSurname = result[Constants.userSurname] as? String
-        let userPhotoString = result[Constants.userPhoto] as? String
-        let userURL = URL(string: userPhotoString!)
+        let ID = result[Constants.userID] as? String
+        let firstName = result[Constants.firstName] as? String
+        let lastName = result[Constants.lastName] as? String
+        let userPhotoString = result[Constants.userPhoto] as? URL
+//        let userURL = URL(string: userPhotoString!)
         
-        user.userID = userID
-        user.name = userName
-        user.surname = userSurname
-        user.imageURL = userURL
+        user.ID = ID
+        user.firstName = firstName
+        user.lastName = lastName
+//        user.imageURL = userURL
     
         return user
     }

@@ -65,11 +65,13 @@ class FBGetContext: Context {
         request.start() { [weak self] (response, result) in
             switch result {
             case .success(let response):
-                guard let resultJSON = (response as AnyObject) as? JSON else { return }
-                self?.saveResult(result: resultJSON)
-                self?.parseResult(result: resultJSON)
-                state = .didLoad
-                
+                if let resultJSON = (response.dictionaryValue) {
+                    self?.saveResult(result: resultJSON)
+                    self?.parseResult(result: resultJSON)
+                    state = .didLoad
+                } else {
+                    state = .didFailLoading
+                }
             case .failed(let error):
                 print(error)
                 self?.loadResult()
@@ -83,7 +85,7 @@ class FBGetContext: Context {
     
     //Function created for overriding
     func parseResult(result: JSON) {
-
+        
     }
     
     func saveResult(result: JSON) {

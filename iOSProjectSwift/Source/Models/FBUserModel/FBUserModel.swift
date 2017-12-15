@@ -16,7 +16,7 @@ class FBUserModel: UserModel {
         return self.imageURL.map({ ImageModel(url: $0) })
     }
     
-    var userID: String?
+    var ID: String?
     var friends: UsersModel?
     var imageURL: URL?
     

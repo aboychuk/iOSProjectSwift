@@ -19,9 +19,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lvz-Av-dbr" userLabel="Login Button">
-                    <rect key="frame" x="99" y="318" width="176" height="30"/>
+                    <rect key="frame" x="76" y="318" width="222" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="Login to Facebook">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,7 +34,7 @@
             <connections>
                 <outlet property="loginButton" destination="Lvz-Av-dbr" id="XYI-3w-quy"/>
             </connections>
-            <point key="canvasLocation" x="-438" y="46"/>
+            <point key="canvasLocation" x="-438.5" y="45.5"/>
         </view>
     </objects>
 </document>

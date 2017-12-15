@@ -39,7 +39,7 @@ class FBLoginContext: Context {
                     print("User cancelled login.")
                     state = .didUnload
                 case .success(_,_,let token):
-                    user.token = token.authenticationToken
+                    self.fillUser(with: token)
                     state = .willLoad
                 }
                 handler(state)
@@ -47,5 +47,10 @@ class FBLoginContext: Context {
         } else {
             handler(state)
         }
+    }
+    
+    func fillUser(with token: AccessToken) {
+        self.user?.token = token.authenticationToken
+        self.user?.ID = token.userId
     }
 }

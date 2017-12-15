@@ -11,17 +11,17 @@ import UIKit
 class UserModel: Model {
     
     struct Constants {
-        static let name = "UserName"
-        static let surname = "UserSurname"
+        static let firstName = "firstName"
+        static let lastName = "lastName"
     }
     
     //MARK: - Properties
     
-    var name: String?
-    var surname: String?
+    var firstName: String?
+    var lastName: String?
     var fullname: String? {
-        if let name = self.name {
-            return self.surname == nil ? name : "\(name)  \(self.surname ?? "")"
+        if let userName = self.firstName {
+            return self.lastName == nil ? self.firstName : "\(userName)  \(self.lastName ?? "")"
         }
         
         return nil
@@ -30,19 +30,19 @@ class UserModel: Model {
     // MARK: Initialization
     
     override init() {
-        self.name = Constants.name
-        self.surname = Constants.surname
+        self.firstName = Constants.firstName
+        self.lastName = Constants.lastName
     }
     
     // MARK: - NSCoding
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.name, forKey:Constants.name)
-        aCoder.encode(self.surname, forKey:Constants.surname)
+        aCoder.encode(self.firstName, forKey:Constants.firstName)
+        aCoder.encode(self.lastName, forKey:Constants.lastName)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObject(forKey: Constants.name) as? String
-        self.surname = aDecoder.decodeObject(forKey: Constants.surname) as? String
+        self.firstName = aDecoder.decodeObject(forKey: Constants.firstName) as? String
+        self.lastName = aDecoder.decodeObject(forKey: Constants.lastName) as? String
     }
 }
