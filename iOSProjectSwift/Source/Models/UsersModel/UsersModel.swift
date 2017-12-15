@@ -65,9 +65,7 @@ class UsersModel: ArrayModel<UserModel> {
             
         }
         self.perform(notification: false) {
-            if let array = objects {
-                self.add(objects: array)
-            }
+            objects.map { self.add(objects: $0) }
         }
         
         self.state = .didLoad

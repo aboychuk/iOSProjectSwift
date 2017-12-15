@@ -65,13 +65,10 @@ class FBGetContext: Context {
         request.start() { [weak self] (response, result) in
             switch result {
             case .success(let response):
-                if let resultJSON = (response.dictionaryValue) {
+                guard let resultJSON = (response.dictionaryValue) else { return }
                     self?.saveResult(result: resultJSON)
                     self?.parseResult(result: resultJSON)
                     state = .didLoad
-                } else {
-                    state = .didFailLoading
-                }
             case .failed(let error):
                 print(error)
                 self?.loadResult()
@@ -89,14 +86,10 @@ class FBGetContext: Context {
     }
     
     func saveResult(result: JSON) {
-        if let path = self.pathToCachedResult {
-            NSKeyedArchiver.archiveRootObject(result, toFile: path)
-        }
+        _ self.pathToCachedResult.map { NSKeyedArchiver.archiveRootObject(result, toFile: $0) }
     }
     
     func loadResult() {
-        if let path = self.pathToCachedResult {
-            NSKeyedUnarchiver.unarchiveObject(withFile: path)
-        }
+        _ = self.pathToCachedResult.map { NSKeyedUnarchiver.unarchiveObject(withFile: $0) }
     }
 }

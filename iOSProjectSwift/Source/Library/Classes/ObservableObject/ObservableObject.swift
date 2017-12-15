@@ -90,9 +90,7 @@ extension ObservableObject {
         //MARK: - Public functions
 
         func notify(of state: ModelState, object: AnyObject? = nil) {
-            if let block = self.relation[state] {
-                block(self.observableObject, object)
-            }
+            self.relation[state].map { $0(self.observableObject, object) }
         }
         
         //MARK: - Subscript
