@@ -86,7 +86,7 @@ class FBGetContext: Context {
     }
     
     func saveResult(result: JSON) {
-        _ self.pathToCachedResult.map { NSKeyedArchiver.archiveRootObject(result, toFile: $0) }
+        _ = self.pathToCachedResult.map { NSKeyedArchiver.archiveRootObject(result, toFile: $0) }
     }
     
     func loadResult() {

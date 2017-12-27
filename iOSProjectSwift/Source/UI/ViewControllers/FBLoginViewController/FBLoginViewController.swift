@@ -38,7 +38,7 @@ class FBLoginViewController : FBViewController, RootView {
     //MARK: - Initializations
     
     init(model: FBCurrentUserModel) {
-        super.init(nibName: toString(from: FBLoginViewController.self), bundle: .main)
+        super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
         
         self.currentUser = model
     }

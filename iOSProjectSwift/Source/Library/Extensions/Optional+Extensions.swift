@@ -6,5 +6,15 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension Optional {
+    
+    //MARK: - Applicative
+    
+    func apply<T>(f: ((Wrapped) -> T)?) -> T? {
+        return self.flatMap { unwrapped in f.map { $0(unwrapped) }}
+    }
+}
+
 

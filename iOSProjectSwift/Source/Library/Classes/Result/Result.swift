@@ -9,18 +9,34 @@
 import Foundation
 
 enum Result<T> {
-    case Success(value: T)
-    case Failure
+    case success(value: T)
+    case failure
 }
 
 extension Result {
     
+    //MARK: - Functor
+    
     func map<U>(f: (T) -> U) -> Result<U> {
         switch self {
-        case let .Success(unwrapped):
-            return Result<U>.Success(value: f(unwrapped))
-        case .Failure:
-            return Result<U>.Failure
+        case let .success(unwrapped):
+            return Result<U>.success(value: f(unwrapped))
+        case .failure:
+            return Result<U>.failure
         }
     }
+    
+    func isSuccess() -> Bool {
+        switch self {
+        case .success(_):
+            return true
+        case .failure:
+            return false
+        }
+    }
+    
+    func isFailure() -> Bool {
+        return !self.isSuccess()
+    }
+    
 }

@@ -38,9 +38,7 @@ class UsersModel: ArrayModel<UserModel> {
     //MARK: - Public Functions
     
     func saveModel() {
-        if let savePath = self.savePath {
-            NSKeyedArchiver.archiveRootObject(self.objects, toFile: savePath)
-        }
+        _ = self.savePath.map { NSKeyedArchiver.archiveRootObject(self.objects, toFile: $0) }
     }
     
     func dumpModel() {

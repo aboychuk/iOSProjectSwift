@@ -53,7 +53,7 @@ class FBUserDetailController : FBViewController, RootView {
     //MARK: - Initializations
     
     init(model: FBCurrentUserModel) {
-        super.init(nibName: toString(from: FBUserDetailController.self), bundle: .main)
+        super.init(nibName: toString(FBUserDetailController.self), bundle: .main)
         
         
         self.currentUser = model
