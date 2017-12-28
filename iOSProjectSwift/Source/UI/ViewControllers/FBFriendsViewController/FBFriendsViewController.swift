@@ -13,9 +13,9 @@ extension FBFriendsViewController: UITableViewDelegate {
     //MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = self.usersModel?[indexPath.row] else { return }
+        guard let user = self.usersModel?[indexPath.row] as? FBUserModel else { return }
 
-        let detailController = FBUserDetailController.init(model: self.currentUser)
+        let detailController = FBUserDetailController(model: user, currentUser: self.currentUser)
         detailController.model = user
         
         self.navigationController?.pushViewController(detailController, animated: true)
@@ -83,10 +83,11 @@ class FBFriendsViewController: FBViewController, RootView {
     
     //MARK: - Initializations
     
-    init(model: FBCurrentUserModel) {
-        super.init(nibName: nil, bundle: nil)
+    init(model: UsersModel, currentUser: FBCurrentUserModel) {
+        super.init(nibName: toString(FBFriendsViewController.self), bundle: .main)
         
-        self.currentUser = model
+        self.currentUser = currentUser
+        self.model = model
     }
     
     required init?(coder aDecoder: NSCoder) {

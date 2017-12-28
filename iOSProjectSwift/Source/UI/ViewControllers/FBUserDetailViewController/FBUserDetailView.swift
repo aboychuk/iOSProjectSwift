@@ -20,6 +20,6 @@ class FBUserDetailView: BaseView {
     
     func fillWithModel(_ model: FBUserModel) {
         self.userFullName?.text = model.fullname
-        self.imageView?.imageModel = model.image
+        self.imageView?.imageModel = model.imageModel
     }
 }

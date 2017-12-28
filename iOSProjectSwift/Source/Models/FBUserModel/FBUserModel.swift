@@ -12,12 +12,12 @@ class FBUserModel: UserModel {
     
     //MARK: - Properties
     
-    var image: ImageModel? {
-        return self.imageURL.map({ ImageModel(url: $0) })
+    var imageModel: ImageModel? {
+        return self.imageURL.flatMap { ImageModel.image(with: $0) }
     }
     
     var ID: String?
-    var friends: UsersModel?
+    var friends: UsersModel = UsersModel()
     var imageURL: URL?
     
 }

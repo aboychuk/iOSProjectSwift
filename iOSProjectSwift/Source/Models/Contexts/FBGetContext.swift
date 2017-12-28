@@ -36,10 +36,6 @@ class FBGetContext: Context {
         return Constants.plistName
     }
     
-    var user: FBUserModel? {
-        return self.model as? FBUserModel
-    }
-    
     //MARK: - Overrided Functions
     
     override func execute() {

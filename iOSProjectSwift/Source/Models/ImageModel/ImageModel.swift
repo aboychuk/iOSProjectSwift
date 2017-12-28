@@ -23,19 +23,24 @@ class ImageModel: Model {
     
     var image: UIImage?
     let url: URL
-    var hashValue: Int = 0
+    var hashValue: Int
 
     //MARK: - Initializers
     
     init(url: URL) {
         self.url = url
+        self.hashValue = url.hashValue
         
         super.init()
     }
     
+    deinit {
+        ImageModelCache.sharedCache.removeModel(forKey: self.url)
+    }
+    
     //MARK: - Public Functions
 
-    func image(with url: URL) -> ImageModel? {
+    static func image(with url: URL) -> ImageModel? {
         let cache = ImageModelCache.sharedCache
         var imageModel = cache.model(forKey: url)
         
@@ -55,6 +60,8 @@ class ImageModel: Model {
     
     override func performLoadingInBackground() {
         self.loadImage()
-        self.state = self.image == nil ? .didFailLoading : .didLoad
+        DispatchQueue.main.async {
+            self.state = self.image == nil ? .didFailLoading : .didLoad
+        }
     }
 }

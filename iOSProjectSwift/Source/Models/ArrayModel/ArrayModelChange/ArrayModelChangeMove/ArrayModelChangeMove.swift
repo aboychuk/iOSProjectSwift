@@ -25,8 +25,8 @@ class ArrayModelChangeMove: ArrayModelChange {
     //MARK: - Overrided Functions
     
     override func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
-        let srcIndex = IndexPath.init(row: self.sourceIndex, section: section)
-        let dstIndex = IndexPath.init(row: self.destinationIndex, section: section)
+        let srcIndex = IndexPath(row: self.sourceIndex, section: section)
+        let dstIndex = IndexPath(row: self.destinationIndex, section: section)
         tableView.updateTableWith {
             tableView.moveRow(at: srcIndex, to: dstIndex)
         }

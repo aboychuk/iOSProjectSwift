@@ -37,10 +37,10 @@ class FBLoginViewController : FBViewController, RootView {
     
     //MARK: - Initializations
     
-    init(model: FBCurrentUserModel) {
+    init(currentUser: FBCurrentUserModel) {
         super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
         
-        self.currentUser = model
+        self.currentUser = currentUser
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,10 +56,10 @@ class FBLoginViewController : FBViewController, RootView {
     //MARK: - Private Functions
     
     private func showUserDetailViewController() {
-        let detailController = FBUserDetailController.init(model: self.currentUser)
-        detailController.model = self.currentUser
+        let model = self.currentUser
+        let detailController = FBUserDetailController(model: model, currentUser: self.currentUser)
         let navigationController = UINavigationController(rootViewController: detailController)
         
-        self.present(navigationController, animated: true, completion: nil)
+        self.present(navigationController, animated: true)
     }
 }

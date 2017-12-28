@@ -23,7 +23,7 @@ class ArrayModelChangeAdd: ArrayModelChange {
     //MARK: - Overrided Functions
     
     override func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
-        let index = IndexPath.init(row: self.index, section: section)
+        let index = IndexPath(row: self.index, section: section)
         tableView.updateTableWith {
             tableView.insertRows(at: [index], with: rowAnimation)
         }

@@ -38,10 +38,14 @@ class FBFriendsContext: FBGetContext {
         return Constants.plistName
     }
     
+    var users: UsersModel? {
+        return self.model as? UsersModel
+    }
+    
     //MARK: - Public Functions
     
     override func parseResult(result: JSON) {
-        guard let user = self.user else { return }
-        self.model = FBParser.updateFriends(user: user, from: result)
+        guard let usersModel = self.users else { return }
+        self.model = FBParser.updateFriends(users: usersModel, from: result)
     }
 }

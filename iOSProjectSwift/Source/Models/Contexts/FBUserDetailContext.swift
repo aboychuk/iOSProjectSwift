@@ -35,6 +35,10 @@ class FBUserDetailContext: FBGetContext {
         return Constants.plistName
     }
     
+    var user: FBUserModel? {
+        return self.model as? FBUserModel
+    }
+
     //MARK: - Public Functions
     
     override func parseResult(result: JSON) {

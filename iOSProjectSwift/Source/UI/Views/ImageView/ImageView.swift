@@ -13,21 +13,21 @@ class ImageView: BaseView {
     //MARK: - Properties
     
     var imageModel: ImageModel? {
-        willSet {
-            self.observationController = self.imageModel?.controller(for: self)
-
-            newValue?.load()
-        }
         didSet {
+            self.observationController = self.imageModel?.controller(for: self)
+            self.imageModel?.load()
+            
             if let controller = self.observationController {
-            oldValue?.remove(controller: controller)
+                oldValue?.remove(controller: controller)
             }
         }
     }
     
     var contentImageView: UIImageView? {
-        willSet { newValue?.addSubview(self) }
-        didSet { oldValue?.removeFromSuperview() }
+        didSet {
+            self.contentImageView?.addSubview(self)
+            oldValue?.removeFromSuperview()
+        }
     }
     
     var observationController: ObservableObject.ObservationController? {
@@ -51,33 +51,9 @@ class ImageView: BaseView {
         }
     }
     
-    //MARK: - Initializations
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.prepareContentImageView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.prepareContentImageView()
-    }
-    
     //MARK: - Public functions
     
     func fill(with model: ImageModel?) {
         self.contentImageView?.image = model?.image
-    }
-    
-    //MARK: - Private functions
-    
-    private func prepareContentImageView() {
-        let imageView = UIImageView(frame: self.bounds)
-        imageView.autoresizingMask = .autoresize
-        self.contentImageView = imageView
     }
 }

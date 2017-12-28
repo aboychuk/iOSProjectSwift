@@ -20,10 +20,10 @@ class FBUserDetailController : FBViewController, RootView {
         didSet {
             let loadingView = self.rootView?.loadingView
             
-            self.observationController?[.didUnload] = { [weak self] _, _ in
-                loadingView?.set(visible: false)
-                self?.dismiss(animated: true, completion: nil)
-            }
+//            self.observationController?[.didUnload] = { [weak self] _, _ in
+//                loadingView?.set(visible: false)
+//                self?.dismiss(animated: true, completion: nil)
+//            }
             
             self.observationController?[.willLoad] = { _, _ in
                 loadingView?.set(visible: true)
@@ -52,11 +52,11 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Initializations
     
-    init(model: FBCurrentUserModel) {
+    init(model: FBUserModel, currentUser: FBCurrentUserModel) {
         super.init(nibName: toString(FBUserDetailController.self), bundle: .main)
         
-        
-        self.currentUser = model
+        self.model = model
+        self.currentUser = currentUser
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -98,11 +98,10 @@ class FBUserDetailController : FBViewController, RootView {
     }
     
     private func showFriendsViewController() {
-        let friendsController = FBFriendsViewController.init(model: self.currentUser)
+        guard let userFriends = self.userModel?.friends else { return }
         
-        if let userFriends = self.userModel?.friends {
-            friendsController.model = userFriends
-        }
+        let friendsController = FBFriendsViewController(model: userFriends, currentUser: self.currentUser)
+
         self.navigationController?.pushViewController(friendsController, animated: true)
     }
 }

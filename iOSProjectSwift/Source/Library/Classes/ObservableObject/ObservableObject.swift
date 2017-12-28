@@ -72,7 +72,7 @@ extension ObservableObject {
         
         //MARK: - Public properties
 
-        var hashValue: Int = 0
+        var hashValue: Int
 
         //MARK: - Private properties
 
@@ -85,6 +85,7 @@ extension ObservableObject {
         init(observableObject: ObservableObject, observer: ObserverType) {
             self.observableObject = observableObject
             self.observer = observer
+            self.hashValue = observer.hashValue
         }
 
         //MARK: - Public functions
