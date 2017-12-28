@@ -17,14 +17,14 @@ class UserModel: Model {
     
     //MARK: - Properties
     
+//    var user: UserModel
+
     var firstName: String?
     var lastName: String?
     var fullname: String? {
-        if let userName = self.firstName {
-            return self.lastName == nil ? self.firstName : "\(userName)  \(self.lastName ?? "")"
-        }
+        let user = self
         
-        return nil
+        return [user.firstName, user.lastName].flatMap { $0 }.joined(separator: " ")
     }
     
     // MARK: Initialization

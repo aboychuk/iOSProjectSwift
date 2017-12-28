@@ -45,7 +45,6 @@ class FBFriendsContext: FBGetContext {
     //MARK: - Public Functions
     
     override func parseResult(result: JSON) {
-        guard let usersModel = self.users else { return }
-        self.model = FBParser.updateFriends(users: usersModel, from: result)
+        self.users.map { self.model = FBParser.updateFriends(users: $0, from: result) }
     }
 }

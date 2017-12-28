@@ -8,14 +8,8 @@
 
 import Foundation
 
-protocol ModelObserver {
-    func didUnload(model: Model)
-    func willLoad(model: Model)
-    func didLoad(model: Model)
-    func didFailLoading(model: Model)
-}
-
 enum ModelState {
+    case isCreated
     case didUnload
     case willLoad
     case didLoad
@@ -48,8 +42,7 @@ class Model: ObservableObject {
     //MARK: - Private Functions
     
     private func processLoading() {
-        let backgroundQueue = DispatchQueue.global(qos: .background)
-        backgroundQueue.async {
+        DispatchQueue.global(qos: .background).async {
             self.performLoadingInBackground()
         }
     }

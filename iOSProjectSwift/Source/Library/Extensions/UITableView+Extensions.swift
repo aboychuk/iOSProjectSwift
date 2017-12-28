@@ -14,7 +14,7 @@ extension UITableView {
     
     func reusableCellWith<T>(type: T.Type, index: IndexPath) -> T {
         guard let cell = self.dequeueReusableCell(withIdentifier: toString(type), for: index) as? T else {
-            fatalError("no reusable cell returned")
+            fatalError("no reusable cell registered")
         }
         
         return cell

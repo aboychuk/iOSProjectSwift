@@ -42,8 +42,7 @@ class FBUserDetailContext: FBGetContext {
     //MARK: - Public Functions
     
     override func parseResult(result: JSON) {
-        guard let user = self.user else { return }
-        self.model = FBParser.update(user: user, from: result)
+        self.user.map { self.model = FBParser.update(user: $0, from: result) }
     }
     
 }

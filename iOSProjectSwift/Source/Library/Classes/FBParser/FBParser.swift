@@ -43,14 +43,13 @@ class FBParser {
     
     static func updateFriends(users: UsersModel, from result: JSON) -> UsersModel {
         let friends = result[Constants.userFriends] as? JSON
-        let friendsData = friends?[Constants.userData]
+        let friendsData = friends?[Constants.userData] as? [JSON]
 
-//        userFriends?.forEach {
-//            var user = FBUserModel()
-////            user = self.update(user: user, from: $0)
-//            users.add(object: user)
-////            user.friends?.add(object: user)
-//        }
+        friendsData?.forEach {
+            var user = FBUserModel()
+            user = self.update(user: user, from: $0)
+            users.add(object: user)
+        }
         
         return users
     }

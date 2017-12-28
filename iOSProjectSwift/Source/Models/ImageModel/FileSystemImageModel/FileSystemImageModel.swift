@@ -29,7 +29,9 @@ class FilesystemImageModel: ImageModel {
     //MARK: - Overrided Functions
 
     override func loadImage() {
-        guard let path = self.imagePath else { return }
-        FileManager.default.contents(atPath: path).map { self.image = UIImage(data: $0) }
+        self.imagePath
+            .map { FileManager.default.contents(atPath: $0)
+            .map { self.image = UIImage(data: $0) }
+        }
     }
 }

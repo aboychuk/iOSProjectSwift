@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ArrayModelObserver {
-    func arrayModel(_ : ArrayModel<Any>, updateWithChangeModel: ArrayModelChange)
-}
-
 class ArrayModel<Element>: Model {
     
     //MARK: - Properties

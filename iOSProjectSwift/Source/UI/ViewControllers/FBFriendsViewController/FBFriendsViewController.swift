@@ -27,9 +27,7 @@ extension FBFriendsViewController: UITableViewDataSource {
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.usersModel?.count else { return 0 }
-        
-        return count
+        return self.usersModel.map { $0.count } ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,8 +51,7 @@ class FBFriendsViewController: FBViewController, RootView {
             let loadingView = self.rootView?.loadingView
             
             self.observationController?[.didUnload] = { [weak self] _, _ in
-                loadingView?.set(visible: false)
-                self?.dismiss(animated: true, completion: nil)
+                self?.dismiss(animated: true)
             }
         
             self.observationController?[.willLoad] = { [weak loadingView] _, _ in
@@ -77,7 +74,7 @@ class FBFriendsViewController: FBViewController, RootView {
     
     //MARK: - Private properties
     
-    var usersModel: UsersModel? {
+    private var usersModel: UsersModel? {
         return self.model as? UsersModel
     }
     
@@ -99,7 +96,8 @@ class FBFriendsViewController: FBViewController, RootView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareNavigationTitle()
-            self.context = FBFriendsContext(model: self.model)
+        self.registerTableViewCell()
+        self.context = FBFriendsContext(model: self.model)
     }
     
     //MARK: - Public functions
@@ -109,6 +107,11 @@ class FBFriendsViewController: FBViewController, RootView {
     }
         
     //MARK: - Private functions
+    
+    private func registerTableViewCell() {
+        let nib = UINib(nibName: toString(FBUserCell.self), bundle: .main)
+        self.rootView?.tableview?.register(nib, forCellReuseIdentifier: toString(FBUserCell.self))
+    }
     
     private func prepareNavigationTitle() {
         self.navigationItem.title = "Friends"

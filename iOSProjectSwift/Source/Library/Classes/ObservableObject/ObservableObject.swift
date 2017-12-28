@@ -12,7 +12,7 @@ class ObservableObject {
     
     // MARK: - Public properties
     
-    var state: ModelState = .didUnload {
+    var state: ModelState = .isCreated {
         didSet {
             self.notifyOfState()
         }

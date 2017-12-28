@@ -20,11 +20,7 @@ class FBLoginViewController : FBViewController, RootView {
         didSet {
             let loadingView = self.rootView?.loadingView
             
-            self.observationController?[.didUnload] = { [weak loadingView] _, _ in
-                loadingView?.set(visible: false)
-            }
-            
-            self.observationController?[.willLoad] = { [weak self] _, _ in
+            self.observationController?[.willLoad] = { [weak self, weak loadingView] _, _ in
                 self?.showUserDetailViewController()
                 loadingView?.set(visible: true)
             }
