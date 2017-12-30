@@ -14,6 +14,7 @@
 		970795141FBF307C00BD986E /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970795131FBF307C00BD986E /* UsersModel.swift */; };
 		972038E41FBF759E003D686C /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E21FBF759E003D686C /* Context.swift */; };
 		972038E51FBF759E003D686C /* FBGetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972038E31FBF759E003D686C /* FBGetContext.swift */; };
+		974809241FF6922B00CC34DB /* FBLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974809231FF6922B00CC34DB /* FBLoginViewModel.swift */; };
 		97664CA91FE4365400A6D6AC /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97664CA81FE4365400A6D6AC /* Optional+Extensions.swift */; };
 		97664CAC1FE46EA400A6D6AC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97664CAB1FE46EA400A6D6AC /* Result.swift */; };
 		976E49031FDEE17B00EDC78E /* WeakHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976E49021FDEE17A00EDC78E /* WeakHashable.swift */; };
@@ -70,6 +71,7 @@
 		970795131FBF307C00BD986E /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		972038E21FBF759E003D686C /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		972038E31FBF759E003D686C /* FBGetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBGetContext.swift; sourceTree = "<group>"; };
+		974809231FF6922B00CC34DB /* FBLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewModel.swift; sourceTree = "<group>"; };
 		97664CA81FE4365400A6D6AC /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		97664CAB1FE46EA400A6D6AC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		976E49021FDEE17A00EDC78E /* WeakHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakHashable.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = Contexts;
 			sourceTree = "<group>";
 		};
+		974809221FF6921200CC34DB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				974809231FF6922B00CC34DB /* FBLoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		97664CAA1FE46E9500A6D6AC /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		97928B3D1FAC6447005DEFEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				974809221FF6921200CC34DB /* ViewModels */,
 				97C376FB1FBF9D7A002C637A /* ViewControllers */,
 				97C376FA1FBF9D7A002C637A /* Views */,
 			);
@@ -698,6 +709,7 @@
 				97FC17361FC6E4A900F2F798 /* String+Extensions.swift in Sources */,
 				97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */,
 				97664CA91FE4365400A6D6AC /* Optional+Extensions.swift in Sources */,
+				974809241FF6922B00CC34DB /* FBLoginViewModel.swift in Sources */,
 				97A6B4E01FC8449900FACFE1 /* FBLogoutContext.swift in Sources */,
 				97FC17331FC6E4A900F2F798 /* ObservableObject.swift in Sources */,
 				97A6B4DC1FC8445B00FACFE1 /* FBUserDetailContext.swift in Sources */,

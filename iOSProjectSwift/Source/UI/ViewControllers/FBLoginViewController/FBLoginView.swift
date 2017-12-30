@@ -10,7 +10,7 @@ import UIKit
 
 class FBloginView: BaseView {
     
-    //MARK: - Properties
+    //MARK: - IBOutlets
     
     @IBOutlet var loginButton: UIButton?
     
