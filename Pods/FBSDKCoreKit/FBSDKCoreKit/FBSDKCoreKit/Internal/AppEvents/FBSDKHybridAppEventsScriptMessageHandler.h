@@ -1,4 +1,4 @@
-// Copyright (c) 2016-present, Facebook, Inc. All rights reserved.
+// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -16,12 +16,11 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+#if !TARGET_OS_TV
+#import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
 
-// Taken from FBSDKShareDefines.h
+@interface FBSDKHybridAppEventsScriptMessageHandler : NSObject <WKScriptMessageHandler>
 
-enum ShareResultKeys: String {
-  case CompletionGesture = "completionGesture"
-  case DidComplete = "didComplete"
-  case PostId = "postId"
-}
+@end
+#endif
