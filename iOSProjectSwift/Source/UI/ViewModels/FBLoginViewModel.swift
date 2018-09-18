@@ -11,20 +11,23 @@ import RxSwift
 
 class FBLoginViewModel {
     
-    //MARK: - Properties
+    //MARK: - Public properties
     
-    var user: FBCurrentUserModel
-    var disposeBag = DisposeBag()
-    var didTapLoginButton: PublishSubject<Void> = PublishSubject()
-    var didLogin: PublishSubject<FBCurrentUserModel> = PublishSubject()
+    let subject = PublishSubject<FBCurrentUserModel>()
+    
+    //MARK: - Private properties
+    
+    private var user: FBCurrentUserModel
     
     //MARK: - Initializations
     
     init(user: FBCurrentUserModel) {
         self.user = user
+    }
+    
+    //MARK: - Public methods
+    
+    func authorize() {
         
-        self.didTapLoginButton.subscribe(onNext: {
-            FBLoginContext(model: self.user).execute()
-        }).disposed(by: self.disposeBag)
     }
 }

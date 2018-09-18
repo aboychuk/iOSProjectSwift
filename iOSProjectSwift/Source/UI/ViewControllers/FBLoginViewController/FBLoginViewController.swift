@@ -16,10 +16,10 @@ class FBLoginViewController : UIViewController, RootView {
     
     typealias ViewType = FBloginView
     
-    // MARK: - Properties
+    // MARK: - Private properties
     
-    var viewModel: FBLoginViewModel
-    var disposeBag = DisposeBag()
+    private var viewModel: FBLoginViewModel
+    private var disposeBag = DisposeBag()
     
     //MARK: - Initializations
     
@@ -27,10 +27,7 @@ class FBLoginViewController : UIViewController, RootView {
         self.viewModel = viewModel
         
         super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
-        
-        self.viewModel.didLogin.subscribe(onNext: {
-            self.showUserDetailViewController(user: $0)
-        }).disposed(by: self.disposeBag)
+        self.prepareObservation()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +35,10 @@ class FBLoginViewController : UIViewController, RootView {
     }
     
     //MARK: - Private Functions
+    
+    private func prepareObservation() {
+        self.viewModel.rx
+    }
     
     private func showUserDetailViewController(user: FBCurrentUserModel) {
         let detailController = FBUserDetailController(model: user, currentUser: user)
