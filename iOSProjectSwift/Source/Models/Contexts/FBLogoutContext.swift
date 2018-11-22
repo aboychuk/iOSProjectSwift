@@ -11,7 +11,13 @@ import FacebookCore
 import FacebookLogin
 import FacebookShare
 
-class FBLogoutContext: FBLoginContext {
+class FBLogoutContext: Context {
+    
+    //MARK: - Properties
+    
+    var user: FBCurrentUserModel? {
+        return self.model as? FBCurrentUserModel
+    }
     
     //MARK: - Overrided functions
     

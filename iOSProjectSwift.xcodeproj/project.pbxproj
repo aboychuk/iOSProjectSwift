@@ -233,9 +233,9 @@
 		97928B3B1FAC6393005DEFEE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				97FC17231FC6E4A900F2F798 /* Library */,
-				97928B3E1FAC6447005DEFEE /* Models */,
 				97928B3D1FAC6447005DEFEE /* UI */,
+				97928B3E1FAC6447005DEFEE /* Models */,
+				97FC17231FC6E4A900F2F798 /* Library */,
 			);
 			path = Source;
 			sourceTree = "<group>";

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FBLoginViewController : UIViewController, RootView {
+class FBLoginViewController :UIViewController, RootView {
     
     //MARK: - RootView protocol
     
@@ -37,7 +37,17 @@ class FBLoginViewController : UIViewController, RootView {
     //MARK: - Private Functions
     
     private func prepareObservation() {
-        self.viewModel.rx
+        self.viewModel.subject.subscribe(({ [weak self] in
+            _ = $0.map { result in
+                switch result {
+                case .Success(let user):
+                    self?.showUserDetailViewController(user: user)
+                case .Failure(let error):
+                    print(error)
+                }
+            }
+        }))
+            .disposed(by: self.disposeBag)
     }
     
     private func showUserDetailViewController(user: FBCurrentUserModel) {
@@ -51,10 +61,11 @@ class FBLoginViewController : UIViewController, RootView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.rootView?.loginButton?
+        self.rootView?
+            .loginButton?
             .rx
             .tap
-            .bind(to: viewModel.didTapLoginButton)
+            .subscribe(onNext: ({ [weak self] in self?.viewModel.authorize() }))
             .disposed(by: self.disposeBag)
     }
 }

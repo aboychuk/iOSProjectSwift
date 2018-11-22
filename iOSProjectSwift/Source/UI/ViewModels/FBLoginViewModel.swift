@@ -13,7 +13,7 @@ class FBLoginViewModel {
     
     //MARK: - Public properties
     
-    let subject = PublishSubject<FBCurrentUserModel>()
+    let subject = PublishSubject<Result<FBCurrentUserModel>>()
     
     //MARK: - Private properties
     
@@ -28,6 +28,6 @@ class FBLoginViewModel {
     //MARK: - Public methods
     
     func authorize() {
-        
+        FBLoginContext(user: self.user, subject: self.subject).execute()
     }
 }
