@@ -48,7 +48,7 @@ class FBParser {
         friendsData?.forEach {
             var user = FBUserModel()
             user = self.update(user: user, from: $0)
-            users.add(object: user)
+            users.add(element: user)
         }
         
         return users

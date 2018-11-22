@@ -5,28 +5,30 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - FacebookCore (0.3.3):
+  - FacebookCore (0.5.0):
     - Bolts (~> 1.9)
-    - FBSDKCoreKit (~> 4.36)
-  - FacebookLogin (0.3.3):
+    - FBSDKCoreKit (~> 4.37)
+  - FacebookLogin (0.5.0):
     - Bolts (~> 1.9)
-    - FacebookCore (~> 0.3.3)
-    - FBSDKCoreKit (~> 4.36)
-    - FBSDKLoginKit (~> 4.36)
-  - FacebookShare (0.3.3):
+    - FacebookCore (~> 0.5)
+    - FBSDKCoreKit (~> 4.37)
+    - FBSDKLoginKit (~> 4.37)
+  - FacebookShare (0.5.0):
     - Bolts (~> 1.9)
-    - FacebookCore (~> 0.3.3)
-    - FBSDKCoreKit (~> 4.36)
-    - FBSDKShareKit (~> 4.36)
-  - FBSDKCoreKit (4.36.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.36.0):
+    - FacebookCore (~> 0.5)
+    - FBSDKCoreKit (~> 4.37)
+    - FBSDKShareKit (~> 4.37)
+  - FBSDKCoreKit (4.38.1):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.38.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.36.0):
-    - FBSDKCoreKit (~> 4.36.0)
-  - RxCocoa (4.3.0):
+  - FBSDKShareKit (4.38.1):
+    - FBSDKCoreKit
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.3.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
   - FacebookCore
@@ -44,19 +46,21 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - RxAtomic
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  FacebookCore: 9ecbe48cfd37c91a93add7f8cec2b4a2c50a1eec
-  FacebookLogin: bdaea5789e9b364fa8a1990ba3bbba4fd2197415
-  FacebookShare: 14e88f2dcc3a03376304d2a1e10254296076ce88
-  FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
-  FBSDKLoginKit: 8bccb6064708ab2f4251a7fc4e3b6d8d00ad91ba
-  FBSDKShareKit: 7090fdd55c39b03941efddb64c83a64ff6b3949f
-  RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
-  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
+  FacebookCore: 74288d0add931d361b1596beae787ab72c438249
+  FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
+  FacebookShare: 963b4bb1124a64a395b1e428163d70b5774116e8
+  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
+  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
+  FBSDKShareKit: 6ffe22f0a0618eb7424d4104ab0ef3ce9643d42a
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
 PODFILE CHECKSUM: bbc77bf0d9dd0cb3e5f2804781b92664a5b9e576
 

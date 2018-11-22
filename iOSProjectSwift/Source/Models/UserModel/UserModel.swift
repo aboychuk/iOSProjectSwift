@@ -8,11 +8,17 @@
 
 import UIKit
 
-class UserModel: Model {
+class UserModel: Model, Hashable {
+    
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.fullname == rhs.fullname
+    }
+    
     
     struct Constants {
         static let firstName = "firstName"
         static let lastName = "lastName"
+        static let hashValue = "hashValue"
     }
     
     //MARK: - Properties
@@ -24,14 +30,18 @@ class UserModel: Model {
     var fullname: String? {
         let user = self
         
-        return [user.firstName, user.lastName].flatMap { $0 }.joined(separator: " ")
+        return [user.firstName, user.lastName].compactMap { $0 }.joined(separator: " ")
     }
+    var hashValue: Int
     
     // MARK: Initialization
     
     override init() {
         self.firstName = Constants.firstName
         self.lastName = Constants.lastName
+        self.hashValue = self.lastName.hashValue
+        
+        super.init()
     }
     
     // MARK: - NSCoding
@@ -39,10 +49,12 @@ class UserModel: Model {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.firstName, forKey:Constants.firstName)
         aCoder.encode(self.lastName, forKey:Constants.lastName)
+        aCoder.encode(self.hashValue, forKey:Constants.hashValue)
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.firstName = aDecoder.decodeObject(forKey: Constants.firstName) as? String
         self.lastName = aDecoder.decodeObject(forKey: Constants.lastName) as? String
+        self.hashValue = aDecoder.decodeInteger(forKey: Constants.hashValue)
     }
 }

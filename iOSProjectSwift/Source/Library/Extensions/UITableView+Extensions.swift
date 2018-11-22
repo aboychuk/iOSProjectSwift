@@ -28,7 +28,7 @@ extension UITableView {
     
     func apply(ModelChange: ArrayModelChange,
                in section: Int = 0,
-               rowAnimation: UITableViewRowAnimation = .automatic) {
+               rowAnimation: UITableView.RowAnimation = .automatic) {
         ModelChange.update(tableView: self, section: section, rowAnimation: rowAnimation)
     }
 }

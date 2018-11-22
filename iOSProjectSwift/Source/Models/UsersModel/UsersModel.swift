@@ -17,8 +17,8 @@ class UsersModel: ArrayModel<UserModel> {
     
     //MARK: - Properties
     
-    let notifications = [NSNotification.Name.UIApplicationWillTerminate,
-                         NSNotification.Name.UIApplicationDidEnterBackground]
+    let notifications = [UIApplication.willTerminateNotification,
+                         UIApplication.didEnterBackgroundNotification]
     
     var savePath: String? {
         return FileManager.documentsPathAppend(folder: Constants.plistName)
@@ -38,7 +38,7 @@ class UsersModel: ArrayModel<UserModel> {
     //MARK: - Public Functions
     
     func saveModel() {
-        _ = self.savePath.map { NSKeyedArchiver.archiveRootObject(self.objects, toFile: $0) }
+        _ = self.savePath.map { NSKeyedArchiver.archiveRootObject(self.elements, toFile: $0) }
     }
     
     func dumpModel() {
@@ -63,7 +63,7 @@ class UsersModel: ArrayModel<UserModel> {
             
         }
         self.perform(notification: false) {
-            objects.map { self.add(objects: $0) }
+            objects.map { self.add(elements: $0) }
         }
         
         self.state = .didLoad
