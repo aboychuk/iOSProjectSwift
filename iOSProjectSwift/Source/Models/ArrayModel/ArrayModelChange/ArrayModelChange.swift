@@ -12,7 +12,7 @@ class ArrayModelChange {
     
     //MARK: - Functions for Overriding
     
-    func update(tableView: UITableView, section: Int, rowAnimation: UITableViewRowAnimation) {
+    func update(tableView: UITableView, section: Int, rowAnimation: UITableView.RowAnimation) {
         
     }
 }

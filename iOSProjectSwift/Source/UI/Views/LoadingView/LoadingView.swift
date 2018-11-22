@@ -62,7 +62,7 @@ class LoadingView: UIView {
     }
     
     private func prepareActivityIndicator() {
-        let newIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let newIndicator = UIActivityIndicatorView(style: .white)
         newIndicator.autoresizingMask = .autoresize
         newIndicator.center = self.center
         newIndicator.startAnimating()

@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIViewAutoresizing {
-    public static var autoresizeWithFixedPosition : UIViewAutoresizing {
+extension UIView.AutoresizingMask {
+    public static var autoresizeWithFixedPosition : UIView.AutoresizingMask {
         return [
         .flexibleLeftMargin,
         .flexibleWidth,
@@ -20,7 +20,7 @@ extension UIViewAutoresizing {
         ]
     }
     
-    public static var autoresize : UIViewAutoresizing {
+    public static var autoresize : UIView.AutoresizingMask {
         return [
         .flexibleWidth,
         .flexibleHeight
