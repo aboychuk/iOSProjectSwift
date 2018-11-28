@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
+		4903D48E21AF339B00AA1723 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D48D21AF339B00AA1723 /* State.swift */; };
 		4974740021AECAA800ABB81E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497473FF21AECAA800ABB81E /* Observable.swift */; };
 		9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950A1FBF2A0500BD986E /* FBUserModel.swift */; };
 		970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4903D48D21AF339B00AA1723 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		497473FF21AECAA800ABB81E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		9707950A1FBF2A0500BD986E /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
@@ -138,6 +140,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4903D48A21AF32E100AA1723 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4903D48C21AF338500AA1723 /* State */,
+				97664CAA1FE46E9500A6D6AC /* Result */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4903D48B21AF332C00AA1723 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				976E49011FDEE17A00EDC78E /* WeakHashable */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		4903D48C21AF338500AA1723 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				4903D48D21AF339B00AA1723 /* State.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		5886B85332B7322EF71E370F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,9 +262,10 @@
 		97928B3B1FAC6393005DEFEE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				97928B3D1FAC6447005DEFEE /* UI */,
+				972038E11FBF759E003D686C /* Contexts */,
 				97928B3E1FAC6447005DEFEE /* Models */,
 				974809221FF6921200CC34DB /* ViewModels */,
+				97928B3D1FAC6447005DEFEE /* UI */,
 				97FC17231FC6E4A900F2F798 /* Library */,
 			);
 			path = Source;
@@ -255,7 +283,6 @@
 		97928B3E1FAC6447005DEFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				972038E11FBF759E003D686C /* Contexts */,
 				970795121FBF306800BD986E /* UsersModel */,
 				9707950B1FBF2A0600BD986E /* FBCurrentUserModel */,
 				970795091FBF2A0500BD986E /* FBUserModel */,
@@ -471,8 +498,10 @@
 		97FC17231FC6E4A900F2F798 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4903D48B21AF332C00AA1723 /* Structs */,
+				4903D48A21AF32E100AA1723 /* Enums */,
 				97E42DEE1FCDFFDC00A09233 /* Protocols */,
-				97FC17251FC6E4A900F2F798 /* GlobalFunctions */,
+				97FC17251FC6E4A900F2F798 /* Functions */,
 				97FC17241FC6E4A900F2F798 /* Classes */,
 				97FC172B1FC6E4A900F2F798 /* Extensions */,
 			);
@@ -482,8 +511,6 @@
 		97FC17241FC6E4A900F2F798 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				97664CAA1FE46E9500A6D6AC /* Result */,
-				976E49011FDEE17A00EDC78E /* WeakHashable */,
 				97A6B4E21FC880AF00FACFE1 /* FBParser */,
 				97FC17271FC6E4A900F2F798 /* ImageModelCache */,
 				97FC17291FC6E4A900F2F798 /* ObservableObject */,
@@ -491,12 +518,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		97FC17251FC6E4A900F2F798 /* GlobalFunctions */ = {
+		97FC17251FC6E4A900F2F798 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
 				97FC17261FC6E4A900F2F798 /* GlobalFunctions.swift */,
 			);
-			path = GlobalFunctions;
+			path = Functions;
 			sourceTree = "<group>";
 		};
 		97FC17271FC6E4A900F2F798 /* ImageModelCache */ = {
@@ -687,6 +714,7 @@
 				97C377101FBFA01B002C637A /* BaseView.swift in Sources */,
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
+				4903D48E21AF339B00AA1723 /* State.swift in Sources */,
 				97FC17341FC6E4A900F2F798 /* Array+Extensions.swift in Sources */,
 				97E42DF01FCDFFEF00A09233 /* RootViewProtocol.swift in Sources */,
 				972038E51FBF759E003D686C /* FBGetContext.swift in Sources */,

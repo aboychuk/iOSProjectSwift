@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum State {
-    case didLoad
-    case didFailLoading
-    case willLoad
-    case didUnload
-}
-
 protocol Observable {
     associatedtype Value
     var notify: Bool { get set }
