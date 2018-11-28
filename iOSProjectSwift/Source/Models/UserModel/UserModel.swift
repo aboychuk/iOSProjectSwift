@@ -15,7 +15,7 @@ class UserModel: Model, Hashable {
     }
     
     
-    struct Constants {
+    private enum Constants {
         static let firstName = "firstName"
         static let lastName = "lastName"
         static let hashValue = "hashValue"

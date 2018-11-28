@@ -12,7 +12,7 @@ class FBParser {
     
     // MARK: Constants
     
-    private struct Constants {
+    private enum Constants {
         static let userID = "id"
         static let firstName = "first_name"
         static let lastName = "last_name"

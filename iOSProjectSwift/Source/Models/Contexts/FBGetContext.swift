@@ -13,7 +13,7 @@ import FacebookShare
 
 class FBGetContext: Context {
     
-    private struct Constants {
+    private enum Constants {
         static let plistName = "default.plist"
         static let emptyString = "empty"
     }

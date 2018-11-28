@@ -235,6 +235,7 @@
 			children = (
 				97928B3D1FAC6447005DEFEE /* UI */,
 				97928B3E1FAC6447005DEFEE /* Models */,
+				974809221FF6921200CC34DB /* ViewModels */,
 				97FC17231FC6E4A900F2F798 /* Library */,
 			);
 			path = Source;
@@ -243,7 +244,6 @@
 		97928B3D1FAC6447005DEFEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				974809221FF6921200CC34DB /* ViewModels */,
 				97C376FB1FBF9D7A002C637A /* ViewControllers */,
 				97C376FA1FBF9D7A002C637A /* Views */,
 			);

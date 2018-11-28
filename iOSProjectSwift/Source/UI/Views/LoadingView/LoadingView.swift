@@ -12,7 +12,7 @@ class LoadingView: UIView {
     
     typealias VoidBlock = () -> ()
     
-    private struct Constants {
+    private enum Constants {
         static let defaultDuration: Double = 3
         static let visibleAlpha: CGFloat = 1
         static let invisibleAlpha: CGFloat = 0.0

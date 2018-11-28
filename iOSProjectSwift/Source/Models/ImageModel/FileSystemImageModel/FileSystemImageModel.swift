@@ -12,7 +12,7 @@ class FilesystemImageModel: ImageModel {
     
     //MARK: - Constants
     
-    struct Constants {
+    private enum Constants {
         static let folderName = "images"
     }
     

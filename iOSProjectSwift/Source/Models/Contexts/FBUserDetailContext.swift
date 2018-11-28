@@ -10,7 +10,7 @@ import UIKit
 
 class FBUserDetailContext: FBGetContext {
     
-    private struct Constants {
+    private enum Constants {
         static let fields = "fields"
         static let fieldKeys = "first_name,last_name,picture.type(large)"
         static let plistName = "UserDetail.plist"

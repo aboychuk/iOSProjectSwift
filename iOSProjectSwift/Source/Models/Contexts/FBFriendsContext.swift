@@ -13,7 +13,7 @@ import FacebookShare
 
 class FBFriendsContext: FBGetContext {
     
-    private struct Constants {
+    private enum Constants {
         static let fields = "fields"
         static let fieldKeys = "friends{first_name,last_name,picture}"
         static let plistName = "UserFriends.plist"

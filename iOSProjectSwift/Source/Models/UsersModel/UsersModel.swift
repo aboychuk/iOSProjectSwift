@@ -10,7 +10,7 @@ import UIKit
 
 class UsersModel: ArrayModel<UserModel> {
     
-    struct Constants {
+    private enum Constants {
         static let plistName = "users.plist"
         static let usersCount = 10
     }
