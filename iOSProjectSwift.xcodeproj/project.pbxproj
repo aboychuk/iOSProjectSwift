@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
+		4974740021AECAA800ABB81E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497473FF21AECAA800ABB81E /* Observable.swift */; };
 		9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950A1FBF2A0500BD986E /* FBUserModel.swift */; };
 		970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */; };
 		970795111FBF2A0600BD986E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950E1FBF2A0600BD986E /* UserModel.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		497473FF21AECAA800ABB81E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		9707950A1FBF2A0500BD986E /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBCurrentUserModel.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				97FC172A1FC6E4A900F2F798 /* ObservableObject.swift */,
+				497473FF21AECAA800ABB81E /* Observable.swift */,
 			);
 			path = ObservableObject;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				97FC17361FC6E4A900F2F798 /* String+Extensions.swift in Sources */,
 				97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */,
+				4974740021AECAA800ABB81E /* Observable.swift in Sources */,
 				97664CA91FE4365400A6D6AC /* Optional+Extensions.swift in Sources */,
 				974809241FF6922B00CC34DB /* FBLoginViewModel.swift in Sources */,
 				97A6B4E01FC8449900FACFE1 /* FBLogoutContext.swift in Sources */,
