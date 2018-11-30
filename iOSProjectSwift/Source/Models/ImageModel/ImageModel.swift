@@ -8,15 +8,6 @@
 
 import UIKit
 
-extension ImageModel : Hashable {
-    
-    //MARK: - Hashable
-    
-    static func ==(lhs: ImageModel, rhs: ImageModel) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-}
-
 class ImageModel: Model {
     
     //MARK: - Properties
@@ -61,7 +52,17 @@ class ImageModel: Model {
     override func performLoadingInBackground() {
         self.loadImage()
         DispatchQueue.main.async {
-            self.state = self.image == nil ? .didFailLoading : .didLoad
+            let observable = ObservableObject(value: self)
+            observable.state = self.image == nil ? .didFailLoading : .didLoad
         }
+    }
+}
+
+extension ImageModel: Hashable {
+    
+    //MARK: - Hashable
+    
+    static func ==(lhs: ImageModel, rhs: ImageModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

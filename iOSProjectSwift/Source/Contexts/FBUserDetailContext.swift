@@ -10,21 +10,14 @@ import UIKit
 
 class FBUserDetailContext: FBGetContext {
     
-    private enum Constants {
-        static let fields = "fields"
-        static let fieldKeys = "first_name,last_name,picture.type(large)"
-        static let plistName = "UserDetail.plist"
-        static let emptyString = "empty"
-    }
-    
     //MARK: - Properties
     
     override var graphPath: String {
-        return self.user?.ID ?? Constants.emptyString
+        return self.user?.ID ?? Strings.EmptyString
     }
     
     override var parameters: [String : String] {
-        return [Constants.fields : Constants.fieldKeys]
+        return [Strings.FBDetailParameters.Fields : Strings.FBDetailParameters.FieldKeys]
     }
     
     override var pathToCachedResult: String? {
@@ -32,17 +25,17 @@ class FBUserDetailContext: FBGetContext {
     }
     
     override var plistName: String {
-        return Constants.plistName
+        return Strings.FBDetailParameters.UserDetailPlist
     }
     
     var user: FBUserModel? {
-        return self.model as? FBUserModel
+        return self.model.value as? FBUserModel
     }
 
     //MARK: - Public Functions
     
     override func parseResult(result: JSON) {
-        self.user.map { self.model = FBParser.update(user: $0, from: result) }
+        self.user.map { self.model.value = FBParser.update(user: $0, from: result) }
     }
     
 }

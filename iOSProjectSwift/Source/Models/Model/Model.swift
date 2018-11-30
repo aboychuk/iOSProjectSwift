@@ -8,27 +8,29 @@
 
 import Foundation
 
-enum ModelState {
-    case isCreated
-    case didUnload
-    case willLoad
-    case didLoad
-    case didFailLoading
-    case didChange
-}
-
-class Model: ObservableObject {
+class Model: Observable {
+    
+    //MARK: - Properties
+    
+    var state: State
+    
+    //MARK: - Init
+    
+    init() {
+        self.state = State.didUnload
+    }
     
     //MARK: - Public Functions
     
     func load() {
-        synchronized(self) {
-            let state = self.state
+        let observable = ObservableObject(value: self)
+        synchronized(observable) {
+            let state = observable.state
             if state == .willLoad || state == .didLoad {
-                self.notifyOfState()
+                observable.notify(of: state)
                 return
             }
-            self.state = .willLoad
+            observable.state = .willLoad
         }
         
         self.processLoading()

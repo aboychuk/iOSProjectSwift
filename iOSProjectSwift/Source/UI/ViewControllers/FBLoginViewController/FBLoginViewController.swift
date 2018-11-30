@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class FBLoginViewController :UIViewController, RootView {
+class FBLoginViewController: UIViewController, RootView, DisposeBagProtocol {
     
     //MARK: - RootView protocol
     
@@ -18,36 +16,40 @@ class FBLoginViewController :UIViewController, RootView {
     
     // MARK: - Private properties
     
-    private var viewModel: FBLoginViewModel
-    private var disposeBag = DisposeBag()
+    internal var disposeBag = DisposeBag()
+    private var model: FBCurrentUserModel
+    private var context: Context? {
+        willSet {
+            self.context?.cancel()
+            newValue?.execute()
+        }
+    }
+    
     
     //MARK: - Initializations
     
-    init(viewModel: FBLoginViewModel) {
-        self.viewModel = viewModel
-        
-        super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
+    init(model: FBCurrentUserModel) {
+        self.model = model
+        let observable = ObservableObject(value: model)
+        self.context = FBLoginContext(model: observable)
         self.prepareObservation()
+
+        super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+    
+    //MARK: - View Lyfecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     //MARK: - Private Functions
     
     private func prepareObservation() {
-        self.viewModel.subject.subscribe(({ [weak self] in
-            _ = $0.map { result in
-                switch result {
-                case .Success(let user):
-                    self?.showUserDetailViewController(user: user)
-                case .Failure(let error):
-                    print(error)
-                }
-            }
-        }))
-            .disposed(by: self.disposeBag)
     }
     
     private func showUserDetailViewController(user: FBCurrentUserModel) {
@@ -55,17 +57,5 @@ class FBLoginViewController :UIViewController, RootView {
         let navigationController = UINavigationController(rootViewController: detailController)
         
         self.present(navigationController, animated: true)
-    }
-    
-    //MARK: - View Lyfecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.rootView?
-            .loginButton?
-            .rx
-            .tap
-            .subscribe(onNext: ({ [weak self] in self?.viewModel.authorize() }))
-            .disposed(by: self.disposeBag)
     }
 }

@@ -16,7 +16,7 @@ class ArrayModel<Element: Hashable>: Model {
     
     //MARK: - Computed properties
     
-    var count   : Int {
+    var count: Int {
         return self.elements.count
     }
     

@@ -6,28 +6,27 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-import Foundation
-import RxSwift
-
-class FBLoginViewModel {
-    
-    //MARK: - Public properties
-    
-    let subject = PublishSubject<Result<FBCurrentUserModel>>()
-    
-    //MARK: - Private properties
-    
-    private var user: FBCurrentUserModel
-    
-    //MARK: - Initializations
-    
-    init(user: FBCurrentUserModel) {
-        self.user = user
-    }
-    
-    //MARK: - Public methods
-    
-    func authorize() {
-        FBLoginContext(user: self.user, subject: self.subject).execute()
-    }
-}
+//import Foundation
+//
+//class FBLoginViewModel {
+//    
+//    //MARK: - Public properties
+//    
+//    let subject = PublishSubject<Result<FBCurrentUserModel>>()
+//    
+//    //MARK: - Private properties
+//    
+//    private var user: FBCurrentUserModel
+//    
+//    //MARK: - Initializations
+//    
+//    init(user: FBCurrentUserModel) {
+//        self.user = user
+//    }
+//    
+//    //MARK: - Public methods
+//    
+//    func authorize() {
+//        FBLoginContext(user: self.user, subject: self.subject).execute()
+//    }
+//}

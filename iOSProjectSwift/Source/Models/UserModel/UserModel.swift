@@ -8,12 +8,7 @@
 
 import UIKit
 
-class UserModel: Model, Hashable {
-    
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.fullname == rhs.fullname
-    }
-    
+class UserModel: Model {
     
     private enum Constants {
         static let firstName = "firstName"
@@ -56,5 +51,12 @@ class UserModel: Model, Hashable {
         self.firstName = aDecoder.decodeObject(forKey: Constants.firstName) as? String
         self.lastName = aDecoder.decodeObject(forKey: Constants.lastName) as? String
         self.hashValue = aDecoder.decodeInteger(forKey: Constants.hashValue)
+    }
+    
+}
+
+extension UserModel: Hashable {
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.fullname == rhs.fullname
     }
 }

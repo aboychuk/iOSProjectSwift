@@ -85,10 +85,10 @@ class ObservableObject<T>: Observable {
                    onWillLoad: CallbackType? = nil,
                    onDidUnload: CallbackType? = nil) -> Subscription<Value>
     {
-        let subscription = Subscription.init(onDidLoad: onDidLoad,
-                                             onDidFailLoading: onDidFailLoading,
-                                             onWillLoad: onWillLoad,
-                                             onDidUnload: onDidUnload)
+        let subscription = Subscription(onDidLoad: onDidLoad,
+                                        onDidFailLoading: onDidFailLoading,
+                                        onWillLoad: onWillLoad,
+                                        onDidUnload: onDidUnload)
         self.subscriptions.append(subscription)
         
         if notifyInitialy {

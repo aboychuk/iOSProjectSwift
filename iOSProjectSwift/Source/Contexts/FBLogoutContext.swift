@@ -16,12 +16,12 @@ class FBLogoutContext: Context {
     //MARK: - Properties
     
     var user: FBCurrentUserModel? {
-        return self.model as? FBCurrentUserModel
+        return self.model.value as? FBCurrentUserModel
     }
     
     //MARK: - Overrided functions
     
-    override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
+    override func executeWithCompletionHandler(_ handler: @escaping (State) -> ()) {
         LoginManager().logOut()
         self.user?.token = nil
         handler(.didUnload)

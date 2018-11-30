@@ -10,31 +10,33 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import FacebookShare
-import RxSwift
 
 class FBLoginContext: Context {
     
     //MARK: - Properties
     
-    var user: FBCurrentUserModel? {
-        return self.model as? FBCurrentUserModel
+    var user: FBCurrentUserModel {
+        guard let user = self.model as? FBCurrentUserModel else {
+            return FBCurrentUserModel()
+        }
+        return user
     }
-    private var subject: PublishSubject<Result<FBCurrentUserModel>>
+    
+    var observable: ObservableObject<FBCurrentUserModel>
     
     //MARK: - Init
     
-    init(user: FBCurrentUserModel, subject: PublishSubject<Result<FBCurrentUserModel>>) {
-        self.subject = subject
-        
-        super.init(model: user)
+    init(observable: ObservableObject<FBCurrentUserModel>) {
+        self.observable = observable
     }
     
     //MARK: - Overrided Functions
     
-    override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
-        let subject = self.subject
+    override func executeWithCompletionHandler(_ handler: @escaping (State) -> ()) {
+        var state = self.observable.state
         guard let user = self.user else {
-            subject.onNext(Result.Failure(LoginError.emptyUser))
+            state = State.didFailLoading
+            
             return
         }
         if !user.authorized {
@@ -42,33 +44,25 @@ class FBLoginContext: Context {
             manager.logIn(readPermissions: [.publicProfile, .userFriends]) { LoginResult in
                 switch LoginResult {
                 case .failed(let error):
-                    subject.onNext(Result.Failure(error))
+                    state = State.didFailLoading
                 case .cancelled:
-                    subject.onNext(Result.Failure(LoginError.cancelledByUser))
+                    state = State.didFailLoading
                 case .success(_,_,let token):
-                    let loggedUser = self.fillUser(with: token)
-                    subject.onNext(loggedUser)
+                    self.observable.value = self.fillUser(with: token)
+                    state = State.didLoad
                 }
             }
         } else {
-            subject.onNext(Result.Success(user))
+            state = State.didLoad
         }
+        self.observable.state = state
     }
     
-    func fillUser(with token: AccessToken) -> Result<FBCurrentUserModel> {
-        guard let user = self.user else {
-            return Result.Failure(LoginError.emptyUser)
-        }
+    func fillUser(with token: AccessToken) -> FBCurrentUserModel {
+        let user = self.user
         user.token = token.authenticationToken
         user.ID = token.userId
         
-        return Result.Success(user)
-    }
-    
-    //MARK: - Error
-    
-    enum LoginError: Error {
-        case emptyUser
-        case cancelledByUser
+        return user
     }
 }

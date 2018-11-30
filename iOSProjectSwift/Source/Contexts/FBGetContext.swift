@@ -13,27 +13,19 @@ import FacebookShare
 
 class FBGetContext: Context {
     
-    private enum Constants {
-        static let plistName = "default.plist"
-        static let emptyString = "empty"
-    }
-    
     //MARK: - Properties
     
     var graphPath: String {
-        return Constants.emptyString
+        return Strings.EmptyString
     }
-    
     var parameters: [String : String] {
-        return [Constants.emptyString : Constants.emptyString]
+        return [Strings.EmptyString : Strings.EmptyString]
     }
-    
     var pathToCachedResult: String? {
         return nil
     }
-    
     var plistName: String {
-        return Constants.plistName
+        return Strings.DefaultPlist
     }
     
     //MARK: - Overrided Functions
@@ -44,7 +36,7 @@ class FBGetContext: Context {
         
         synchronized(model) {
             if modelState == .didUnload || modelState == .willLoad {
-                model.notifyOfState()
+//                model.notify(of: modelState)
                 if modelState == .didLoad {
                     return
                 }
@@ -54,7 +46,7 @@ class FBGetContext: Context {
         super.execute()
     }
     
-    override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
+    override func executeWithCompletionHandler(_ handler: @escaping (State) -> ()) {
         var state = self.model.state
         let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
         

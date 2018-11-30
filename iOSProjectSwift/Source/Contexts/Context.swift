@@ -23,13 +23,13 @@ class Context {
     //MARK: - Public Functions
     
     func execute() {
-        executeWithCompletionHandler() { [weak self] (modelstate: ModelState) in
-            self?.model.state = modelstate
+        executeWithCompletionHandler() { [weak self] (modelState: State) in
+            self?.model.state = modelState
         }
     }
     
     //Function created for overrideing do not call directly
-    func executeWithCompletionHandler(_ handler:  @escaping (ModelState) -> ()) {
+    func executeWithCompletionHandler(_ handler:  @escaping (State) -> ()) {
         
     }
     

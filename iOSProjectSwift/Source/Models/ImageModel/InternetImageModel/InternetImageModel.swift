@@ -35,7 +35,7 @@ class InternetImageModel: FilesystemImageModel {
             
             return
         } else {
-            self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: ({ (location, response, error ) in
+            self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: ({ (location, response, error) in
                 do {
                     try FileManager.default.moveItem(atPath: (location?.path)!, toPath: self.imagePath!)
                 } catch let error as NSError {
