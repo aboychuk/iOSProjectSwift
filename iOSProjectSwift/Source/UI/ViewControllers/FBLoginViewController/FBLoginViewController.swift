@@ -40,9 +40,9 @@ class FBLoginViewController :UIViewController, RootView {
         self.viewModel.subject.subscribe(({ [weak self] in
             _ = $0.map { result in
                 switch result {
-                case .Success(let user):
+                case .success(let user):
                     self?.showUserDetailViewController(user: user)
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
                 }
             }

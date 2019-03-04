@@ -1,5 +1,5 @@
 //
-//  GlobalFunctions.swift
+//  Functions.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 11/8/17.
@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: - Global functions
 
-func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
+public func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     objc_sync_enter(lock)
     defer {
         objc_sync_exit(lock)
@@ -19,10 +19,10 @@ func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     return block()
 }
 
-func toString<T>(_ type: T.Type) -> String {
+public func toString<T>(_ type: T.Type) -> String {
     return String(describing: type)
 }
 
 //MARK: - Global typealias
 
-typealias JSON = [String : Any]
+public typealias JSON = [String : Any]

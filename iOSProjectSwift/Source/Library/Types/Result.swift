@@ -9,8 +9,8 @@
 import Foundation
 
 enum Result<T> {
-    case Success(T)
-    case Failure(Error)
+    case success(T)
+    case failure(Error)
 }
 
 extension Result {
@@ -19,18 +19,18 @@ extension Result {
     
     func map<U>(f: (T) -> U) -> Result<U> {
         switch self {
-        case let .Success(unwrapped):
-            return Result<U>.Success(f(unwrapped))
-        case .Failure(let error):
-            return Result<U>.Failure(error)
+        case let .success(unwrapped):
+            return Result<U>.success(f(unwrapped))
+        case .failure(let error):
+            return Result<U>.failure(error)
         }
     }
     
     func isSuccess() -> Bool {
         switch self {
-        case .Success(_):
+        case .success(_):
             return true
-        case .Failure:
+        case .failure:
             return false
         }
     }

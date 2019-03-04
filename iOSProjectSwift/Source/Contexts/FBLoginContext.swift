@@ -34,7 +34,7 @@ class FBLoginContext: Context {
     override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
         let subject = self.subject
         guard let user = self.user else {
-            subject.onNext(Result.Failure(LoginError.emptyUser))
+            subject.onNext(Result.failure(LoginError.emptyUser))
             return
         }
         if !user.authorized {
@@ -42,27 +42,27 @@ class FBLoginContext: Context {
             manager.logIn(readPermissions: [.publicProfile, .userFriends]) { LoginResult in
                 switch LoginResult {
                 case .failed(let error):
-                    subject.onNext(Result.Failure(error))
+                    subject.onNext(Result.failure(error))
                 case .cancelled:
-                    subject.onNext(Result.Failure(LoginError.cancelledByUser))
+                    subject.onNext(Result.failure(LoginError.cancelledByUser))
                 case .success(_,_,let token):
                     let loggedUser = self.fillUser(with: token)
                     subject.onNext(loggedUser)
                 }
             }
         } else {
-            subject.onNext(Result.Success(user))
+            subject.onNext(Result.success(user))
         }
     }
     
     func fillUser(with token: AccessToken) -> Result<FBCurrentUserModel> {
         guard let user = self.user else {
-            return Result.Failure(LoginError.emptyUser)
+            return Result.failure(LoginError.emptyUser)
         }
         user.token = token.authenticationToken
         user.ID = token.userId
         
-        return Result.Success(user)
+        return Result.success(user)
     }
     
     //MARK: - Error
