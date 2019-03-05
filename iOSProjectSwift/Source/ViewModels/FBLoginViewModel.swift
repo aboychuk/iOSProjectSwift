@@ -28,29 +28,37 @@ class FBLoginViewModel: ViewModelProtocol {
     private let loginButtonSubject = PublishSubject<Void>()
     private let errorSubject = PublishSubject<Error>()
     private let authorizedSubject = PublishSubject<FBCurrentUser>()
-    private var user: FBCurrentUser
+    private let service: FBLoginService
+    private let disposeBag: DisposeBag
     
     //MARK: - Init
     
-    init(user: FBCurrentUser) {
-        self.user = user
+    init(service: FBLoginService) {
+        self.service = service
+        self.disposeBag = DisposeBag()
         self.input = Input(didTapOnLogin: self.loginButtonSubject.asObserver())
-        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asDriver(onErrorJustReturn: LoginViewModelError.defaultError))
+        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asDriver(onErrorJustReturn: LoginViewModelError.unknownError))
+        self.setup()
     }
     
     //MARK: - Private methods
     
     private func setup() {
-
-    }
-    
-    func authorize() {
-//        FBLoginContext(user: self.user, subject: self.subject).execute()
+        let viewModel = self
+        viewModel.service.login()
+            .subscribe(
+                onNext: { result in
+                    switch result {
+                    case .success(let user): viewModel.authorizedSubject.onNext(user)
+                    case .failure(let error): viewModel.errorSubject.onNext(error)
+                    }
+            })
+            .disposed(by: viewModel.disposeBag)
     }
     
     // MARK: - Error
     
     private enum LoginViewModelError: Error {
-        case defaultError
+        case unknownError
     }
 }

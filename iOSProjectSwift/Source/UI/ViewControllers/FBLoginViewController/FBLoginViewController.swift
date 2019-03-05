@@ -10,10 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FBLoginViewController :UIViewController, RootView {
-    
-    //MARK: - RootView protocol
-    
+class FBLoginViewController: UIViewController, RootView, ControllerType {
+    typealias ViewModelType = FBLoginViewModel
     typealias ViewType = FBloginView
     
     // MARK: - Private properties
