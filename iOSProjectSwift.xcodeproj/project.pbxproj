@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
+		6F0EBB56222E9CE200EC49BB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EBB55222E9CE200EC49BB /* UIViewController+Extensions.swift */; };
 		6F1C7E4A222D175300BF3821 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */; };
 		6F1C7E4C222D17C000BF3821 /* ControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E4B222D17C000BF3821 /* ControllerType.swift */; };
 		6FFF968F222E80F600DD66C1 /* FBLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF968E222E80F600DD66C1 /* FBLoginService.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F0EBB55222E9CE200EC49BB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		6F1C7E4B222D17C000BF3821 /* ControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerType.swift; sourceTree = "<group>"; };
 		6FFF968E222E80F600DD66C1 /* FBLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginService.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				97FC17301FC6E4A900F2F798 /* UITableView+Extensions.swift */,
 				97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */,
 				97664CA81FE4365400A6D6AC /* Optional+Extensions.swift */,
+				6F0EBB55222E9CE200EC49BB /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				97FC17331FC6E4A900F2F798 /* ObservableObject.swift in Sources */,
 				97A6B4DC1FC8445B00FACFE1 /* FBUserDetailContext.swift in Sources */,
 				97FC17311FC6E4A900F2F798 /* Functions.swift in Sources */,
+				6F0EBB56222E9CE200EC49BB /* UIViewController+Extensions.swift in Sources */,
 				9707950F1FBF2A0600BD986E /* FBUser.swift in Sources */,
 				97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */,
 				970795141FBF307C00BD986E /* Users.swift in Sources */,

@@ -19,7 +19,7 @@ public func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
     return block()
 }
 
-public func toString<T>(_ type: T.Type) -> String {
+public func typeString<T>(_ type: T.Type) -> String {
     return String(describing: type)
 }
 

@@ -81,7 +81,7 @@ class FBFriendsViewController: FBViewController, RootView {
     //MARK: - Initializations
     
     init(model: Users, currentUser: FBCurrentUser) {
-        super.init(nibName: toString(FBFriendsViewController.self), bundle: .main)
+        super.init(nibName: typeString(FBFriendsViewController.self), bundle: .main)
         
         self.currentUser = currentUser
         self.model = model
@@ -109,8 +109,8 @@ class FBFriendsViewController: FBViewController, RootView {
     //MARK: - Private functions
     
     private func registerTableViewCell() {
-        let nib = UINib(nibName: toString(FBUserCell.self), bundle: .main)
-        self.rootView?.tableview?.register(nib, forCellReuseIdentifier: toString(FBUserCell.self))
+        let nib = UINib(nibName: typeString(FBUserCell.self), bundle: .main)
+        self.rootView?.tableview?.register(nib, forCellReuseIdentifier: typeString(FBUserCell.self))
     }
     
     private func prepareNavigationTitle() {

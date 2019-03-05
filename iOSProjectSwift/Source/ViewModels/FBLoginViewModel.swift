@@ -18,7 +18,7 @@ class FBLoginViewModel: ViewModelProtocol {
     
     struct Output {
         let authorizedObservable: Observable<FBCurrentUser>
-        let errorObservable: Driver<Error>
+        let errorObservable: Observable<Error>
     }
     
     //MARK: - Properties
@@ -37,7 +37,7 @@ class FBLoginViewModel: ViewModelProtocol {
         self.service = service
         self.disposeBag = DisposeBag()
         self.input = Input(didTapOnLogin: self.loginButtonSubject.asObserver())
-        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asDriver(onErrorJustReturn: LoginViewModelError.unknownError))
+        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asObservable())
         self.setup()
     }
     

@@ -11,8 +11,8 @@ import UIKit
 protocol ControllerType {
     associatedtype ViewModelType: ViewModelProtocol
     
-    func configure(with: ViewModelType)
+    func configure(with viewModel: ViewModelType)
     
     /// Factory method
-    static func create(with: ViewModelType) -> UIViewController
+    static func create(with viewModel: ViewModelType) -> UIViewController
 }

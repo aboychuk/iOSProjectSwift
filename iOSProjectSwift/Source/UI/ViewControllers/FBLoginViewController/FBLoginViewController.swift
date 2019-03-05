@@ -14,37 +14,38 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     typealias ViewModelType = FBLoginViewModel
     typealias ViewType = FBloginView
     
-    // MARK: - Private properties
+    // MARK: - Properties
     
-    private var viewModel: FBLoginViewModel
+    private var viewModel: FBLoginViewModel?
     private var disposeBag = DisposeBag()
     
-    //MARK: - Initializations
+    // MARK: - View lyfecycle
     
-    init(viewModel: FBLoginViewModel) {
-        self.viewModel = viewModel
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.viewModel.map { self.configure(with: $0) }
+    }
+    
+    // MARK: - Private
+    
+    internal func configure(with viewModel: FBLoginViewModel) {
+        self.rootView?.loginButton?.rx.tap
+            .asObservable()
+            .subscribe(viewModel.input.didTapOnLogin)
+            .disposed(by: self.disposeBag)
         
-        super.init(nibName: toString(FBLoginViewController.self), bundle: .main)
-        self.prepareObservation()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: - Private Functions
-    
-    private func prepareObservation() {
-        self.viewModel.subject.subscribe(({ [weak self] in
-            _ = $0.map { result in
-                switch result {
-                case .success(let user):
-                    self?.showUserDetailViewController(user: user)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }))
+        self.viewModel?.output.errorObservable
+            .subscribe(
+                onNext: { error in
+                    self.presentAlertError(error: error)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel?.output.authorizedObservable
+            .subscribe(
+                onNext: { user in
+                    // present next VC
+            })
             .disposed(by: self.disposeBag)
     }
     
@@ -55,15 +56,12 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
         self.present(navigationController, animated: true)
     }
     
-    //MARK: - View Lyfecycle
+    // MARK: - Static
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.rootView?
-            .loginButton?
-            .rx
-            .tap
-            .subscribe(onNext: ({ [weak self] in self?.viewModel.authorize() }))
-            .disposed(by: self.disposeBag)
+    static func create(with viewModel: FBLoginViewModel) -> UIViewController {
+        let viewController = FBLoginViewController()
+        viewController.viewModel = viewModel
+        
+        return viewController
     }
 }

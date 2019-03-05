@@ -13,7 +13,7 @@ extension UITableView {
     //MARK: - Instance Functions
     
     func reusableCellWith<T>(type: T.Type, index: IndexPath) -> T {
-        guard let cell = self.dequeueReusableCell(withIdentifier: toString(type), for: index) as? T else {
+        guard let cell = self.dequeueReusableCell(withIdentifier: typeString(type), for: index) as? T else {
             fatalError("no reusable cell registered")
         }
         

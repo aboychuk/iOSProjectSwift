@@ -13,7 +13,7 @@ extension UINib {
     //MARK: - Class Functions
     
     static func nib<T>(from type: T.Type, bundle: Bundle = .main) -> UINib? {
-        return UINib(nibName: toString(type), bundle: bundle)
+        return UINib(nibName: typeString(type), bundle: bundle)
     }
     
     static func object<T>(from type: T.Type, bundle: Bundle = .main, options: [UINib.OptionsKey : Any]? = nil) -> T? {
