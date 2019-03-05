@@ -9,17 +9,22 @@
 import Foundation
 import RxSwift
 
-class FBLoginViewModel {
+class FBLoginViewModel: ViewModelProtocol {
     
-    //MARK: - Public properties
+    let input = Input {
+        let didTapLoginButton: AnyObserver<Void>
+    }
+    
+    let output = Output {
+        
+    }
+    
+    //MARK: - Properties
     
     let subject = PublishSubject<Result<FBCurrentUserModel>>()
-    
-    //MARK: - Private properties
-    
     private var user: FBCurrentUserModel
     
-    //MARK: - Initializations
+    //MARK: - Init
     
     init(user: FBCurrentUserModel) {
         self.user = user

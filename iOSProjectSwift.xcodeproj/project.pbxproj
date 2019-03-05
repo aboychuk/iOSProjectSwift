@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
+		6F1C7E4A222D175300BF3821 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */; };
+		6F1C7E4C222D17C000BF3821 /* ControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E4B222D17C000BF3821 /* ControllerType.swift */; };
 		9707950F1FBF2A0600BD986E /* FBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950A1FBF2A0500BD986E /* FBUserModel.swift */; };
 		970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */; };
 		970795111FBF2A0600BD986E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950E1FBF2A0600BD986E /* UserModel.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		6F1C7E4B222D17C000BF3821 /* ControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerType.swift; sourceTree = "<group>"; };
 		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		9707950A1FBF2A0500BD986E /* FBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserModel.swift; sourceTree = "<group>"; };
 		9707950C1FBF2A0600BD986E /* FBCurrentUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBCurrentUserModel.swift; sourceTree = "<group>"; };
@@ -153,7 +157,7 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
-		972038E11FBF759E003D686C /* Contexts */ = {
+		972038E11FBF759E003D686C /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				97A6B4E21FC880AF00FACFE1 /* FBParser */,
@@ -164,7 +168,7 @@
 				97C376F41FBF90AD002C637A /* FBLoginContext.swift */,
 				97A6B4DF1FC8449900FACFE1 /* FBLogoutContext.swift */,
 			);
-			path = Contexts;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		974809221FF6921200CC34DB /* ViewModels */ = {
@@ -195,7 +199,7 @@
 		97928B3B1FAC6393005DEFEE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				972038E11FBF759E003D686C /* Contexts */,
+				972038E11FBF759E003D686C /* Services */,
 				97928B3D1FAC6447005DEFEE /* UI */,
 				97928B3E1FAC6447005DEFEE /* Models */,
 				974809221FF6921200CC34DB /* ViewModels */,
@@ -339,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				97E42DEF1FCDFFEF00A09233 /* RootViewProtocol.swift */,
+				6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */,
+				6F1C7E4B222D17C000BF3821 /* ControllerType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -599,6 +605,7 @@
 				97C1F3D71FBD9F9600F91F68 /* ArrayModelChangeMove.swift in Sources */,
 				97FC17381FC6E4A900F2F798 /* UITableView+Extensions.swift in Sources */,
 				970795101FBF2A0600BD986E /* FBCurrentUserModel.swift in Sources */,
+				6F1C7E4A222D175300BF3821 /* ViewModelProtocol.swift in Sources */,
 				97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */,
 				97C377031FBF9F34002C637A /* FBLoginViewController.swift in Sources */,
 				97C1F3D91FBD9FA600F91F68 /* ArrayModelChangeRemove.swift in Sources */,
@@ -612,6 +619,7 @@
 				972038E41FBF759E003D686C /* Context.swift in Sources */,
 				97FCD6A91FB45F77007BD5A9 /* FileSystemImageModel.swift in Sources */,
 				97C377011FBF9F17002C637A /* FBViewController.swift in Sources */,
+				6F1C7E4C222D17C000BF3821 /* ControllerType.swift in Sources */,
 				97C3770E1FBFA00F002C637A /* LoadingView.swift in Sources */,
 				970795111FBF2A0600BD986E /* UserModel.swift in Sources */,
 			);
