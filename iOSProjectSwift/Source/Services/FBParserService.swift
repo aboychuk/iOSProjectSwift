@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBParser {
+class FBParserService {
     
     // MARK: Constants
     
@@ -24,7 +24,7 @@ class FBParser {
     
     //MARK: - Public functions
     
-    static func update(user: FBUserModel, from result: JSON) -> FBUserModel {
+    static func update(user: FBUser, from result: JSON) -> FBUser {
         let ID = result[Constants.userID] as? String
         let firstName = result[Constants.firstName] as? String
         let lastName = result[Constants.lastName] as? String
@@ -41,12 +41,12 @@ class FBParser {
         return user
     }
     
-    static func updateFriends(users: UsersModel, from result: JSON) -> UsersModel {
+    static func updateFriends(users: Users, from result: JSON) -> Users {
         let friends = result[Constants.userFriends] as? JSON
         let friendsData = friends?[Constants.userData] as? [JSON]
 
         friendsData?.forEach {
-            var user = FBUserModel()
+            var user = FBUser()
             user = self.update(user: user, from: $0)
             users.add(element: user)
         }

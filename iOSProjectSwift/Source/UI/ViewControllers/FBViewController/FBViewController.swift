@@ -14,11 +14,11 @@ class FBViewController: UIViewController  {
     
     var observationController: ObservableObject.ObservationController?
     
-    var model: Model = FBUserModel() {
+    var model: Model = FBUser() {
         didSet { self.observationController = self.model.controller(for: self) }
     }
     
-    var currentUser: FBCurrentUserModel = FBCurrentUserModel() {
+    var currentUser: FBCurrentUser = FBCurrentUser() {
         didSet { self.observationController = self.currentUser.controller(for: self) }
     }
     

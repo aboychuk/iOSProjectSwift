@@ -13,7 +13,7 @@ extension FBFriendsViewController: UITableViewDelegate {
     //MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = self.usersModel?[indexPath.row] as? FBUserModel else { return }
+        guard let user = self.usersModel?[indexPath.row] as? FBUser else { return }
 
         let detailController = FBUserDetailController(model: user, currentUser: self.currentUser)
         detailController.model = user
@@ -32,7 +32,7 @@ extension FBFriendsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
-        cell.userModel = self.usersModel?[indexPath.row] as? FBUserModel
+        cell.userModel = self.usersModel?[indexPath.row] as? FBUser
         
         return cell
     }
@@ -74,13 +74,13 @@ class FBFriendsViewController: FBViewController, RootView {
     
     //MARK: - Private properties
     
-    private var usersModel: UsersModel? {
-        return self.model as? UsersModel
+    private var usersModel: Users? {
+        return self.model as? Users
     }
     
     //MARK: - Initializations
     
-    init(model: UsersModel, currentUser: FBCurrentUserModel) {
+    init(model: Users, currentUser: FBCurrentUser) {
         super.init(nibName: toString(FBFriendsViewController.self), bundle: .main)
         
         self.currentUser = currentUser

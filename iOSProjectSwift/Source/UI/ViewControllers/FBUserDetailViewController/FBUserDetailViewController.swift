@@ -45,13 +45,13 @@ class FBUserDetailController : FBViewController, RootView {
     
     //MARK: - Private properties
     
-    private var userModel: FBUserModel? {
-        return self.model as? FBUserModel
+    private var userModel: FBUser? {
+        return self.model as? FBUser
     }
     
     //MARK: - Initializations
     
-    init(model: FBUserModel, currentUser: FBCurrentUserModel) {
+    init(model: FBUser, currentUser: FBCurrentUser) {
         super.init(nibName: toString(FBUserDetailController.self), bundle: .main)
         
         self.model = model

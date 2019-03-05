@@ -8,31 +8,49 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class FBLoginViewModel: ViewModelProtocol {
     
-    let input = Input {
-        let didTapLoginButton: AnyObserver<Void>
+    struct Input {
+        let didTapOnLogin: AnyObserver<Void>
     }
     
-    let output = Output {
-        
+    struct Output {
+        let authorizedObservable: Observable<FBCurrentUser>
+        let errorObservable: Driver<Error>
     }
     
     //MARK: - Properties
     
-    let subject = PublishSubject<Result<FBCurrentUserModel>>()
-    private var user: FBCurrentUserModel
+    let input: Input
+    let output: Output
+    private let loginButtonSubject = PublishSubject<Void>()
+    private let errorSubject = PublishSubject<Error>()
+    private let authorizedSubject = PublishSubject<FBCurrentUser>()
+    private var user: FBCurrentUser
     
     //MARK: - Init
     
-    init(user: FBCurrentUserModel) {
+    init(user: FBCurrentUser) {
         self.user = user
+        self.input = Input(didTapOnLogin: self.loginButtonSubject.asObserver())
+        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asDriver(onErrorJustReturn: LoginViewModelError.defaultError))
     }
     
-    //MARK: - Public methods
+    //MARK: - Private methods
+    
+    private func setup() {
+
+    }
     
     func authorize() {
-        FBLoginContext(user: self.user, subject: self.subject).execute()
+//        FBLoginContext(user: self.user, subject: self.subject).execute()
+    }
+    
+    // MARK: - Error
+    
+    private enum LoginViewModelError: Error {
+        case defaultError
     }
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class UserModel: Model, Hashable {
+class User: Model, Hashable {
     
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+    static func == (lhs: User, rhs: User) -> Bool {
         return lhs.fullname == rhs.fullname
     }
     

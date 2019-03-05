@@ -1,5 +1,5 @@
 //
-//  UsersModel.swift
+//  Users.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 11/17/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersModel: ArrayModel<UserModel> {
+class Users: ArrayModel<User> {
     
     private enum Constants {
         static let plistName = "users.plist"
@@ -54,11 +54,11 @@ class UsersModel: ArrayModel<UserModel> {
     //MARK: - Overrided Functions
         
     override func performLoadingInBackground() {
-        var objects: Array<UserModel>?
+        var objects: Array<User>?
         if let savePath = self.savePath {
-            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<UserModel>
+            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<User>
             if objects == nil {
-                objects = Array(repeating: UserModel(), count: Constants.usersCount)
+                objects = Array(repeating: User(), count: Constants.usersCount)
             }
             
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBUserModel: UserModel {
+class FBUser: User {
     
     //MARK: - Properties
     
@@ -17,7 +17,7 @@ class FBUserModel: UserModel {
     }
     
     var ID: String?
-    var friends: UsersModel = UsersModel()
+    var friends: Users = Users()
     var imageURL: URL?
     
 }

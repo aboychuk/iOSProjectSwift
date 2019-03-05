@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         self.window = UIWindow.window {
-            let loginViewModel = FBLoginViewModel(user: FBCurrentUserModel())
+            let loginViewModel = FBLoginViewModel(user: FBCurrentUser())
             $0.rootViewController = FBLoginViewController(viewModel: loginViewModel)
             $0.makeKeyAndVisible()
         }

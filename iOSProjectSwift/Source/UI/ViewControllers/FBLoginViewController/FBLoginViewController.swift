@@ -50,7 +50,7 @@ class FBLoginViewController :UIViewController, RootView {
             .disposed(by: self.disposeBag)
     }
     
-    private func showUserDetailViewController(user: FBCurrentUserModel) {
+    private func showUserDetailViewController(user: FBCurrentUser) {
         let detailController = FBUserDetailController(model: user, currentUser: user)
         let navigationController = UINavigationController(rootViewController: detailController)
         

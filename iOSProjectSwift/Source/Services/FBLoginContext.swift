@@ -16,14 +16,14 @@ class FBLoginContext: Context {
     
     //MARK: - Properties
     
-    var user: FBCurrentUserModel? {
-        return self.model as? FBCurrentUserModel
+    var user: FBCurrentUser? {
+        return self.model as? FBCurrentUser
     }
-    private var subject: PublishSubject<Result<FBCurrentUserModel>>
+    private var subject: PublishSubject<Result<FBCurrentUser>>
     
     //MARK: - Init
     
-    init(user: FBCurrentUserModel, subject: PublishSubject<Result<FBCurrentUserModel>>) {
+    init(user: FBCurrentUser, subject: PublishSubject<Result<FBCurrentUser>>) {
         self.subject = subject
         
         super.init(model: user)
@@ -55,7 +55,7 @@ class FBLoginContext: Context {
         }
     }
     
-    func fillUser(with token: AccessToken) -> Result<FBCurrentUserModel> {
+    func fillUser(with token: AccessToken) -> Result<FBCurrentUser> {
         guard let user = self.user else {
             return Result.failure(LoginError.emptyUser)
         }

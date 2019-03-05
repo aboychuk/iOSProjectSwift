@@ -10,7 +10,7 @@ import FacebookCore
 import FacebookLogin
 import FacebookShare
 
-class FBCurrentUserModel: FBUserModel {
+class FBCurrentUser: FBUser {
     
     //MARK: - Properties
     

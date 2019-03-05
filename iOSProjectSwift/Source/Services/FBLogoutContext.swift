@@ -15,8 +15,8 @@ class FBLogoutContext: Context {
     
     //MARK: - Properties
     
-    var user: FBCurrentUserModel? {
-        return self.model as? FBCurrentUserModel
+    var user: FBCurrentUser? {
+        return self.model as? FBCurrentUser
     }
     
     //MARK: - Overrided functions
