@@ -34,24 +34,26 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
             .subscribe(viewModel.input.didTapOnLogin)
             .disposed(by: self.disposeBag)
         
-        self.viewModel?.output.errorObservable
+        viewModel.output.errorObservable
             .subscribe(
                 onNext: { error in
                     self.presentAlertError(error: error)
             })
             .disposed(by: self.disposeBag)
         
-        self.viewModel?.output.authorizedObservable
+        viewModel.output.authorizedObservable
             .subscribe(
                 onNext: { user in
-                    // present next VC
+                    self.presentDetailViewController(user: user)
             })
             .disposed(by: self.disposeBag)
     }
     
-    private func showUserDetailViewController(user: FBCurrentUser) {
-        let detailController = FBDetailViewController(model: user, currentUser: user)
-        let navigationController = UINavigationController(rootViewController: detailController)
+    private func presentDetailViewController(user: FBUser) {
+        let service = FBGetUserDetailService(user: user)
+        let viewModel = FBDetailViewModel(service: service)
+        let controller = FBDetailViewController.create(with: viewModel)
+        let navigationController = UINavigationController(rootViewController: controller)
         
         self.present(navigationController, animated: true)
     }
