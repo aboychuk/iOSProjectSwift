@@ -1,5 +1,5 @@
 //
-//  FBUserDetailView.swift
+//  FBDetailView.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 11/30/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBUserDetailView: BaseView {
+class FBDetailView: BaseView {
     
     //MARK: - Properties
     

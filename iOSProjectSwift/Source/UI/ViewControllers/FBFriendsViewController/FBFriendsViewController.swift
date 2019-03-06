@@ -15,7 +15,7 @@ extension FBFriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let user = self.usersModel?[indexPath.row] as? FBUser else { return }
 
-        let detailController = FBUserDetailController(model: user, currentUser: self.currentUser)
+        let detailController = FBDetailViewController(model: user, currentUser: self.currentUser)
         detailController.model = user
         
         self.navigationController?.pushViewController(detailController, animated: true)

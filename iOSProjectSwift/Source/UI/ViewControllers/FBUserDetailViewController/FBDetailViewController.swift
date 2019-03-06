@@ -8,13 +8,10 @@
 
 import UIKit
 
-class FBUserDetailController : FBViewController, RootView {
+class FBDetailViewController: FBViewController, RootView {
+    typealias ViewType = FBDetailView
     
-    //MARK: - RootView protocol
-    
-    typealias ViewType = FBUserDetailView
-    
-    //MARK: - Public Properties
+    //MARK: - Properties
     
     override var observationController: ObservableObject.ObservationController? {
         didSet {
@@ -52,7 +49,7 @@ class FBUserDetailController : FBViewController, RootView {
     //MARK: - Initializations
     
     init(model: FBUser, currentUser: FBCurrentUser) {
-        super.init(nibName: typeString(FBUserDetailController.self), bundle: .main)
+        super.init(nibName: typeString(FBDetailViewController.self), bundle: .main)
         
         self.model = model
         self.currentUser = currentUser

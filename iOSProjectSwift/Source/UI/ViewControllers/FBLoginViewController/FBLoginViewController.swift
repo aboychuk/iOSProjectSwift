@@ -50,7 +50,7 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     }
     
     private func showUserDetailViewController(user: FBCurrentUser) {
-        let detailController = FBUserDetailController(model: user, currentUser: user)
+        let detailController = FBDetailViewController(model: user, currentUser: user)
         let navigationController = UINavigationController(rootViewController: detailController)
         
         self.present(navigationController, animated: true)

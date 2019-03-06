@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		396B7137E1E176B73FD00AAA /* Pods_iOSProjectSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F15010B79A24AA77B501DA /* Pods_iOSProjectSwift.framework */; };
 		6F0EBB56222E9CE200EC49BB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EBB55222E9CE200EC49BB /* UIViewController+Extensions.swift */; };
+		6F0EBB59222EA15D00EC49BB /* FBDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EBB58222EA15D00EC49BB /* FBDetailViewModel.swift */; };
 		6F1C7E4A222D175300BF3821 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */; };
 		6F1C7E4C222D17C000BF3821 /* ControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C7E4B222D17C000BF3821 /* ControllerType.swift */; };
+		6F318BFF222FD283004B1B8A /* FBGetServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F318BFE222FD283004B1B8A /* FBGetServiceProtocol.swift */; };
+		6F318C01222FD2C4004B1B8A /* FBGetUserDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F318C00222FD2C4004B1B8A /* FBGetUserDetailService.swift */; };
 		6FFF968F222E80F600DD66C1 /* FBLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF968E222E80F600DD66C1 /* FBLoginService.swift */; };
 		9707950F1FBF2A0600BD986E /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950A1FBF2A0500BD986E /* FBUser.swift */; };
 		970795101FBF2A0600BD986E /* FBCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950C1FBF2A0600BD986E /* FBCurrentUser.swift */; };
@@ -33,8 +36,8 @@
 		97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */; };
 		97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */; };
 		97A6EF1E1FD04DFA00D9DDB5 /* FBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */; };
-		97A6EF211FD0652D00D9DDB5 /* FBUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */; };
-		97A6EF231FD0654500D9DDB5 /* FBUserDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF221FD0654500D9DDB5 /* FBUserDetailController.xib */; };
+		97A6EF211FD0652D00D9DDB5 /* FBDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF201FD0652D00D9DDB5 /* FBDetailView.swift */; };
+		97A6EF231FD0654500D9DDB5 /* FBDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF221FD0654500D9DDB5 /* FBDetailViewController.xib */; };
 		97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */; };
 		97A6EF271FD0977100D9DDB5 /* FBFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF261FD0977100D9DDB5 /* FBFriendsViewController.xib */; };
 		97A6EF2B1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */; };
@@ -45,7 +48,7 @@
 		97C376F51FBF90AD002C637A /* FBLoginContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C376F41FBF90AD002C637A /* FBLoginContext.swift */; };
 		97C377011FBF9F17002C637A /* FBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377001FBF9F17002C637A /* FBViewController.swift */; };
 		97C377031FBF9F34002C637A /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377021FBF9F34002C637A /* FBLoginViewController.swift */; };
-		97C377051FBF9F52002C637A /* FBUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */; };
+		97C377051FBF9F52002C637A /* FBDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377041FBF9F52002C637A /* FBDetailViewController.swift */; };
 		97C377071FBF9F66002C637A /* FBFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377061FBF9F66002C637A /* FBFriendsViewController.swift */; };
 		97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770B1FBF9FFE002C637A /* ImageView.swift */; };
 		97C3770E1FBFA00F002C637A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3770D1FBFA00F002C637A /* LoadingView.swift */; };
@@ -69,8 +72,11 @@
 
 /* Begin PBXFileReference section */
 		6F0EBB55222E9CE200EC49BB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		6F0EBB58222EA15D00EC49BB /* FBDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDetailViewModel.swift; sourceTree = "<group>"; };
 		6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		6F1C7E4B222D17C000BF3821 /* ControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerType.swift; sourceTree = "<group>"; };
+		6F318BFE222FD283004B1B8A /* FBGetServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBGetServiceProtocol.swift; sourceTree = "<group>"; };
+		6F318C00222FD2C4004B1B8A /* FBGetUserDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGetUserDetailService.swift; sourceTree = "<group>"; };
 		6FFF968E222E80F600DD66C1 /* FBLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginService.swift; sourceTree = "<group>"; };
 		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		9707950A1FBF2A0500BD986E /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
@@ -94,8 +100,8 @@
 		97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizing+Extensions.swift"; sourceTree = "<group>"; };
 		97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
 		97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoginViewController.xib; sourceTree = "<group>"; };
-		97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDetailView.swift; sourceTree = "<group>"; };
-		97A6EF221FD0654500D9DDB5 /* FBUserDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserDetailController.xib; sourceTree = "<group>"; };
+		97A6EF201FD0652D00D9DDB5 /* FBDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDetailView.swift; sourceTree = "<group>"; };
+		97A6EF221FD0654500D9DDB5 /* FBDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBDetailViewController.xib; sourceTree = "<group>"; };
 		97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsView.swift; sourceTree = "<group>"; };
 		97A6EF261FD0977100D9DDB5 /* FBFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBFriendsViewController.xib; sourceTree = "<group>"; };
 		97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
@@ -106,7 +112,7 @@
 		97C376F41FBF90AD002C637A /* FBLoginContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginContext.swift; sourceTree = "<group>"; };
 		97C377001FBF9F17002C637A /* FBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBViewController.swift; sourceTree = "<group>"; };
 		97C377021FBF9F34002C637A /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
-		97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserDetailViewController.swift; sourceTree = "<group>"; };
+		97C377041FBF9F52002C637A /* FBDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDetailViewController.swift; sourceTree = "<group>"; };
 		97C377061FBF9F66002C637A /* FBFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsViewController.swift; sourceTree = "<group>"; };
 		97C3770B1FBF9FFE002C637A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		97C3770D1FBFA00F002C637A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 			children = (
 				97A6B4E31FC880BC00FACFE1 /* FBParserService.swift */,
 				6FFF968E222E80F600DD66C1 /* FBLoginService.swift */,
+				6F318C00222FD2C4004B1B8A /* FBGetUserDetailService.swift */,
 				97A6B4DB1FC8445B00FACFE1 /* FBUserDetailContext.swift */,
 				972038E21FBF759E003D686C /* Context.swift */,
 				972038E31FBF759E003D686C /* FBGetContext.swift */,
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				974809231FF6922B00CC34DB /* FBLoginViewModel.swift */,
+				6F0EBB58222EA15D00EC49BB /* FBDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -309,9 +317,9 @@
 		97C376FE1FBF9F03002C637A /* FBUserDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				97A6EF201FD0652D00D9DDB5 /* FBUserDetailView.swift */,
-				97C377041FBF9F52002C637A /* FBUserDetailViewController.swift */,
-				97A6EF221FD0654500D9DDB5 /* FBUserDetailController.xib */,
+				97A6EF201FD0652D00D9DDB5 /* FBDetailView.swift */,
+				97C377041FBF9F52002C637A /* FBDetailViewController.swift */,
+				97A6EF221FD0654500D9DDB5 /* FBDetailViewController.xib */,
 			);
 			path = FBUserDetailViewController;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 		97E42DEE1FCDFFDC00A09233 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				6F318BFE222FD283004B1B8A /* FBGetServiceProtocol.swift */,
 				97E42DEF1FCDFFEF00A09233 /* RootViewProtocol.swift */,
 				6F1C7E49222D175300BF3821 /* ViewModelProtocol.swift */,
 				6F1C7E4B222D17C000BF3821 /* ControllerType.swift */,
@@ -500,7 +509,7 @@
 			files = (
 				97A6EF1E1FD04DFA00D9DDB5 /* FBLoginViewController.xib in Resources */,
 				97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */,
-				97A6EF231FD0654500D9DDB5 /* FBUserDetailController.xib in Resources */,
+				97A6EF231FD0654500D9DDB5 /* FBDetailViewController.xib in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
 				97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */,
 				97A6EF271FD0977100D9DDB5 /* FBFriendsViewController.xib in Resources */,
@@ -577,12 +586,13 @@
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FCD6AB1FB45F8C007BD5A9 /* InternetImageModel.swift in Sources */,
 				97FC17341FC6E4A900F2F798 /* Array+Extensions.swift in Sources */,
+				6F318BFF222FD283004B1B8A /* FBGetServiceProtocol.swift in Sources */,
 				97E42DF01FCDFFEF00A09233 /* RootViewProtocol.swift in Sources */,
 				972038E51FBF759E003D686C /* FBGetContext.swift in Sources */,
 				97FC17321FC6E4A900F2F798 /* ImageModelCache.swift in Sources */,
 				97FC17371FC6E4A900F2F798 /* UINib+Extensions.swift in Sources */,
 				97C376F51FBF90AD002C637A /* FBLoginContext.swift in Sources */,
-				97C377051FBF9F52002C637A /* FBUserDetailViewController.swift in Sources */,
+				97C377051FBF9F52002C637A /* FBDetailViewController.swift in Sources */,
 				97FC17351FC6E4A900F2F798 /* FileManager+Extensions.swift in Sources */,
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				97FC17361FC6E4A900F2F798 /* String+Extensions.swift in Sources */,
@@ -596,13 +606,15 @@
 				6F0EBB56222E9CE200EC49BB /* UIViewController+Extensions.swift in Sources */,
 				9707950F1FBF2A0600BD986E /* FBUser.swift in Sources */,
 				97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */,
+				6F0EBB59222EA15D00EC49BB /* FBDetailViewModel.swift in Sources */,
 				970795141FBF307C00BD986E /* Users.swift in Sources */,
 				97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */,
 				97C1F3D51FBD9F7F00F91F68 /* ArrayModelChangeAdd.swift in Sources */,
-				97A6EF211FD0652D00D9DDB5 /* FBUserDetailView.swift in Sources */,
+				97A6EF211FD0652D00D9DDB5 /* FBDetailView.swift in Sources */,
 				97FCD6A71FB45F58007BD5A9 /* ImageModel.swift in Sources */,
 				97C1F3D71FBD9F9600F91F68 /* ArrayModelChangeMove.swift in Sources */,
 				97FC17381FC6E4A900F2F798 /* UITableView+Extensions.swift in Sources */,
+				6F318C01222FD2C4004B1B8A /* FBGetUserDetailService.swift in Sources */,
 				970795101FBF2A0600BD986E /* FBCurrentUser.swift in Sources */,
 				6F1C7E4A222D175300BF3821 /* ViewModelProtocol.swift in Sources */,
 				97C1F3D31FBD9F6900F91F68 /* ArrayModelChange.swift in Sources */,

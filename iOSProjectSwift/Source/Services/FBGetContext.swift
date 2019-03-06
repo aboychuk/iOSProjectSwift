@@ -57,7 +57,6 @@ class FBGetContext: Context {
     override func executeWithCompletionHandler(_ handler: @escaping (ModelState) -> ()) {
         var state = self.model.state
         let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
-        
         request.start() { [weak self] (response, result) in
             switch result {
             case .success(let response):

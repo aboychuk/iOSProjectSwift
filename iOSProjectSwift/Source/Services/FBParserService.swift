@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FBParserService {
+struct FBParserService {
     
     // MARK: Constants
     
