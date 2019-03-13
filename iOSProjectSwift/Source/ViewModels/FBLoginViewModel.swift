@@ -28,16 +28,16 @@ class FBLoginViewModel: ViewModelProtocol {
     private let loginButtonSubject = PublishSubject<Void>()
     private let errorSubject = PublishSubject<Error>()
     private let authorizedSubject = PublishSubject<FBCurrentUser>()
+    private let disposeBag = DisposeBag()
     private let service: FBLoginService
-    private let disposeBag: DisposeBag
     
     //MARK: - Init
     
     init(service: FBLoginService) {
         self.service = service
-        self.disposeBag = DisposeBag()
         self.input = Input(didTapOnLogin: self.loginButtonSubject.asObserver())
-        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(), errorObservable: self.errorSubject.asObservable())
+        self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(),
+                             errorObservable: self.errorSubject.asObservable())
         self.setup()
     }
     

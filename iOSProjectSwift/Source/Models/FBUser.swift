@@ -17,7 +17,7 @@ class FBUser: User {
     }
     
     var ID: String?
-    var friends: Users = Users()
+    var friends: Friends = Friends()
     var imageURL: URL?
     
 }

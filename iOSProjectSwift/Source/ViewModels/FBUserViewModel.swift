@@ -1,5 +1,5 @@
 //
-//  FBDetailViewModel.swift
+//  FBUserViewModel.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 3/5/19.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class FBDetailViewModel: ViewModelProtocol {
+class FBUserViewModel: ViewModelProtocol {
     
     struct Input {
         let didTapOnFriends: AnyObserver<Void>
@@ -27,7 +27,7 @@ class FBDetailViewModel: ViewModelProtocol {
     
     let input: Input
     let output: Output
-    private var service: FBGetUserDetailService
+    private var service: FBGetUserService
     private let friendsButtonSubject = PublishSubject<Void>()
     private let logoutButtonSubject = PublishSubject<Void>()
     private let userSubject = PublishSubject<FBUser>()
@@ -36,7 +36,7 @@ class FBDetailViewModel: ViewModelProtocol {
     
     // MARK: - Init
     
-    init(service: FBGetUserDetailService) {
+    init(service: FBGetUserService) {
         self.service = service
         self.input = Input(didTapOnFriends: self.friendsButtonSubject.asObserver(),
                            didTapOnLogout: self.logoutButtonSubject.asObserver())

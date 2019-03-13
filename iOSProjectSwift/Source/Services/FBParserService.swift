@@ -10,19 +10,7 @@ import UIKit
 
 struct FBParserService {
     
-    // MARK: Constants
-    
-    private enum Constants {
-        static let userID = "id"
-        static let firstName = "first_name"
-        static let lastName = "last_name"
-        static let userPicture = "picture"
-        static let userData = "data"
-        static let userUrl = "url"
-        static let userFriends = "friends"
-    }
-    
-    //MARK: - Public functions
+    // MARK: - Static
     
     static func update(user: FBUser, from result: JSON) -> FBUser {
         let ID = result[Constants.userID] as? String
@@ -41,7 +29,7 @@ struct FBParserService {
         return user
     }
     
-    static func updateFriends(users: Users, from result: JSON) -> Users {
+    static func updateFriends(_ users: Friends, from result: JSON) -> Friends {
         let friends = result[Constants.userFriends] as? JSON
         let friendsData = friends?[Constants.userData] as? [JSON]
 
@@ -52,5 +40,17 @@ struct FBParserService {
         }
         
         return users
+    }
+    
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let userID = "id"
+        static let firstName = "first_name"
+        static let lastName = "last_name"
+        static let userPicture = "picture"
+        static let userData = "data"
+        static let userUrl = "url"
+        static let userFriends = "friends"
     }
 }

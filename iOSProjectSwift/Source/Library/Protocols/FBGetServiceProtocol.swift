@@ -27,22 +27,31 @@ protocol FBGetServiceProtocol {
 
 extension FBGetServiceProtocol {
     
+    // MARK: - Properties
+    
+    var pathToCachedResult: String? {
+        return FileManager.documentsPathAppend(folder: self.plistName)
+    }
+    
+    // MARK: - Public
+    
     public func load() -> Observable<Result<Model>> {
         return Observable.create { observable in
             let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
             request.start({ response, result in
                 switch result {
                 case .success(response: let data):
-                    guard let json = data.dictionaryValue else {
-                        observable.onNext(Result.failure(FBGetServiceError.noData))
+                    data.dictionaryValue.map {
+                        self.saveResult(result: $0)
+                        let model = self.parse($0)
+                        observable.onNext(Result.success(model))
                     }
-                    self.saveResult(result: json)
-                    let model = self.parse(json)
-                    observable.onNext(Result.success(model))
                 case .failed(let error):
                     observable.onNext(Result.failure(error))
                 }
             })
+            
+            return Disposables.create()
         }
     }
     

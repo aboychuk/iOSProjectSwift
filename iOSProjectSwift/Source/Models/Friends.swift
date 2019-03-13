@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Users: ArrayModel<User> {
+class Friends: ArrayModel<User> {
     
     private enum Constants {
         static let plistName = "users.plist"

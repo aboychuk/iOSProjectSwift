@@ -1,5 +1,5 @@
 //
-//  FBGetUserDetailService.swift
+//  FBGetUserService.swift
 //  iOSProjectSwift
 //
 //  Created by Andrew Boychuk on 3/6/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FBGetUserDetailService: FBGetServiceProtocol {
+class FBGetUserService: FBGetServiceProtocol {
     typealias Model = FBUser
     
     // MARK: - Properties
@@ -22,9 +22,6 @@ class FBGetUserDetailService: FBGetServiceProtocol {
     }
     var plistName: String {
         return Constants.plistName
-    }
-    var pathToCachedResult: String? {
-        return FileManager.documentsPathAppend(folder: self.plistName)
     }
     
     // MARK: - Init

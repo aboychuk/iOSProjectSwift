@@ -26,6 +26,15 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
         self.viewModel.map { self.configure(with: $0) }
     }
     
+    // MARK: - Static
+    
+    static func create(with viewModel: FBLoginViewModel) -> UIViewController {
+        let viewController = FBLoginViewController()
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
+    
     // MARK: - Private
     
     internal func configure(with viewModel: FBLoginViewModel) {
@@ -50,20 +59,11 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     }
     
     private func presentDetailViewController(user: FBUser) {
-        let service = FBGetUserDetailService(user: user)
-        let viewModel = FBDetailViewModel(service: service)
-        let controller = FBDetailViewController.create(with: viewModel)
+        let service = FBGetUserService(user: user)
+        let viewModel = FBUserViewModel(service: service)
+        let controller = FBUserViewController.create(with: viewModel)
         let navigationController = UINavigationController(rootViewController: controller)
         
         self.present(navigationController, animated: true)
-    }
-    
-    // MARK: - Static
-    
-    static func create(with viewModel: FBLoginViewModel) -> UIViewController {
-        let viewController = FBLoginViewController()
-        viewController.viewModel = viewModel
-        
-        return viewController
     }
 }

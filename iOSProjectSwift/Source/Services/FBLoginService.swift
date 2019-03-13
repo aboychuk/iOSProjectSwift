@@ -49,6 +49,21 @@ class FBLoginService {
         }
     }
     
+    public func logout() -> Observable<Result<FBCurrentUser>> {
+        return Observable.create { observable in
+            if !self.user.authorized {
+                observable.onNext(Result.failure(LoginError.notloggedIn))
+            } else {
+                self.loginManager.logOut()
+                self.user.token = nil
+                self.user.ID = nil
+                observable.onNext(Result.success(self.user))
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
     // MARK: - Private
 
     private func fillUser(with token: AccessToken) -> Result<FBCurrentUser> {
@@ -65,5 +80,6 @@ class FBLoginService {
         case emptyUser
         case cancelledByUser
         case alreadyLoggedIn
+        case notloggedIn
     }
 }
