@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class FBUserViewModel: ViewModelProtocol {
+class FBUserViewModel: ViewModelType {
     
     struct Input {
         let didTapOnFriends: AnyObserver<Void>
@@ -27,7 +27,7 @@ class FBUserViewModel: ViewModelProtocol {
     
     let input: Input
     let output: Output
-    private var service: FBGetUserService
+    private let service: FBGetUserService
     private let friendsButtonSubject = PublishSubject<Void>()
     private let logoutButtonSubject = PublishSubject<Void>()
     private let userSubject = PublishSubject<FBUser>()

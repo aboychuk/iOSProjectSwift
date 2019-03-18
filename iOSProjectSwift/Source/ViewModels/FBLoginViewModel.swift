@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class FBLoginViewModel: ViewModelProtocol {
+class FBLoginViewModel: ViewModelType {
     
     struct Input {
         let didTapOnLogin: AnyObserver<Void>
