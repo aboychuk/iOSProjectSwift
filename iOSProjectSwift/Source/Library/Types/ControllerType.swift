@@ -16,3 +16,4 @@ protocol ControllerType {
     /// Factory method
     static func create(with viewModel: ViewModelType) -> UIViewController
 }
+

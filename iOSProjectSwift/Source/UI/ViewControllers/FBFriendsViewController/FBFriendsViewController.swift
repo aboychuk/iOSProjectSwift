@@ -28,7 +28,10 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     // MARK: - Static
     
     static func create(with viewModel: FBFriendsViewModel) -> UIViewController {
+        let viewController = FBFriendsViewController()
+        viewController.viewModel = viewModel
         
+        return viewController
     }
     
     // MARK: - Public
@@ -53,32 +56,32 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     }
 }
 
-extension FBFriendsViewController: UITableViewDelegate {
-    
-    //MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = self.usersModel?[indexPath.row] as? FBUser else { return }
-        
-        let detailController = FBUserViewController(model: user, currentUser: self.currentUser)
-        detailController.model = user
-        
-        self.navigationController?.pushViewController(detailController, animated: true)
-    }
-}
-
-extension FBFriendsViewController: UITableViewDataSource {
-    
-    //MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.usersModel.map { $0.count } ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
-        cell.userModel = self.usersModel?[indexPath.row] as? FBUser
-        
-        return cell
-    }
-}
+//extension FBFriendsViewController: UITableViewDelegate {
+//
+//    //MARK: - UITableViewDelegate
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let user = self.usersModel?[indexPath.row] as? FBUser else { return }
+//
+//        let detailController = FBUserViewController(model: user, currentUser: self.currentUser)
+//        detailController.model = user
+//
+//        self.navigationController?.pushViewController(detailController, animated: true)
+//    }
+//}
+//
+//extension FBFriendsViewController: UITableViewDataSource {
+//
+//    //MARK: - UITableViewDataSource
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.usersModel.map { $0.count } ?? 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
+//        cell.userModel = self.usersModel?[indexPath.row] as? FBUser
+//
+//        return cell
+//    }
+//}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ImageModel : Hashable {
+extension ImageModel: Hashable {
     
     //MARK: - Hashable
     

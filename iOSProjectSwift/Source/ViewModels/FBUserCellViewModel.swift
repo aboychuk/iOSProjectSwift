@@ -19,7 +19,6 @@ class FBUserCellViewModel: ViewModelType {
         let imageObservable: Observable<UIImage>
     }
     
-    
     // MARK: - Properties
     
     let model: FBUser
@@ -28,6 +27,7 @@ class FBUserCellViewModel: ViewModelType {
     
     init(model: FBUser) {
         self.model = model
+        
     }
     
 }

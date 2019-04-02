@@ -44,6 +44,13 @@ class FBLoginViewModel: ViewModelType {
     //MARK: - Private methods
     
     private func setup() {
+        self.loginButtonSubject
+            .subscribe(
+                onNext: { self.loginUser() })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func loginUser() {
         let viewModel = self
         viewModel.service.login()
             .subscribe(

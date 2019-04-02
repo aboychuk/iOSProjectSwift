@@ -72,9 +72,9 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
     //MARK: - Private
     
     private func presentFriendsViewController(friends: Friends) {
-        let service = FBGetUserService(user: user)
-        let viewModel = FBUserViewModel(service: service)
-        let controller = FBUserViewController.create(with: viewModel)
+        let service = FBGetFriendsService(friends: friends)
+        let viewModel = FBFriendsViewModel(service: service)
+        let controller = FBFriendsViewController.create(with: viewModel)
         let navigationController = UINavigationController(rootViewController: controller)
         
         self.present(navigationController, animated: true)

@@ -28,6 +28,7 @@ class FBUserViewModel: ViewModelType {
     let input: Input
     let output: Output
     private let service: FBGetUserService
+    private let imageViewModel: ImageViewModel?
     private let friendsButtonSubject = PublishSubject<Void>()
     private let logoutButtonSubject = PublishSubject<Void>()
     private let userSubject = PublishSubject<FBUser>()
@@ -62,5 +63,12 @@ class FBUserViewModel: ViewModelType {
                     }
             })
             .disposed(by: viewModel.disposeBag)
+        viewModel.userSubject
+            .subscribe(
+                onNext: { [weak self] user in
+                    // TODO add service
+                    user.imageURL
+                self?.imageViewModel = ImageViewModel(service: <#T##ImageFetchService#>)
+        })
     }
 }

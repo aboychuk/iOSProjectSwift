@@ -27,7 +27,7 @@ class FBUserCell: UITableViewCell {
     
     func fillWithModel(_ model: FBUser) {
         self.fullNameLabel?.text = model.fullname
-        self.userImageView?.imageModel = model.imageModel
+        self.userImageView?.imageViewModel = model.imageModel
     }
     
     //MARK - Overriden functions

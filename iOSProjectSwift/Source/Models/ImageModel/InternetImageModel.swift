@@ -13,13 +13,9 @@ class InternetImageModel: FilesystemImageModel {
     //MARK: - Properties
     
     var downloadTask: URLSessionDownloadTask? {
-        willSet {
-            if downloadTask != newValue {
-                downloadTask?.cancel()
-            }
-        }
         didSet {
             if downloadTask != oldValue {
+                oldValue?.cancel()
                 downloadTask?.resume()
             }
         }
@@ -38,12 +34,12 @@ class InternetImageModel: FilesystemImageModel {
             self.downloadTask = urlSession.downloadTask(with: self.url, completionHandler: ({ (location, response, error ) in
                 do {
                     try FileManager.default.moveItem(atPath: (location?.path)!, toPath: self.imagePath!)
+                    super.loadImage()
                 } catch let error as NSError {
                     print(error)
                 }
             }))
         }
         
-        super.loadImage()
     }
 }

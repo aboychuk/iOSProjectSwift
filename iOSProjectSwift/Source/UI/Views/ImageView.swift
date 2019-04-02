@@ -12,14 +12,9 @@ class ImageView: BaseView {
     
     //MARK: - Properties
     
-    var imageModel: ImageModel? {
+    var imageViewModel: ImageViewModel? {
         didSet {
-            self.observationController = self.imageModel?.controller(for: self)
-            self.imageModel?.load()
-            
-            if let controller = self.observationController {
-                oldValue?.remove(controller: controller)
-            }
+            _ = imageViewModel?.input.fetchImage
         }
     }
     
@@ -27,27 +22,6 @@ class ImageView: BaseView {
         didSet {
             self.contentImageView?.addSubview(self)
             oldValue?.removeFromSuperview()
-        }
-    }
-    
-    var observationController: ObservableObject.ObservationController? {
-        didSet {
-            self.observationController?[.didUnload] = { [weak self] _, _ in
-                self?.loadingView?.set(visible: false)
-            }
-            
-            self.observationController?[.willLoad] = { [weak self] _, _ in
-                self?.loadingView?.set(visible: true)
-            }
-            
-            self.observationController?[.didLoad] = { [weak self] _, _ in
-                self?.loadingView?.set(visible: false)
-                self?.fill(with: self?.imageModel)
-            }
-            
-            self.observationController?[.didUnload] = { [weak self] _, _ in
-                self?.loadingView?.set(visible: false)
-            }
         }
     }
     
