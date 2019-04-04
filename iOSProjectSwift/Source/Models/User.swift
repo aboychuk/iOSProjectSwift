@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: Model, Hashable {
+class User: Hashable {
     
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.fullname == rhs.fullname
@@ -36,12 +36,10 @@ class User: Model, Hashable {
     
     // MARK: Initialization
     
-    override init() {
+    init() {
         self.firstName = Constants.firstName
         self.lastName = Constants.lastName
         self.hashValue = self.lastName.hashValue
-        
-        super.init()
     }
     
     // MARK: - NSCoding

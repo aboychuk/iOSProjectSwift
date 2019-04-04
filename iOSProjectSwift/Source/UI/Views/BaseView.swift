@@ -26,12 +26,6 @@ class BaseView: UIView {
         self.prepareLoadingView()
     }
     
-    //MARK: - Functions for  overriding
-
-    func fill(with model: Model) {
-
-    }
-    
     //MARK: - Private Functions
     
     private func prepareLoadingView() {

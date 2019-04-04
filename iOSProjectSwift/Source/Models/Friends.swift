@@ -53,21 +53,21 @@ class Friends: ArrayModel<User> {
     
     //MARK: - Overrided Functions
         
-    override func performLoadingInBackground() {
-        var objects: Array<User>?
-        if let savePath = self.savePath {
-            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<User>
-            if objects == nil {
-                objects = Array(repeating: User(), count: Constants.usersCount)
-            }
-            
-        }
-        self.perform(notification: false) {
-            objects.map { self.add(elements: $0) }
-        }
-        
-        self.state = .didLoad
-    }
+//    override func performLoadingInBackground() {
+//        var objects: Array<User>?
+//        if let savePath = self.savePath {
+//            objects = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? Array<User>
+//            if objects == nil {
+//                objects = Array(repeating: User(), count: Constants.usersCount)
+//            }
+//            
+//        }
+//        self.perform(notification: false) {
+//            objects.map { self.add(elements: $0) }
+//        }
+//        
+//        self.state = .didLoad
+//    }
     
     //MARK: - Private Functions
     

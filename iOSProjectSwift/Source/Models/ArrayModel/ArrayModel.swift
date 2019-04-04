@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArrayModel<Element: Hashable>: Model {
+class ArrayModel<Element: Hashable> {
     
     //MARK: - Public properties
     

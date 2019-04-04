@@ -17,33 +17,33 @@ enum ModelState {
     case didChange
 }
 
-class Model: ObservableObject {
-    
-    //MARK: - Public Functions
-    
-    func load() {
-        synchronized(self) {
-            let state = self.state
-            if state == .willLoad || state == .didLoad {
-                self.notifyOfState()
-                return
-            }
-            self.state = .willLoad
-        }
-        
-        self.processLoading()
-    }
-    
-    //method created for overriding, do not call directly
-    func performLoadingInBackground() {
-        
-    }
-    
-    //MARK: - Private Functions
-    
-    private func processLoading() {
-        DispatchQueue.global(qos: .background).async {
-            self.performLoadingInBackground()
-        }
-    }
-}
+//class Model: ObservableObject {
+//    
+//    //MARK: - Public Functions
+//    
+//    func load() {
+//        synchronized(self) {
+//            let state = self.state
+//            if state == .willLoad || state == .didLoad {
+//                self.notifyOfState()
+//                return
+//            }
+//            self.state = .willLoad
+//        }
+//        
+//        self.processLoading()
+//    }
+//    
+//    //method created for overriding, do not call directly
+//    func performLoadingInBackground() {
+//        
+//    }
+//    
+//    //MARK: - Private Functions
+//    
+//    private func processLoading() {
+//        DispatchQueue.global(qos: .background).async {
+//            self.performLoadingInBackground()
+//        }
+//    }
+//}

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ControllerType {
-    associatedtype ViewModelType: ViewModelType
+    associatedtype ViewModelType
     
     func configure(with viewModel: ViewModelType)
     

@@ -12,10 +12,6 @@ class FBUser: User {
     
     //MARK: - Properties
     
-    var imageModel: ImageModel? {
-        return self.imageURL.flatMap { ImageModel.image(with: $0) }
-    }
-    
     var ID: String?
     var friends: Friends = Friends()
     var imageURL: URL?

@@ -36,9 +36,9 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     
     // MARK: - Public
     
-    func updateWithModel(_ model: Model) {
-        self.rootView?.fillWithModel()
-    }
+//    func updateWithModel(_ model: Model) {
+//        self.rootView?.fillWithModel()
+//    }
         
     // MARK: - Private
     

@@ -12,12 +12,12 @@ class ImageView: BaseView {
     
     //MARK: - Properties
     
-    var imageViewModel: ImageViewModel? {
+    var url: URL? {
         didSet {
-            _ = imageViewModel?.input.fetchImage
+                self.loadImage()
         }
     }
-    
+
     var contentImageView: UIImageView? {
         didSet {
             self.contentImageView?.addSubview(self)
@@ -27,7 +27,7 @@ class ImageView: BaseView {
     
     //MARK: - Public functions
     
-    func fill(with model: ImageModel?) {
-        self.contentImageView?.image = model?.image
+    func loadImage() {
+        self.contentImageView?.loadImage(fromURL: self.url)
     }
 }
