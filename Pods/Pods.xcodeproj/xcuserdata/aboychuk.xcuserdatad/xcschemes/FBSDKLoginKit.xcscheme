@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C44D6615E754C129D3C449212AC1716"
+               BlueprintIdentifier = "F4F5475E487A77ABAED9C84A1268DFAC"
+               BuildableName = "FBSDKLoginKit.framework"
                BlueprintName = "FBSDKLoginKit"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "FBSDKLoginKit.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

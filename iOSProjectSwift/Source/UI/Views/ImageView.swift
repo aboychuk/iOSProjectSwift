@@ -14,7 +14,7 @@ class ImageView: BaseView {
     
     var url: URL? {
         didSet {
-                self.loadImage()
+            self.loadImage()
         }
     }
 
@@ -27,7 +27,7 @@ class ImageView: BaseView {
     
     //MARK: - Public functions
     
-    func loadImage() {
+    private func loadImage() {
         self.contentImageView?.loadImage(fromURL: self.url)
     }
 }
