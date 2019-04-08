@@ -27,7 +27,6 @@ class FBUserCellViewModel: ViewModelType {
     
     init(model: FBUser) {
         self.model = model
-        
     }
     
 }

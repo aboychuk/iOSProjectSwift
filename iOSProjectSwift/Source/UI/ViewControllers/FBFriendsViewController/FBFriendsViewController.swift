@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 class FBFriendsViewController: UIViewController, ControllerType, RootView {
     typealias ViewModelType = FBFriendsViewModel
     typealias ViewType = FBFriendsView
     
-    
     // MARK: - Properties
     
     var viewModel: FBFriendsViewModel?
+    private var bag = DisposeBag()
     
     //MARK: - View Lifecycle
     
@@ -52,7 +54,14 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     }
     
     internal func configure(with viewModel: FBFriendsViewModel) {
-        
+        if let tableView = self.rootView?.tableview {
+            viewModel
+                .output
+                .userObservable
+                .bind(to: tableView.rx.items(cellIdentifier: typeString(FBUserCell.self),
+                                             cellType: FBUserCell.self)) { (index, user, cell) in cell.userModel = user }
+                .disposed(by: self.bag)
+        }
     }
 }
 
