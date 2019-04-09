@@ -12,11 +12,11 @@ import FacebookLogin
 import FacebookShare
 
 class FBGetFriendsService: FBGetServiceProtocol {
-    typealias Model = Friends
+    typealias Model = ArrayModel<User>
     
     // MARK: - Properties
     
-    var model: Friends
+    var model: ArrayModel<User>
     var graphPath: String {
         return AccessToken.current?.userId ?? Constants.emptyString
     }
@@ -29,13 +29,13 @@ class FBGetFriendsService: FBGetServiceProtocol {
     
     // MARK: - Init
     
-    init(friends: Friends) {
+    init(friends: ArrayModel<User>) {
         self.model = friends
     }
     
     // MARK: - Private
     
-    internal func parse(_ json: JSON) -> Friends {
+    internal func parse(_ json: JSON) -> ArrayModel<User> {
         return FBParserService.updateFriends(self.model, from: json)
     }
     

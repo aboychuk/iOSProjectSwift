@@ -17,47 +17,54 @@ class FBLoginViewModel: ViewModelType {
     }
     
     struct Output {
-        let authorizedObservable: Observable<FBCurrentUser>
+        let authorizedObservable: Observable<Credentials>
         let errorObservable: Observable<Error>
     }
     
-    //MARK: - Properties
+    // MARK: - Properties
     
     let input: Input
     let output: Output
+    private let credentials: Credentials
     private let loginButtonSubject = PublishSubject<Void>()
     private let errorSubject = PublishSubject<Error>()
-    private let authorizedSubject = PublishSubject<FBCurrentUser>()
+    private let authorizedSubject = PublishSubject<Credentials>()
     private let disposeBag = DisposeBag()
-    private let service: FBLoginService
+    private let service = FBAuthenticationService()
     
-    //MARK: - Init
+    // MARK: - Init
     
-    init(service: FBLoginService) {
-        self.service = service
+    init(credentials: Credentials) {
+        self.credentials = credentials
         self.input = Input(didTapOnLogin: self.loginButtonSubject.asObserver())
         self.output = Output(authorizedObservable: self.authorizedSubject.asObservable(),
                              errorObservable: self.errorSubject.asObservable())
         self.setup()
     }
     
-    //MARK: - Private methods
+    // MARK: - Private methods
     
     private func setup() {
         self.loginButtonSubject
             .subscribe(
-                onNext: { self.loginUser() })
+                onNext: { [weak self] in
+                    self?.loginUser()
+            })
             .disposed(by: self.disposeBag)
     }
     
     private func loginUser() {
         let viewModel = self
-        viewModel.service.login()
+        viewModel
+            .service
+            .login(credentials: viewModel.credentials)
             .subscribe(
-                onNext: { result in
+                onNext: { [weak viewModel] result in
                     switch result {
-                    case .success(let user): viewModel.authorizedSubject.onNext(user)
-                    case .failure(let error): viewModel.errorSubject.onNext(error)
+                    case .success(let credentials):
+                        viewModel?.authorizedSubject.onNext(credentials)
+                    case .failure(let error):
+                        viewModel?.errorSubject.onNext(error)
                     }
             })
             .disposed(by: viewModel.disposeBag)

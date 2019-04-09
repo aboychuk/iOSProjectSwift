@@ -17,7 +17,7 @@ class FBUserViewModel: ViewModelType {
     }
     
     struct Output {
-        let userObservable: Observable<FBUser>
+        let userObservable: Observable<UserType>
         let friendsObservable: Observable<Void>
         let logoutObservable: Observable<Void>
         let errorObservable: Observable<Error>
@@ -30,9 +30,10 @@ class FBUserViewModel: ViewModelType {
     private let service: FBGetUserService
     private let friendsButtonSubject = PublishSubject<Void>()
     private let logoutButtonSubject = PublishSubject<Void>()
-    private let userSubject = PublishSubject<FBUser>()
+    private let userSubject = PublishSubject<UserType>()
     private let errorSubject = PublishSubject<Error>()
     private let disposeBag = DisposeBag()
+    private var user: UserType = User()
     
     // MARK: - Init
     
@@ -51,16 +52,33 @@ class FBUserViewModel: ViewModelType {
     
     private func setup() {
         let viewModel = self
-        viewModel.service.load()
+        viewModel
+            .service
+            .load()
             .subscribe(
-                onNext: { result in
+                onNext: { [weak self] result in
                     switch result {
                     case .success(let user):
+                        self?.user = user
                         viewModel.userSubject.onNext(user)
                     case .failure(let error):
                         viewModel.errorSubject.onNext(error)
                     }
             })
             .disposed(by: viewModel.disposeBag)
+        
+        viewModel
+            .friendsButtonSubject
+            .subscribe { [unowned self] in
+                self.userSubject.onNext(self.user)
+            }
+            .disposed(by: self.disposeBag)
+        
+        viewModel
+            .logoutButtonSubject
+            .subscribe {
+                self.userSubject.onNext(self.user)
+            }
+            .disposed(by: self.disposeBag)
     }
 }

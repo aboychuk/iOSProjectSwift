@@ -13,6 +13,12 @@ import FacebookLogin
 import FacebookShare
 
 protocol FBGetServiceProtocol {
+    
+    var model: ArrayModel<User>
+    
+    func parse(_ json: JSON) -> ArrayModel<User> {
+    <#code#>
+    }
     associatedtype Model
     
     var model: Model { get set }
@@ -35,6 +41,7 @@ extension FBGetServiceProtocol {
     
     // MARK: - Public
     
+    /// Proceeds loading in background schedule
     public func load() -> Observable<Result<Model>> {
         return Observable.create { observable in
             let request = GraphRequest(graphPath: self.graphPath, parameters: self.parameters)
@@ -52,7 +59,7 @@ extension FBGetServiceProtocol {
             })
             
             return Disposables.create()
-        }
+        }.observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
     }
     
     func saveResult(result: JSON) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArrayModel<Element: Hashable> {
+class ArrayModel<Element: Equatable> {
     
     //MARK: - Public properties
     
@@ -16,7 +16,7 @@ class ArrayModel<Element: Hashable> {
     
     //MARK: - Computed properties
     
-    var count   : Int {
+    var count: Int {
         return self.elements.count
     }
     

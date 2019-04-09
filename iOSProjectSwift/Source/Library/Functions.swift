@@ -8,13 +8,17 @@
 
 import Foundation
 
+//MARK: - Global typealias
+
+public typealias JSON = [String : Any]
+
 //MARK: - Global functions
 
 public func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
-    objc_sync_enter(lock)
     defer {
         objc_sync_exit(lock)
     }
+    objc_sync_enter(lock)
     
     return block()
 }
@@ -22,7 +26,3 @@ public func synchronized<Type>(_ lock: AnyObject, block: () -> (Type)) -> Type {
 public func typeString<T>(_ type: T.Type) -> String {
     return String(describing: type)
 }
-
-//MARK: - Global typealias
-
-public typealias JSON = [String : Any]

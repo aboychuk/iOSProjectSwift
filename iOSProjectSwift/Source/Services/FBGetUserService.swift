@@ -9,13 +9,13 @@
 import Foundation
 
 class FBGetUserService: FBGetServiceProtocol {
-    typealias Model = FBUser
+    typealias Model = User
     
     // MARK: - Properties
     
-    var model: FBUser
+    var model: User
     var graphPath: String {
-        return self.model.ID ?? Constants.emptyString
+        return self.model.id ?? Constants.emptyString
     }
     var parameters: [String : String] {
         return [Constants.fields : Constants.fieldKeys]
@@ -26,13 +26,13 @@ class FBGetUserService: FBGetServiceProtocol {
     
     // MARK: - Init
     
-    init(user: FBUser) {
+    init(user: User) {
         self.model = user
     }
     
     // MARK: - Private
     
-    internal func parse(_ json: JSON) -> FBUser {
+    internal func parse(_ json: JSON) -> User {
         return FBParserService.update(user: self.model, from: json)
     }
     

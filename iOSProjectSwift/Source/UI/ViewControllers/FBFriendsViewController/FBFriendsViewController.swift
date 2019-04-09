@@ -35,12 +35,6 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
         
         return viewController
     }
-    
-    // MARK: - Public
-    
-//    func updateWithModel(_ model: Model) {
-//        self.rootView?.fillWithModel()
-//    }
         
     // MARK: - Private
     
@@ -61,36 +55,8 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
                 .bind(to: tableView.rx.items(cellIdentifier: typeString(FBUserCell.self),
                                              cellType: FBUserCell.self)) { (index, user, cell) in cell.userModel = user }
                 .disposed(by: self.bag)
+//            tableView.rx.itemSelected
+            // TODO: add action on selected item show detailVC
         }
     }
 }
-
-//extension FBFriendsViewController: UITableViewDelegate {
-//
-//    //MARK: - UITableViewDelegate
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let user = self.usersModel?[indexPath.row] as? FBUser else { return }
-//
-//        let detailController = FBUserViewController(model: user, currentUser: self.currentUser)
-//        detailController.model = user
-//
-//        self.navigationController?.pushViewController(detailController, animated: true)
-//    }
-//}
-//
-//extension FBFriendsViewController: UITableViewDataSource {
-//
-//    //MARK: - UITableViewDataSource
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.usersModel.map { $0.count } ?? 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.reusableCellWith(type: FBUserCell.self, index: indexPath)
-//        cell.userModel = self.usersModel?[indexPath.row] as? FBUser
-//
-//        return cell
-//    }
-//}

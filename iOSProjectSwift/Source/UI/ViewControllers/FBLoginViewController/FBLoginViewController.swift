@@ -16,7 +16,7 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     
     // MARK: - Properties
     
-    private var viewModel: FBLoginViewModel?
+    private weak var viewModel: FBLoginViewModel?
     private var disposeBag = DisposeBag()
     
     // MARK: - View lyfecycle
@@ -38,27 +38,36 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     // MARK: - Private
     
     internal func configure(with viewModel: FBLoginViewModel) {
-        self.rootView?.loginButton?.rx.tap
+        self.rootView?
+            .loginButton?.rx.tap
             .asObservable()
+            .observeOn(MainScheduler.instance)
             .subscribe(viewModel.input.didTapOnLogin)
             .disposed(by: self.disposeBag)
         
-        viewModel.output.errorObservable
+        viewModel
+            .output
+            .errorObservable
+            .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { error in
-                    self.presentAlertError(error: error)
+                onNext: { [weak self] error in
+                    self?.presentAlertError(error: error)
             })
             .disposed(by: self.disposeBag)
         
-        viewModel.output.authorizedObservable
+        viewModel
+            .output
+            .authorizedObservable
+            .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { user in
-                    self.presentDetailViewController(user: user)
+                onNext: { [weak self] in
+                    self?.presentDetailViewController(credentials: $0)
             })
             .disposed(by: self.disposeBag)
     }
     
-    private func presentDetailViewController(user: FBUser) {
+    private func presentDetailViewController(credentials: Credentials) {
+        let user = User(credentials: credentials)
         let service = FBGetUserService(user: user)
         let viewModel = FBUserViewModel(service: service)
         let controller = FBUserViewController.create(with: viewModel)

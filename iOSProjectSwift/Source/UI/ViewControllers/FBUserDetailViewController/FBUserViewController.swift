@@ -12,6 +12,7 @@ import RxSwift
 class FBUserViewController: UIViewController, ControllerType, RootView {
     typealias ViewModelType = FBUserViewModel
     typealias ViewType = FBUserView
+    typealias Friends = ArrayModel<User>
     
     //MARK: - Properties
     
@@ -42,7 +43,12 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
     }
     
     internal func configure(with viewModel: FBUserViewModel) {
-        // TODO: add logout action and friends action
+        
+        self.rootView?.logoutBarButton?.rx.tap
+            .asObservable()
+            .subscribe(viewModel.input.didTapOnLogout)
+            .disposed(by: self.disposeBag)
+        
         self.rootView?.friendsButton?.rx.tap
             .asObservable()
             .subscribe(viewModel.input.didTapOnFriends)
@@ -55,8 +61,8 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
         
         viewModel.output.errorObservable
             .subscribe(
-                onNext: { error in
-            self.presentAlertError(error: error)
+                onNext: { [weak self] error in
+                    self?.presentAlertError(error: error)
             })
             .disposed(by: self.disposeBag)
         

@@ -11,34 +11,25 @@ import RxSwift
 import FacebookLogin
 import FacebookCore
 
-class FBLoginService {
+struct FBAuthenticationService {
     
     // MARK: - Properties
     
-    private let user: FBCurrentUser
-    private let loginManager: LoginManager
-    private let readPermissions: [ReadPermission]
-    
-    // MARK: - Init
-    
-    init(user: FBCurrentUser) {
-        self.user = user
-        self.loginManager = LoginManager()
-        self.readPermissions = [.publicProfile, .userFriends]
-    }
+    private let loginManager = LoginManager()
+    private let readPermissions: [ReadPermission] = [.publicProfile, .userFriends]
     
     // MARK: - Public
     
-    public func login() -> Observable<Result<FBCurrentUser>> {
+    public func login(credentials: Credentials) -> Observable<Result<Credentials>> {
         let service = self
         return Observable.create { observer in
-            if !service.user.authorized {
+            if !credentials.authorized {
                 let manager = service.loginManager
                 manager.logIn(readPermissions: service.readPermissions) { result in
                     switch result {
                     case .failed(let error): observer.onNext(Result.failure(error))
                     case .cancelled: observer.onNext(Result.failure(LoginError.cancelledByUser))
-                    case .success(_,_, let token): observer.onNext(service.fillUser(with: token))
+                    case .success(_,_, let token): observer.onNext(Result.success(self.fill(with: token)))
                     }
                 }
             } else {
@@ -46,40 +37,32 @@ class FBLoginService {
             }
  
             return Disposables.create()
-        }
+        }.observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
     }
     
-    public func logout() -> Observable<Result<FBCurrentUser>> {
+    public func logout(credentials: Credentials) -> Observable<Bool> {
         return Observable.create { observable in
-            if !self.user.authorized {
-                observable.onNext(Result.failure(LoginError.notloggedIn))
+            if !credentials.authorized {
+                observable.onNext(false)
             } else {
                 self.loginManager.logOut()
-                self.user.token = nil
-                self.user.ID = nil
-                observable.onNext(Result.success(self.user))
+                observable.onNext(true)
             }
             
             return Disposables.create()
-        }
+        }.observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
     }
     
     // MARK: - Private
 
-    private func fillUser(with token: AccessToken) -> Result<FBCurrentUser> {
-        let user = self.user
-        user.token = token.authenticationToken
-        user.ID = token.userId
-        
-        return Result.success(user)
+    private func fill(with token: AccessToken) -> Credentials {
+        return Credentials(id: token.userId, token: token.authenticationToken)
     }
     
     //MARK: - Error
     
     private enum LoginError: Error {
-        case emptyUser
         case cancelledByUser
         case alreadyLoggedIn
-        case notloggedIn
     }
 }

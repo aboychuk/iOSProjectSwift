@@ -9,32 +9,32 @@
 import UIKit
 
 struct FBParserService {
+    typealias Friends = ArrayModel<User>
     
     // MARK: - Static
     
-    static func update(user: FBUser, from result: JSON) -> FBUser {
-        let ID = result[Constants.userID] as? String
+    static func update(user: User, from result: JSON) -> User {
+        var filledUser = user
+        let id = result[Constants.userID] as? String
         let firstName = result[Constants.firstName] as? String
         let lastName = result[Constants.lastName] as? String
         let pictures = result[Constants.userPicture] as? JSON
         let data = pictures?[Constants.userData] as? JSON
-        let userPhotoString = data?[Constants.userUrl] as? String
-        let userURL = userPhotoString.flatMap { URL(string: $0) }
+        let userPhotoUrl = data?[Constants.userUrl] as? String
         
-        user.ID = ID
-        user.firstName = firstName
-        user.lastName = lastName
-        user.imageURL = userURL
+        filledUser.id = id
+        filledUser.firstName = firstName
+        filledUser.lastName = lastName
+        filledUser.imageUrl = userPhotoUrl
     
-        return user
+        return filledUser
     }
     
     static func updateFriends(_ users: Friends, from result: JSON) -> Friends {
         let friends = result[Constants.userFriends] as? JSON
         let friendsData = friends?[Constants.userData] as? [JSON]
-
         friendsData?.forEach {
-            var user = FBUser()
+            var user = User()
             user = self.update(user: user, from: $0)
             users.add(element: user)
         }

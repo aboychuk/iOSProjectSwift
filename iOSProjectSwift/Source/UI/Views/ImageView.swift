@@ -17,6 +17,12 @@ class ImageView: BaseView {
             self.loadImage()
         }
     }
+    
+    var urlString: String? {
+        didSet {
+            self.getUrl(from: urlString)
+        }
+    }
 
     var contentImageView: UIImageView? {
         didSet {
@@ -25,7 +31,11 @@ class ImageView: BaseView {
         }
     }
     
-    //MARK: - Public functions
+    //MARK: - Private
+    
+    private func getUrl(from string: String?) {
+        _ = string.map { self.url = URL(string: $0) }
+    }
     
     private func loadImage() {
         self.contentImageView?.loadImage(fromURL: self.url)

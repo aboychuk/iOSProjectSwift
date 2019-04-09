@@ -12,7 +12,7 @@ import RxSwift
 class FBFriendsViewModel: ViewModelType {
     
     struct Input {
-        // didtap indexpath
+        let didSelectModelAtindex: AnyObserver<Void>
     }
     
     struct Output {
@@ -33,7 +33,7 @@ class FBFriendsViewModel: ViewModelType {
     
     init(service: FBGetFriendsService) {
         self.service = service
-        self.input = Input()
+        self.input = Input(didSelectModelAtindex: <#T##AnyObserver<Void>#>)
         self.output = Output(userObservable: self.userSubject.asObservable(),
                              errorObservable: self.errorSubject.asObservable())
         self.setup()

@@ -31,9 +31,9 @@ class FBUserView: BaseView {
     
     // MARK: - Public
     
-    func fillWithModel(_ model: FBUser) {
-        self.userFullName?.text = model.fullname
-        self.imageView?.url = model.imageURL
+    func fillWithModel(_ model: UserType) {
+        self.userFullName?.text = model.fullName
+        self.imageView?.urlString = model.imageUrl
     }
     
     // MARK: - Private
