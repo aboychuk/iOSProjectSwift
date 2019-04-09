@@ -10,6 +10,8 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import FacebookShare
+import RxSwift
+import RxCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,13 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.makeKeyAndVisible()
         }
         
-//        _ = Observable<Int>
-//            .interval(1, scheduler: MainScheduler.instance)
-//            .subscribe(
-//                onNext: { _ in
-//                    print(“Resource count: \(RxSwift.Resources.total).”)
-//            }
-//        )
+        _ = Observable<Int>
+            .interval(1, scheduler: MainScheduler.instance)
+            .subscribe(
+                onNext: { _ in
+                    print("Resource count: \(RxSwift.Resources.total)")
+            }
+        )
 
         
         return true
