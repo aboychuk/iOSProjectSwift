@@ -51,7 +51,7 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
         if let tableView = self.rootView?.tableview {
             viewModel
                 .output
-                .userObservable
+                .friendsObservable
                 .bind(to: tableView.rx.items(cellIdentifier: typeString(FBUserCell.self),
                                              cellType: FBUserCell.self)) { (index, user, cell) in cell.userModel = user }
                 .disposed(by: self.bag)

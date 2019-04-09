@@ -13,12 +13,6 @@ import FacebookLogin
 import FacebookShare
 
 protocol FBGetServiceProtocol {
-    
-    var model: ArrayModel<User>
-    
-    func parse(_ json: JSON) -> ArrayModel<User> {
-    <#code#>
-    }
     associatedtype Model
     
     var model: Model { get set }

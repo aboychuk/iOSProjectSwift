@@ -10,13 +10,15 @@ import Foundation
 import RxSwift
 
 class FBFriendsViewModel: ViewModelType {
+    typealias Friends = ArrayModel<User>
     
     struct Input {
         let didSelectModelAtindex: AnyObserver<Void>
     }
     
     struct Output {
-        let userObservable: Observable<[FBUser]>
+        let friendObservable: Observable<User>
+        let friendsObservable: Observable<Friends>
         let errorObservable: Observable<Error>
     }
     
@@ -25,7 +27,9 @@ class FBFriendsViewModel: ViewModelType {
     let input: Input
     let output: Output
     private let service: FBGetFriendsService
-    private let userSubject = PublishSubject<[FBUser]>()
+    private let didSelectFriend = PublishSubject<Void>()
+    private let friendSubject = PublishSubject<User>()
+    private let friendsSubject = PublishSubject<Friends>()
     private let errorSubject = PublishSubject<Error>()
     private let disposeBag = DisposeBag()
     
@@ -33,8 +37,9 @@ class FBFriendsViewModel: ViewModelType {
     
     init(service: FBGetFriendsService) {
         self.service = service
-        self.input = Input(didSelectModelAtindex: <#T##AnyObserver<Void>#>)
-        self.output = Output(userObservable: self.userSubject.asObservable(),
+        self.input = Input(didSelectModelAtindex: self.didSelectFriend.asObserver())
+        self.output = Output(friendObservable: self.friendSubject.asObservable(),
+                             friendsObservable: self.friendsSubject.asObservable(),
                              errorObservable: self.errorSubject.asObservable())
         self.setup()
     }

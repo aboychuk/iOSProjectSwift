@@ -17,14 +17,12 @@
 		6F318C01222FD2C4004B1B8A /* FBGetUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F318C00222FD2C4004B1B8A /* FBGetUserService.swift */; };
 		6F4235852237CB830002C09C /* FBGetFriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4235842237CB830002C09C /* FBGetFriendsService.swift */; };
 		6F6D041B225B5FD40035401A /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D041A225B5FD40035401A /* Credentials.swift */; };
-		6FD3127D223FA7DF00C87A99 /* FBUserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD3127C223FA7DF00C87A99 /* FBUserCellViewModel.swift */; };
 		6FF393762254E3E400D940B1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF393752254E3E400D940B1 /* UIImageView+Extensions.swift */; };
 		6FFF968F222E80F600DD66C1 /* FBAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF968E222E80F600DD66C1 /* FBAuthenticationService.swift */; };
 		970795111FBF2A0600BD986E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707950E1FBF2A0600BD986E /* User.swift */; };
 		974809241FF6922B00CC34DB /* FBLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974809231FF6922B00CC34DB /* FBLoginViewModel.swift */; };
 		97664CA91FE4365400A6D6AC /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97664CA81FE4365400A6D6AC /* Optional+Extensions.swift */; };
 		97664CAC1FE46EA400A6D6AC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97664CAB1FE46EA400A6D6AC /* Result.swift */; };
-		976E49031FDEE17B00EDC78E /* WeakHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976E49021FDEE17A00EDC78E /* WeakHashable.swift */; };
 		97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */; };
 		97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */; };
 		97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A136801FDB1D59000FBFAD /* FBUserCell.xib */; };
@@ -65,7 +63,6 @@
 		6F318C00222FD2C4004B1B8A /* FBGetUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGetUserService.swift; sourceTree = "<group>"; };
 		6F4235842237CB830002C09C /* FBGetFriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGetFriendsService.swift; sourceTree = "<group>"; };
 		6F6D041A225B5FD40035401A /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		6FD3127C223FA7DF00C87A99 /* FBUserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserCellViewModel.swift; sourceTree = "<group>"; };
 		6FF393752254E3E400D940B1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		6FFF968E222E80F600DD66C1 /* FBAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuthenticationService.swift; sourceTree = "<group>"; };
 		94999868D8AD3E4F26077385 /* Pods-iOSProjectSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectSwift/Pods-iOSProjectSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,7 +70,6 @@
 		974809231FF6922B00CC34DB /* FBLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewModel.swift; sourceTree = "<group>"; };
 		97664CA81FE4365400A6D6AC /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		97664CAB1FE46EA400A6D6AC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		976E49021FDEE17A00EDC78E /* WeakHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakHashable.swift; sourceTree = "<group>"; };
 		97766A6D1FBFC1E7000B3F89 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		97A1367E1FDB1D49000FBFAD /* FBUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserCell.swift; sourceTree = "<group>"; };
 		97A136801FDB1D59000FBFAD /* FBUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserCell.xib; sourceTree = "<group>"; };
@@ -133,7 +129,6 @@
 			children = (
 				6F1C7E49222D175300BF3821 /* ViewModelType.swift */,
 				6F1C7E4B222D17C000BF3821 /* ControllerType.swift */,
-				976E49021FDEE17A00EDC78E /* WeakHashable.swift */,
 				97664CAB1FE46EA400A6D6AC /* Result.swift */,
 			);
 			path = Types;
@@ -156,7 +151,6 @@
 				974809231FF6922B00CC34DB /* FBLoginViewModel.swift */,
 				6F0EBB58222EA15D00EC49BB /* FBUserViewModel.swift */,
 				6F10512322313076000B06B1 /* FBFriendsViewModel.swift */,
-				6FD3127C223FA7DF00C87A99 /* FBUserCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -482,7 +476,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A1367F1FDB1D49000FBFAD /* FBUserCell.swift in Sources */,
-				976E49031FDEE17B00EDC78E /* WeakHashable.swift in Sources */,
 				97C377101FBFA01B002C637A /* BaseView.swift in Sources */,
 				97C3770C1FBF9FFE002C637A /* ImageView.swift in Sources */,
 				97FC17341FC6E4A900F2F798 /* Array+Extensions.swift in Sources */,
@@ -509,7 +502,6 @@
 				6F1C7E4A222D175300BF3821 /* ViewModelType.swift in Sources */,
 				97C377031FBF9F34002C637A /* FBLoginViewController.swift in Sources */,
 				97A6B4E41FC880BC00FACFE1 /* FBParserService.swift in Sources */,
-				6FD3127D223FA7DF00C87A99 /* FBUserCellViewModel.swift in Sources */,
 				97664CAC1FE46EA400A6D6AC /* Result.swift in Sources */,
 				97A6EF2B1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift in Sources */,
 				97EED2241FB645A10088D7E8 /* ArrayModel.swift in Sources */,

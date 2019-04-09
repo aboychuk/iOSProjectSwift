@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         self.window = UIWindow.window {
-            let user = Credentials()
-            let service = FBLoginService(credentials: user)
-            let viewModel = FBLoginViewModel(service: service)
+            let viewModel = FBLoginViewModel(credentials: Credentials())
             let loginViewController = FBLoginViewController.create(with: viewModel)
             $0.rootViewController = loginViewController
             $0.makeKeyAndVisible()

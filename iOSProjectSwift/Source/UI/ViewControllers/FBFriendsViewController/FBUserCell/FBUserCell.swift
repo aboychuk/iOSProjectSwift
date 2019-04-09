@@ -15,7 +15,7 @@ class FBUserCell: UITableViewCell {
     @IBOutlet var userImageView: ImageView?
     @IBOutlet var fullNameLabel: UILabel?
     
-    var userModel: FBUser? {
+    var userModel: User? {
         willSet {
             if let model = newValue {
                 self.fillWithModel(model)
@@ -25,9 +25,9 @@ class FBUserCell: UITableViewCell {
     
     //MARK: - Public
     
-    func fillWithModel(_ model: FBUser) {
-        self.fullNameLabel?.text = model.fullname
-        self.userImageView?.url = model.imageURL
+    func fillWithModel(_ model: User) {
+        self.fullNameLabel?.text = model.fullName
+        self.userImageView?.urlString = model.imageUrl
     }
     
     //MARK: - Override

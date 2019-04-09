@@ -25,10 +25,4 @@ extension UITableView {
         block()
         self.endUpdates()
     }
-    
-    func apply(ModelChange: ArrayModelChange,
-               in section: Int = 0,
-               rowAnimation: UITableView.RowAnimation = .automatic) {
-        ModelChange.update(tableView: self, section: section, rowAnimation: rowAnimation)
-    }
 }
