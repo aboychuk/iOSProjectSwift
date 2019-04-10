@@ -21,6 +21,7 @@ class FBUserView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        print("FBUserView is created")
         self.logoutBarButton = createBarButton(title: "Logout")
     }
     
@@ -37,9 +38,10 @@ class FBUserView: BaseView {
     }
     
     // MARK: - Private
+    
     // TODO: - Move to category
     private func createBarButton(title: String) -> UIBarButtonItem {
-        let button = UIBarButtonItem.init()
+        let button = UIBarButtonItem()
         button.title = title
         button.style = .done
         

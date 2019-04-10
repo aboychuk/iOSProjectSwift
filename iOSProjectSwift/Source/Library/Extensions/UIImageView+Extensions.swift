@@ -16,7 +16,7 @@ extension UIImageView {
         }
         
         DispatchQueue.global(qos: .background).async {
-            let cache =  URLCache.shared
+            let cache = URLCache.shared
             let request = URLRequest(url: imageURL)
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {

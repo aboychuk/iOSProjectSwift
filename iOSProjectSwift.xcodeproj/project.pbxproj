@@ -28,10 +28,9 @@
 		97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A136801FDB1D59000FBFAD /* FBUserCell.xib */; };
 		97A6B4E41FC880BC00FACFE1 /* FBParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6B4E31FC880BC00FACFE1 /* FBParserService.swift */; };
 		97A6EF1A1FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */; };
-		97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */; };
 		97A6EF1E1FD04DFA00D9DDB5 /* FBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */; };
 		97A6EF211FD0652D00D9DDB5 /* FBUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF201FD0652D00D9DDB5 /* FBUserView.swift */; };
-		97A6EF231FD0654500D9DDB5 /* FBUserlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF221FD0654500D9DDB5 /* FBUserlViewController.xib */; };
+		97A6EF231FD0654500D9DDB5 /* FBUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF221FD0654500D9DDB5 /* FBUserViewController.xib */; };
 		97A6EF251FD0975B00D9DDB5 /* FBFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */; };
 		97A6EF271FD0977100D9DDB5 /* FBFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A6EF261FD0977100D9DDB5 /* FBFriendsViewController.xib */; };
 		97A6EF2B1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */; };
@@ -75,10 +74,9 @@
 		97A136801FDB1D59000FBFAD /* FBUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserCell.xib; sourceTree = "<group>"; };
 		97A6B4E31FC880BC00FACFE1 /* FBParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBParserService.swift; sourceTree = "<group>"; };
 		97A6EF191FCF005700D9DDB5 /* UIViewAutoresizing+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizing+Extensions.swift"; sourceTree = "<group>"; };
-		97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
 		97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoginViewController.xib; sourceTree = "<group>"; };
 		97A6EF201FD0652D00D9DDB5 /* FBUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserView.swift; sourceTree = "<group>"; };
-		97A6EF221FD0654500D9DDB5 /* FBUserlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserlViewController.xib; sourceTree = "<group>"; };
+		97A6EF221FD0654500D9DDB5 /* FBUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBUserViewController.xib; sourceTree = "<group>"; };
 		97A6EF241FD0975B00D9DDB5 /* FBFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFriendsView.swift; sourceTree = "<group>"; };
 		97A6EF261FD0977100D9DDB5 /* FBFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBFriendsViewController.xib; sourceTree = "<group>"; };
 		97A6EF2A1FD0A80F00D9DDB5 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 		97C376FD1FBF9F03002C637A /* FBLoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				97A6EF1B1FD04DE100D9DDB5 /* FBLoginView.swift */,
 				97C377021FBF9F34002C637A /* FBLoginViewController.swift */,
 				97A6EF1D1FD04DFA00D9DDB5 /* FBLoginViewController.xib */,
 			);
@@ -247,7 +244,7 @@
 			children = (
 				97A6EF201FD0652D00D9DDB5 /* FBUserView.swift */,
 				97C377041FBF9F52002C637A /* FBUserViewController.swift */,
-				97A6EF221FD0654500D9DDB5 /* FBUserlViewController.xib */,
+				97A6EF221FD0654500D9DDB5 /* FBUserViewController.xib */,
 			);
 			path = FBUserDetailViewController;
 			sourceTree = "<group>";
@@ -402,7 +399,7 @@
 			files = (
 				97A6EF1E1FD04DFA00D9DDB5 /* FBLoginViewController.xib in Resources */,
 				97F1AB341FA2309A00085BD6 /* Assets.xcassets in Resources */,
-				97A6EF231FD0654500D9DDB5 /* FBUserlViewController.xib in Resources */,
+				97A6EF231FD0654500D9DDB5 /* FBUserViewController.xib in Resources */,
 				97766A6E1FBFC1E7000B3F89 /* LoadingView.xib in Resources */,
 				97A136811FDB1D59000FBFAD /* FBUserCell.xib in Resources */,
 				97A6EF271FD0977100D9DDB5 /* FBFriendsViewController.xib in Resources */,
@@ -486,7 +483,6 @@
 				97FC17351FC6E4A900F2F798 /* FileManager+Extensions.swift in Sources */,
 				97F1AB2D1FA2309A00085BD6 /* AppDelegate.swift in Sources */,
 				97FC17361FC6E4A900F2F798 /* String+Extensions.swift in Sources */,
-				97A6EF1C1FD04DE100D9DDB5 /* FBLoginView.swift in Sources */,
 				97664CA91FE4365400A6D6AC /* Optional+Extensions.swift in Sources */,
 				974809241FF6922B00CC34DB /* FBLoginViewModel.swift in Sources */,
 				97FC17311FC6E4A900F2F798 /* Functions.swift in Sources */,

@@ -43,8 +43,8 @@ class FBGetFriendsService: FBGetServiceProtocol {
     
     private enum Constants {
         static let fields = "fields"
-        static let fieldKeys = "first_name,last_name,picture.type(large)"
-        static let plistName = "UserDetail.plist"
+        static let fieldKeys = "friends{first_name,last_name,picture}"
+        static let plistName = "UserFriends.plist"
         static let emptyString = "empty"
     }
     

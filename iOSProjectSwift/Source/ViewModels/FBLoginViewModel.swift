@@ -54,20 +54,18 @@ class FBLoginViewModel: ViewModelType {
     }
     
     private func loginUser() {
-        let viewModel = self
-        viewModel
-            .service
-            .login(credentials: viewModel.credentials)
+        self.service
+            .login(credentials: self.credentials)
             .subscribe(
-                onNext: { [weak viewModel] result in
+                onNext: { [weak self] result in
                     switch result {
                     case .success(let credentials):
-                        viewModel?.authorizedSubject.onNext(credentials)
+                        self?.authorizedSubject.onNext(credentials)
                     case .failure(let error):
-                        viewModel?.errorSubject.onNext(error)
+                        self?.errorSubject.onNext(error)
                     }
             })
-            .disposed(by: viewModel.disposeBag)
+            .disposed(by: self.disposeBag)
     }
     
     // MARK: - Error

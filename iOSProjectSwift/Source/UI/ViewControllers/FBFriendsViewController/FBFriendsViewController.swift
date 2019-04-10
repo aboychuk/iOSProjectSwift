@@ -16,7 +16,7 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     
     // MARK: - Properties
     
-    var viewModel: FBFriendsViewModel?
+    private var viewModel: FBFriendsViewModel?
     private var bag = DisposeBag()
     
     //MARK: - View Lifecycle

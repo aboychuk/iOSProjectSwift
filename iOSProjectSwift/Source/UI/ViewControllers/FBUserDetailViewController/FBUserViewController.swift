@@ -16,7 +16,7 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
     
     //MARK: - Properties
     
-    var viewModel: FBUserViewModel?
+    private var viewModel: FBUserViewModel?
     private var disposeBag = DisposeBag()
     
     //MARK: - View Lyfecycle
@@ -54,12 +54,8 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
             .subscribe(viewModel.input.didTapOnFriends)
             .disposed(by: self.disposeBag)
         
-        self.rootView?.logoutBarButton?.rx.tap
-            .asObservable()
-            .subscribe(viewModel.input.didTapOnLogout)
-            .disposed(by: self.disposeBag)
-        
         viewModel.output.errorObservable
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] error in
                     self?.presentAlertError(error: error)
@@ -67,22 +63,41 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
             .disposed(by: self.disposeBag)
         
         viewModel.output.userObservable
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] user in
                     //TODO: Fix fillMethod remove model add raw data String Image
-            self?.rootView?.fillWithModel(user)
+                    self?.rootView?.fillWithModel(user)
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel.output.friendsObservable
+            .subscribe(
+                onNext: { [weak self] friends in
+                    self?.presentFriendsViewController(friends: friends)
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel.output.logoutObservable
+            .subscribe(
+                onNext: { [weak self] in
+                    self?.popToRootViewController()
             })
             .disposed(by: self.disposeBag)
     }
     
     //MARK: - Private
     
+    private func popToRootViewController() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func presentFriendsViewController(friends: Friends) {
         let service = FBGetFriendsService(friends: friends)
         let viewModel = FBFriendsViewModel(service: service)
         let controller = FBFriendsViewController.create(with: viewModel)
-        let navigationController = UINavigationController(rootViewController: controller)
         
-        self.present(navigationController, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

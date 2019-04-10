@@ -40,6 +40,7 @@ struct User: UserType {
     
     init(credentials: Credentials) {
         self.credentials = credentials
+        self.id = credentials.id
     }
 
 

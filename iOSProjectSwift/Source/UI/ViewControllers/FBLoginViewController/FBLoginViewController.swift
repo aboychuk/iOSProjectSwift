@@ -10,20 +10,25 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FBLoginViewController: UIViewController, RootView, ControllerType {
+class FBLoginViewController: UIViewController, ControllerType {
     typealias ViewModelType = FBLoginViewModel
-    typealias ViewType = FBloginView
     
     // MARK: - Properties
     
-    private weak var viewModel: FBLoginViewModel?
+    private var viewModel: FBLoginViewModel?
     private var disposeBag = DisposeBag()
+    @IBOutlet var loginButton: UIButton?
     
     // MARK: - View lyfecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.map { self.configure(with: $0) }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Static
@@ -38,10 +43,8 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
     // MARK: - Private
     
     internal func configure(with viewModel: FBLoginViewModel) {
-        self.rootView?
-            .loginButton?.rx.tap
+        self.loginButton?.rx.tap
             .asObservable()
-            .observeOn(MainScheduler.instance)
             .subscribe(viewModel.input.didTapOnLogin)
             .disposed(by: self.disposeBag)
         
@@ -61,18 +64,18 @@ class FBLoginViewController: UIViewController, RootView, ControllerType {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] in
-                    self?.presentDetailViewController(credentials: $0)
+                    self?.presentUserViewController(credentials: $0)
             })
             .disposed(by: self.disposeBag)
     }
     
-    private func presentDetailViewController(credentials: Credentials) {
+    private func presentUserViewController(credentials: Credentials) {
         let user = User(credentials: credentials)
         let service = FBGetUserService(user: user)
         let viewModel = FBUserViewModel(service: service)
         let controller = FBUserViewController.create(with: viewModel)
-        let navigationController = UINavigationController(rootViewController: controller)
         
-        self.present(navigationController, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

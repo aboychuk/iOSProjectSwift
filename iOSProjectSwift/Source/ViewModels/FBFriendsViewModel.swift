@@ -47,7 +47,18 @@ class FBFriendsViewModel: ViewModelType {
     // MARK: - Private
     
     private func setup() {
-        
+        self.service
+            .load()
+            .subscribe(
+                onNext: { [weak self] result in
+                    switch result {
+                    case .success(let friends):
+                        self?.friendsSubject.onNext(friends)
+                    case .failure(let error):
+                        self?.errorSubject.onNext(error)
+                    }
+            })
+            .disposed(by: self.disposeBag)
     }
     
 }

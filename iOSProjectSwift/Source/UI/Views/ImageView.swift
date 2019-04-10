@@ -17,27 +17,34 @@ class ImageView: BaseView {
             self.loadImage()
         }
     }
-    
     var urlString: String? {
         didSet {
             self.getUrl(from: urlString)
         }
     }
-
     var contentImageView: UIImageView? {
         didSet {
-            self.contentImageView?.addSubview(self)
-            oldValue?.removeFromSuperview()
+            if contentImageView != oldValue {
+                oldValue?.removeFromSuperview()
+                contentImageView.map { self.addSubview($0) }
+            }
         }
     }
     
     //MARK: - Private
+    
+    private func setupUI() {
+        let contentImageView = UIImageView(frame: self.bounds)
+        contentImageView.autoresizingMask = .autoresize
+        self.contentImageView = contentImageView
+    }
     
     private func getUrl(from string: String?) {
         _ = string.map { self.url = URL(string: $0) }
     }
     
     private func loadImage() {
+        self.setupUI()
         self.contentImageView?.loadImage(fromURL: self.url)
     }
 }
