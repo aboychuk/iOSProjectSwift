@@ -13,7 +13,7 @@ class FBFriendsViewModel: ViewModelType {
     typealias Friends = ArrayModel<User>
     
     struct Input {
-        let didSelectModelAtindex: AnyObserver<Void>
+        let didSelectModelAtindex: AnyObserver<IndexPath>
     }
     
     struct Output {
@@ -27,11 +27,12 @@ class FBFriendsViewModel: ViewModelType {
     let input: Input
     let output: Output
     private let service: FBGetFriendsService
-    private let didSelectFriend = PublishSubject<Void>()
+    private let didSelectFriend = PublishSubject<IndexPath>()
     private let friendSubject = PublishSubject<User>()
     private let friendsSubject = PublishSubject<Friends>()
     private let errorSubject = PublishSubject<Error>()
     private let disposeBag = DisposeBag()
+    private var friends = ArrayModel<User>()
     
     // MARK: - Init
     
@@ -53,11 +54,19 @@ class FBFriendsViewModel: ViewModelType {
                 onNext: { [weak self] result in
                     switch result {
                     case .success(let friends):
+                        self?.friends = friends
                         self?.friendsSubject.onNext(friends)
                     case .failure(let error):
                         self?.errorSubject.onNext(error)
                     }
             })
+            .disposed(by: self.disposeBag)
+        
+        self.didSelectFriend.subscribe(onNext: { (indexPath) in
+            if let user = self.friends[indexPath.row] {
+                self.friendSubject.onNext(user)
+            }
+        })
             .disposed(by: self.disposeBag)
     }
     

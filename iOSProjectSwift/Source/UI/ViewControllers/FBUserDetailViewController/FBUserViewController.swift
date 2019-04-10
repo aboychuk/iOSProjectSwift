@@ -39,7 +39,7 @@ class FBUserViewController: UIViewController, ControllerType, RootView {
     // MARK: - Private
     
     private func setupUI() {
-        self.navigationItem.leftBarButtonItem = self.rootView?.logoutBarButton
+        self.navigationItem.rightBarButtonItem = self.rootView?.logoutBarButton
     }
     
     internal func configure(with viewModel: FBUserViewModel) {

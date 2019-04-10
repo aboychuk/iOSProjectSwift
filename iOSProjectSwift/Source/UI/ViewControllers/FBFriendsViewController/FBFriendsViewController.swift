@@ -17,7 +17,7 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     // MARK: - Properties
     
     private var viewModel: FBFriendsViewModel?
-    private var bag = DisposeBag()
+    private var disposeBag = DisposeBag()
     
     //MARK: - View Lifecycle
     
@@ -25,6 +25,7 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
         super.viewDidLoad()
         self.prepareNavigationTitle()
         self.registerTableViewCell()
+        self.viewModel.map { self.configure(with: $0) }
     }
     
     // MARK: - Static
@@ -49,14 +50,32 @@ class FBFriendsViewController: UIViewController, ControllerType, RootView {
     
     internal func configure(with viewModel: FBFriendsViewModel) {
         if let tableView = self.rootView?.tableview {
+            tableView.rx.itemSelected
+                .asObservable()
+                .subscribe(viewModel.input.didSelectModelAtindex)
+                .disposed(by: self.disposeBag)
+            
             viewModel
                 .output
                 .friendsObservable
                 .bind(to: tableView.rx.items(cellIdentifier: typeString(FBUserCell.self),
                                              cellType: FBUserCell.self)) { (index, user, cell) in cell.userModel = user }
-                .disposed(by: self.bag)
-//            tableView.rx.itemSelected
-            // TODO: add action on selected item show detailVC
+                .disposed(by: self.disposeBag)
+            
+            viewModel.output.friendObservable
+                .subscribe(
+                    onNext: { [weak self] user in
+                        self?.presentUserViewController(user: user)
+                })
+                .disposed(by: self.disposeBag)
         }
+    }
+    
+    private func presentUserViewController(user: User) {
+        let service = FBGetUserService(user: user)
+        let viewModel = FBUserViewModel(service: service)
+        let controller = FBUserViewController.create(with: viewModel)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
